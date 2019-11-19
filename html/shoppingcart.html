@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Varukorg</title>
-    <link rel="stylesheet" href="/public/css/styles.css"><!-- Här är .css-filen som vi gulp skapat åt oss. -->
+    <link rel="stylesheet" href="/public/css/shoppingcart.css"><!-- Här är .css-filen som vi gulp skapat åt oss. -->
     <script src=""></script>
 </head>
 
@@ -17,9 +17,20 @@
     </header>
 
     <section class="chosenproduct">
-        <section class="chosenproduct__product">Produkt från produktsida</section>
-        <section class="chosenproduct__productinfo"></section>
+        <h1 class="chosenproduct__header">
+            Du har valt:
+        </h1>
+        <div class="chosenproduct__product">
+            <div class="productinfo__card-1">
+                <img class="productinfo__card-img" src="/img/small.jpg" alt="small">
+            </div>
+        </div>
+
+            <div class="chosenproduct__productinfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                praesentium ullam reiciendis numquam officiis nam blanditiis magnam accusamus architecto distinctio!
+            </div>
     </section>
+
     <section class="options"></section>
     <section class="personaldetails"></section>
     <section class="buy"></section>
