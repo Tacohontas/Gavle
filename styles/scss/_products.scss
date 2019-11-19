@@ -9,11 +9,13 @@
     .productinfo__card {
         display: flex;
         justify-content: space-evenly;
+        margin: 2rem;
     }
     .productinfo__card-1, .productinfo__card-2, .productinfo__card-3 {
-        width: 15rem;
+        width: 18rem;
         background-color: $dark-col;
-        box-shadow: 1px 1px 3px 0px black;
+        box-shadow: .5px .5px 3px 0px black;
+        border: 1px solid black;
     
     }
     .productinfo__card-img {
@@ -28,12 +30,25 @@
         border: none;
         margin: 1rem;
         color: $font-col;
-        font-size: 1rem;
-    
-    
+        font-size: 1.5rem;
+
     }
     p {
         color: $font-col;
         padding: 1rem;
     }
-    
+    .compare__containers {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: .5rem;
+        padding: 20px;
+    }
+    .compare__containers-1, .compare__containers-2, .compare__containers-3, .compare__containers-4 {
+        text-align: center;
+        font-size: 1rem;
+        padding: 1rem 0;
+        background-color: $light-col;
+    } 
+    .compare__containers-1 {
+        grid-row: 1/4;
+    }
