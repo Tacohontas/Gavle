@@ -1,9 +1,7 @@
 .productinfo__card {
-border: 2px solid black;
-width: 2rem;
-height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    border: 5px solid black;
 }
 
-h1 {
-    color: brown;
-}
+
