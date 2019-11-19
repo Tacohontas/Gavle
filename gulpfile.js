@@ -12,7 +12,7 @@ sass.compiler = require('node-sass');
  
 var JS_PATH = "public/**/*.js"
  
-const CSS_PATH ="public/scss/*.scss" // Här hämtar man CSS-filerna ** = tar undermappar i css
+const CSS_PATH ="public/scss/main.scss" // Här hämtar man CSS-filerna ** = tar undermappar i css
 //styles
  
  
