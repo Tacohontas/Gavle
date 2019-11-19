@@ -11,8 +11,7 @@ var sass = require('gulp-sass');
 sass.compiler = require('node-sass');
  
 var JS_PATH = "public/**/*.js"
- 
-const CSS_PATH ="public/scss/main.scss" // Här hämtar man CSS-filerna ** = tar undermappar i css
+const CSS_PATH ="styles/scss/main.scss" // Här hämtar man CSS-filerna ** = tar undermappar i css
 //styles
  
  
@@ -30,7 +29,7 @@ gulp.task("styles", async function(){
     .pipe(concat("styles.css")) // kommer ta dina css-filer och baka ihop till en cssfil med namnet "styles.css"
     .pipe(cleanCSS({compatibility: 'ie8'})) // lägger all CSS på samma rad.
  //  .pipe(sourcemaps.write("./maps"))
-   .pipe(gulp.dest("public/css")) // Här väljer man destinationen för style.css-filen
+   .pipe(gulp.dest("styles/css")) // Här väljer man destinationen för style.css-filen
  
 })
  

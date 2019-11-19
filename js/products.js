@@ -1,30 +1,13 @@
-/*
-const btn = document.querySelector(".productinfo__card-btn");
-const data = document.querySelector(".productinfo__card-img").src;
- 
+const buyBtn = document.querySelectorAll(".productinfo__card-btn");
 
 
-btn.addEventListener("click", ()=>{
-console.log(data)
-localStorage.setItem("data", data);
+for (let i = 0; i < buyBtn.length; i++) {
 
-window.document.location="./shoppingcart.html";
-});
-*/
-
-
-
-
-const btn = document.querySelectorAll("button");
-
-
-for(let i = 0; i<btn.length; i++){
-
-btn[i].addEventListener("click", ()=>{
-    const data = btn[i].closest("div");
-const data2 = data.firstElementChild.src;   
-    console.log(data2)
-    localStorage.setItem("data", data2);
-    window.document.location="./shoppingcart.html";
+    buyBtn[i].addEventListener("click", () => {
+        const buyBtnDivParent = buyBtn[i].closest("div"); // Letar efter närmsta div-element till button
+        const data = buyBtnDivParent.firstElementChild.src; // Selectar första child i köp-knappens parent.
+        console.log(data)
+        localStorage.setItem("data", data);
+        window.document.location = "./shoppingcart.html";
     });
 }

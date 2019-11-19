@@ -5,3 +5,8 @@
 @import "invoice.scss";
 @import "products.scss";
 @import "shoppingcart.scss";
+
+body{
+    background: $bg-col;
+    color: $font-col;
+}

@@ -1,0 +1,39 @@
+
+    .body {
+        background-color: $bg-col;
+    }
+    .productinfo__h1 {
+        text-align: center;
+    }
+    
+    .productinfo__card {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .productinfo__card-1, .productinfo__card-2, .productinfo__card-3 {
+        width: 15rem;
+        background-color: $dark-col;
+        box-shadow: 1px 1px 3px 0px black;
+    
+    }
+    .productinfo__card-img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .productinfo__card-btn {
+        width: 8rem;
+        height: 3rem;
+        background-color: $button-col;
+        border: none;
+        margin: 1rem;
+        color: $font-col;
+        font-size: 1rem;
+    
+    
+    }
+    p {
+        color: $font-col;
+        padding: 1rem;
+    }
+    
