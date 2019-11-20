@@ -1,0 +1,34 @@
+
+.body {
+    background-color: $bg-col;
+    color: black;
+    font-size: 30px;
+}
+.invoice {
+    width: 35rem;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    grid-gap: 1rem;
+    background-color: white;
+    text-align: center;
+
+}
+.invoice__header {
+    
+
+}
+
+.invoice__adress, .invoice__details {
+
+}
+.invoice__spec, .invoice__sum {
+   
+}
+
+.invoice__footer, .invoice__info {
+   
+}
+
+
