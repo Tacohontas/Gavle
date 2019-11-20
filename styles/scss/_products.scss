@@ -1,7 +1,7 @@
 
-    .body {
-        background-color: $bg-col;
-    }
+body{
+    background: $bg-col;
+}
     .productinfo__h1 {
         text-align: center;
     }
@@ -38,7 +38,4 @@
         font-size: 1.5rem;
 
     }
-    p {
-        color: $font-col;
-        padding: 1rem;
-    }
+    

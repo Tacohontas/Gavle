@@ -1,34 +1,54 @@
 
-.body {
+ .body {
     background-color: $bg-col;
-    color: black;
     font-size: 30px;
-}
+    color: black;
+} 
 .invoice {
-    width: 35rem;
+    margin: 2rem;
+    width: 36rem;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 3fr 1fr;
     grid-gap: 1rem;
     background-color: white;
-    text-align: center;
 
 }
-.invoice__header {
+.invoice__header, .invoice__num {
+    max-width: 18rem;
+    max-height: 16rem;
+
+}
+.invoice__header-logo {
+    max-width: 8rem;
+    margin: 2rem;
+}
+.invoice__num-invnr {
+    text-align: start;
     
-
 }
-
 .invoice__adress, .invoice__details {
-
+    max-width: 18rem;
+    max-height: 16rem;
 }
+/* .invoice__adress-tabel {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+} */
 .invoice__spec, .invoice__sum {
-   
+    max-width: 18rem;
+    max-height: 50rem;
 }
 
 .invoice__footer, .invoice__info {
-   
+    max-width: 18rem;
+    max-height: 16rem;
 }
 
 
