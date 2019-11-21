@@ -1,35 +1,24 @@
-/*
-    body{
-        background: $bg-col;
-        color: $font-col;
-        margin: 30px;
-    }
-    
-    */
-    .chosenproduct{
-        background: $box-col;
-        display: grid;
-        grid-template-columns: 2;
-        grid-template-rows: 2;
-        grid-template-areas: 
-        'chosenproduct__header chosenproduct__header'
-        'chosenproduct__product chosenproduct__productinfo';
-        padding: 30px;
-    }
-    
-    .chosenproduct__header{
-        grid-area: chosenproduct__header;
-    }
-    
-    .chosenproduct__product{
-        grid-area: chosenproduct__product;
-    
-    }
-    
-    .chosenproduct__productinfo{
-        grid-area: chosenproduct__productinfo;
-    }
+.chosenproduct {
+  background: $bg-col;
+  display: grid;
+  grid-template-areas:
+    "chosenproduct__header chosenproduct__header"
+    "chosenproduct__product chosenproduct__productinfo";
+  padding: 30px;
+}
 
-    .chosenproduct__product__img{
-        height: 300px;
-    }
+.chosenproduct__header {
+  grid-area: chosenproduct__header;
+}
+
+.chosenproduct__product {
+  grid-area: chosenproduct__product;
+}
+
+.chosenproduct__productinfo {
+  grid-area: chosenproduct__productinfo;
+}
+
+.chosenproduct__product__img {
+  height: 300px;
+}
