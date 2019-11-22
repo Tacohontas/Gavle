@@ -6,38 +6,87 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Faktura</title>
     <link rel="stylesheet" href="../styles/css/styles.css"></link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    
+    <!-- Fakturan -->
+
 <main class="invoice">
+
+    <!-- Faktura header -->
 <header class="invoice__header">
     <img class="invoice__header-logo" src="../img/logo.png" alt="logo">
 </header>
 
 <header class="invoice__num">
-    <p>Ordernummer: 
+    <p>Datum: 
         <div class="invoice__num-date"></div>
     </p>
     <p>Fakturanummer:
         <div class="invoice__num-invnr"></div>
     </p>
-    
 </header>
+
+    <!-- Här hamnar inforamtionen som fylls i i varukorg formet-->
+
 <section class="invoice__adress">
-    <h4>Adress</h4>
-   <div class="invoice__adress-fnamn"></div>
-   <div class="invoice__adress-gata"></div></div>
-   <div class="invoice__adress-postnr"></div></div>
-   <div class="invoice__adress-pers"></div>
-   <div class="invoice__adress-tel"></div>
-   <div class="invoice__adress-mail"></div>
-   <div class="invoice__adress-med"></div>
+  <div class="invoice__adress-text">     
+    <h4>Adress:</h4>
+   <div class="invoice__adress-fnamn">j</div>
+   <div class="invoice__adress-gata">a</div>
+   <div class="invoice__adress-postnr">v</div>
+   <div class="invoice__adress-pers">a</div>
+   <div class="invoice__adress-tel">s</div>
+   <div class="invoice__adress-mail">c</div>
+</div>   
 </section>
+
+<!-- Övrig information på fakturan. Förfallodatum, betalningsvilkor osv -->
+
 <section class="invoice__details">
-    
+<table>
+    <tr>
+        <td><h4>Betalningsvilkor:</h4></td>
+        <td>30 dagar</td>
+    </tr>
+    <tr>
+       <td><h4>Förfallodatum: </h4></td>
+        <td><div class="invoice__details-ff">INFO</div></td>
+    </tr>
+    </table>
 </section>
-<section class="invoice__spec">5</section>
-<section class="invoice__sum">6</section>
+
+<section class="invoice__spec">
+<table>
+    <tr>
+    <th>
+        Produkt
+    </th>
+    </tr>
+    <tr>
+        <td> <div class="invoice__spec-produkt">js</div></td>
+    </tr>
+    <tr>
+        <td> <div class="invoice__spec-tillval">js alt</div></td>
+    </tr>
+</table>
+    <p class="invoice__spec-p"> Meddelande: 
+    <div class="invoice__spec-med"></div>
+    </p>
+</section>
+<section class="invoice__sum">
+    <table>
+        <tr>
+            <th>Summa</th>
+        </tr>
+        <tr>
+            <td> <div class="invoice__sum-produkt">000 kr</div></td>
+        </tr>
+        <tr>
+            <td> <div class="invoice__sum-tillval">00 kr</div></td>
+        </tr>
+    </table>
+</section>
 <footer class="invoice__footer">7</footer>
 <footer class="invoice__info">8</footer>
 </main>
