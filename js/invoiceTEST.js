@@ -12,3 +12,12 @@ function ShowDataInvoice() {
 document.addEventListener("DOMContentLoaded", function() {
   ShowDataInvoice();
 });
+
+// Tillbaka-knapp
+const returnBtn = document.querySelector(".tillbakabtn");
+returnBtn.addEventListener("click", tillbakaTillVarukorg);
+
+function tillbakaTillVarukorg(){
+  window.document.location = "./shoppingcart.html"
+}
+

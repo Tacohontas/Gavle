@@ -1,0 +1,59 @@
+* {
+    /* ALLT FRÅN MAIN.SCSS */
+    /* Colors */
+    --button-col: #EFAC00;
+    --box-col: #5077A3;
+    --bg-col: #334350;
+    --dark-col: #14293C;
+    --light-col: #7E8072;
+    --light2-col: #6d90ad;
+    --font-col: white;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    /* Fonts */
+}
+
+body {
+    background: var(--dark-col);
+    color: var(--font-col);
+    margin: 0;
+    /* Nollställer margin från main.scss */
+}
+
+/* Chosen product (Den valda produkten) */
+
+.chosenproduct {
+    background: var(--light2-col);
+    padding: 30px;
+    margin: 1rem;
+    display: grid;
+    grid-template-areas: "chosenproduct__header chosenproduct__header" "chosenproduct__product chosenproduct__productinfo";
+}
+
+.chosenproduct__header {
+    grid-area: chosenproduct__header;
+}
+
+.chosenproduct__product {
+    grid-area: chosenproduct__product;
+}
+
+.chosenproduct__productinfo {
+    grid-area: chosenproduct__productinfo;
+}
+
+.chosenproduct__product__img {
+    height: 10rem;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+/* Personal details (Fyll i din info-sektion) */
+
+.personaldetails {
+    padding: 30px;
+    margin: 1rem;
+    background: var(--light2-col);
+}
+
+.PD__item__input {
+    width: 50%;
+}

@@ -1,10 +1,18 @@
+body {
+  background: $dark-col;
+  margin: 0; /* Nollställer margin från main.scss */
+}
+
+/* Chosen product (Den valda produkten) */
+
 .chosenproduct {
-  background: $bg-col;
+  background: $light2-col;
+  padding: 30px;
+  margin: 1rem;
   display: grid;
   grid-template-areas:
     "chosenproduct__header chosenproduct__header"
     "chosenproduct__product chosenproduct__productinfo";
-  padding: 30px;
 }
 
 .chosenproduct__header {
@@ -20,5 +28,18 @@
 }
 
 .chosenproduct__product__img {
-  height: 300px;
+  height: 10rem;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+/* Personal details (Fyll i din info-sektion) */
+
+.personaldetails {
+  padding: 30px;
+  margin: 1rem;
+  background: $light2-col;
+
+  .PD__item__input {
+    width: 50%;
+  }
 }

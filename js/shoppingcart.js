@@ -14,8 +14,8 @@ function ShowData() {
 }
 
 function addInfo() {
-  const formName = document.querySelector("#name").value;
-  const formPhone = document.querySelector("#phone").value;
+  const formName = document.querySelector("#business_name").value;
+  const formPhone = document.querySelector("#contact_phone").value;
 
   localStorage.setItem("namn", formName);
   localStorage.setItem("telefon", formPhone);

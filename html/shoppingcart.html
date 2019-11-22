@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Varukorg</title>
-    <link rel="stylesheet" href="../styles/css/styles.css">
+    <link rel="stylesheet" href="../styles/css/shoppingcart.css">
     </link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
     <script src="../js/shoppingcart.js" defer></script>
 </head>
@@ -16,6 +16,9 @@
     <header class="header">
         <nav class="navmenu"></nav>
     </header>
+
+
+    <!-- Vald produkt -->
 
     <section class="chosenproduct">
         <h1 class="chosenproduct__header">
@@ -31,13 +34,28 @@
         </div>
     </section>
 
+
+    <!-- Tillval -->
+
     <section class="options"></section>
 
 
-    <!-- Form för att fylla i företagsinfo -->
+    <!-- Form för att fylla i företagsuppgifter -->
+
     <section class="personaldetails">
-        <input type="text" id="name" placeholder="Företagsnamn">
-        <input type="number" id="phone" placeholder="mobilnummer">
+
+        <h3>Fyll i din info:</h3>
+        <div class="PD__item"><input type="text" class="PD__item__input" id="business_name" placeholder="Företagsnamn">
+        </div>
+        <div class="PD__item"><input type="text" class="PD__item__input" id="street" placeholder="Gata"></div>
+        <div class="PD__item"><input type="text" class="PD__item__input" id="zip" placeholder="Postadress"></div>
+        <div class="PD__item"><input type="text" class="PD__item__input" id="contact_name" placeholder="Kontaktperson">
+        </div>
+        <div class="PD__item"><input type="number" class="PD__item__input" id="contact_phone" placeholder="Mobilnummer">
+        </div>
+        <div class="PD__item"><input type="email" class="PD__item__input" id="contact_email" placeholder="Emailadress">
+        </div>
+        <div class="PD__item"><textarea class="PD__item__input" id="message" placeholder="Meddelande"></textarea></div>
         <button class="addDetails">Lägg till information</button>
     </section>
 
