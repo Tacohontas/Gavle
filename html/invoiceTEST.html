@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Invoice TEST</title>
-<script src="../js/invoiceTEST.js" defer></script>
+    <script src="../js/invoiceTEST.js" defer></script>
 </head>
+
 <body>
 
-<h3>Företagsnamn:</h3>
-<div class="namediv"></div>
-<h3>Mobilnummer</h3>    
-<div class="phonediv"></div>
+    <style>
+        body {
+            background: lightgray;
+        }
 
-<button class="tillbakabtn">Tillbaka till shoppingcart</button>
+        div {
+            color: green;
+        }
+
+        .section1 {
+            background: lightcyan;
+        }
+
+        .section2 {
+            background: lightcyan;
+        }
+    </style>
+
+    <!-- Data som hämtats från shoppingcart.html -->
+    <section class="section1">
+        <h3>Företagsnamn:</h3>
+        <div class="business_name_div"></div>
+        <h3>Gatuadress:</h3>
+        <div class="street_div"></div>
+        <h3>Postadress:</h3>
+        <div class="zip_div"></div>
+        <h3>Kontaktperson:</h3>
+        <div class="contact_name_div"></div>
+        <h3>Mobilnummer:</h3>
+        <div class="contact_phone_div"></div>
+        <h3>Email-adress:</h3>
+        <div class="contact_email_div"></div>
+        <h3>Meddelande:</h3>
+        <div class="message_div"></div>
+    </section>
+
+
+    <!-- Data som genereras på den här sidan -->
+    <section class="section2">
+        <h3>Dagens datum:</h3>
+        <div class="date_div"></div>
+        <h3>Fakturanummer:</h3>
+        <div class="invoicenumber_div"></div>
+    </section>
+
+
+    <button class="tillbakabtn">Tillbaka till shoppingcart</button>
+
 
 </body>
+
 </html>
