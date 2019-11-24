@@ -1,11 +1,15 @@
 
+.container {
+    display: grid;
+    justify-items: center;
+}
 .invoice {
-    margin: 2rem;
-    width: 36rem;
+    margin: 1rem;
+    width: 38rem;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
     background-color: white;
     color: black;
     font-family: 'Poppins', sans-serif;
@@ -27,11 +31,12 @@
 }
 .invoice__num {
     grid-column: 2/3;
-    text-align: start;
     padding: 1.5rem 0 0 0;
     margin: 0 1rem 0 0;
     border-bottom: 2px solid black;
-    
+}
+.invoice__num-table {
+    text-align: left;
 }
 
 .invoice__adress{
@@ -57,16 +62,61 @@
     border-bottom: 2px solid black;
     margin: 0 0 0 1rem;
 }
-.invoice__spec-p {
-}
+
 .invoice__sum {
+    display: flex;
+    justify-content: flex-end;
     border-bottom: 2px solid black;
     margin: 0 1rem 0 0;
+
+}
+.invoice__sum-table {
+    text-align: right;
+}
+.invoice__bet {
+    border-bottom: 2px solid black;
+    margin: 0 0 0 1rem;
+}
+
+.invoice__total {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 2px solid black;
+    margin: 0 1rem 0 0;
+   
 }
 .invoice__footer {
-    
+    margin: 0 0 1rem 1rem;
 }
-.invoice__info {
-
+.invoice__footer-detail {
+    text-align: left;
+}
+.invoice__print {
+    width: 8rem;
+    height: 3rem;
+    background-color: $button-col;
+    border: none;
+    margin: 1rem;
+    color: $bg-col;
+    font-size: 1.5rem;
+}
+.invoice__back {
+    width: 8rem;
+    height: 3rem;
+    background-color: $button-col;
+    border: none;
+    margin: 1rem;
+    color: $bg-col;
+    font-size: 1.5rem;
+}
+.btns {
+    display: flex;
+    justify-content: center;
 }
 
+/* #anim1:hover {
+ transform: translate(20px);
+}
+#anim2:hover {
+
+} */

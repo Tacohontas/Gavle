@@ -34,5 +34,5 @@ function addInfo() {
   localStorage.setItem("contact_email", contactEmailValue);
   localStorage.setItem("message", messageValue);
 
-  window.document.location = "../html/invoiceTEST.html";
+  window.document.location = "../html/invoice.html";
 }
