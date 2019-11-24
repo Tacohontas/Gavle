@@ -1,14 +1,10 @@
 
-body{
-    background: $bg-col;
-}
     .productinfo__h1 {
         text-align: center;
-        font-size: 30px;
+        font-size: 40px;
     }
     
     .productinfo__card {
-        
         margin: 2rem auto;
         max-width: 1170px;
         display: grid;
@@ -23,10 +19,14 @@ body{
         background-color: $dark-col;
         box-shadow: .5px .5px 3px 0px black;
         opacity: .8;
+        
     }
     .productinfo__card-img {
         max-width: 100%;
         height: auto;
+    }
+    .productinfo__card-text {
+        margin: 1rem;
     }
     
     .productinfo__card-btn {

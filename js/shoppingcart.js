@@ -46,7 +46,7 @@ function addInfo() {
     localStorage.setItem("contact_email", contactEmailValue);
     localStorage.setItem("message", messageValue);
 
-    window.document.location = "../html/invoiceTEST.html";
+    window.document.location = "../html/invoice.html";
   } else {
     document.querySelector(".buy__warningtext").innerHTML =
       "Du måste läsa igenom våra köpvillkor innan du går vidare.";
