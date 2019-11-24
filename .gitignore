@@ -1,1 +1,4 @@
 node_modules
+
+# Fil som skapas av Mac-datorer
+.DS_Store

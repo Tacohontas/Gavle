@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
 
     <script src="../js/shoppingcart.js" defer></script>
+    <link rel="stylesheet" href="/styles/css/styles.css">
 </head>
 
 <body>
@@ -34,8 +35,9 @@
 
         <div class="chosenproduct__productinfo">
             <h1 class="chosenproduct__productinfo__header">Info om din produkt:</h1>
-            <div class="chosenproduct__productinfo__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-            praesentium ullam reiciendis numquam officiis nam blanditiis magnam accusamus architecto distinctio!</div>
+            <p class="chosenproduct__productinfo__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                praesentium ullam reiciendis numquam officiis nam blanditiis magnam accusamus architecto distinctio!
+            </p>
         </div>
     </section>
 
@@ -61,13 +63,26 @@
         <div class="PD__item"><input type="email" class="PD__item__input" id="contact_email" placeholder="Emailadress">
         </div>
         <div class="PD__item"><textarea class="PD__item__input" id="message" placeholder="Meddelande"></textarea></div>
-        <button class="addDetails">Lägg till information</button>
     </section>
 
-    <!-- Köpknapp -->
-    <section class="buy"></section>
+
+    <!-- Totalsumma -->
 
     <section class="total"></section>
+
+
+    <!-- Köpknapp (samma som från products.html just nu!) -->
+
+    <section class="buy">
+
+        <!-- Här läggs meddelande ifall terms ej är lästa -->
+
+        <p class="buy__warningtext"></p>
+        <button class="productinfo__card-btn" id="shoppingcart_buybtn">Köp</button>
+
+        <input type="checkbox" class="buy__readterms">Jag har läst igenom <a href="">köpvillkoren</a>.
+    </section>
+
 
     <footer class="footer"></footer>
 

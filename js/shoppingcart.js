@@ -1,13 +1,13 @@
+// När hela sidan laddats färdigt: (DOMContentLoaded):
 document.addEventListener("DOMContentLoaded", function() {
-  // DOMContentLoaded = När hela sidan laddats färdigt
   ShowData();
 });
 
-const addBtn = document.querySelector(".addDetails");
+// Köpknappen
+const addBtn = document.querySelector("#shoppingcart_buybtn");
 addBtn.addEventListener("click", addInfo);
 
-
-// Hämtar produkt (produktens bild) från produkter.html 
+// Hämtar produkt (produktens bild) från products.html
 function ShowData() {
   const chosenproduct__product__img = document.querySelector(
     ".chosenproduct__product__img"
@@ -25,14 +25,30 @@ function addInfo() {
   const contactEmailValue = document.querySelector("#contact_email").value;
   const messageValue = document.querySelector("#message").value;
 
-  // Lagrar ovanstående i localstorage.
-  localStorage.setItem("business_name", businessNameValue);
-  localStorage.setItem("street", streetValue);
-  localStorage.setItem("zip", zipValue);
-  localStorage.setItem("contact_name", contactNameValue);
-  localStorage.setItem("contact_phone", contactPhoneValue);
-  localStorage.setItem("contact_email", contactEmailValue);
-  localStorage.setItem("message", messageValue);
+  // Kollar så att alla fält är ifyllda.
+  const inputs = document.getElementsByClassName("PD__item__input");
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].value == "") {
+      document.querySelector(".buy__warningtext").innerHTML =
+        "Du måste fylla i alla ovanstående fält.";
+      return false;
+    }
+  }
 
-  window.document.location = "../html/invoiceTEST.html";
+  // Kollar ifall checkboxen för köpesvillkoren är icheckad:
+  if (document.querySelector(".buy__readterms").checked) {
+    // Lagrar ovanstående i localstorage.
+    localStorage.setItem("business_name", businessNameValue);
+    localStorage.setItem("street", streetValue);
+    localStorage.setItem("zip", zipValue);
+    localStorage.setItem("contact_name", contactNameValue);
+    localStorage.setItem("contact_phone", contactPhoneValue);
+    localStorage.setItem("contact_email", contactEmailValue);
+    localStorage.setItem("message", messageValue);
+
+    window.document.location = "../html/invoiceTEST.html";
+  } else {
+    document.querySelector(".buy__warningtext").innerHTML =
+      "Du måste läsa igenom våra köpvillkor innan du går vidare.";
+  }
 }
