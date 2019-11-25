@@ -3,6 +3,12 @@ body {
   margin: 0; /* Nollställer margin från main.scss */
 }
 
+// section{
+//   background: $light2-col;
+//   padding: 30px;
+//   margin: 1rem;
+// }
+
 /* Chosen product (Den valda produkten) */
 
 .chosenproduct {
@@ -31,6 +37,37 @@ body {
   height: 10rem;
   box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
+
+/* Options (tillvals-sektionen) */
+
+.options{
+  background: $light2-col;
+  padding: 30px;
+  margin: 1rem;
+}
+
+.options__item{
+  border: 1px solid $box-col;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 1rem;
+  width: 80%;
+}
+
+.options__item__desc{
+  font-size: 80%;
+}
+
+.options__item__checkbox{
+  display: hidden;
+}
+
+.options__item:hover{
+  border: 1px solid $dark-col;
+}
+
+
 
 /* Personal details (Fyll i din info-sektion) */
 

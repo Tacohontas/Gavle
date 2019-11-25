@@ -7,12 +7,22 @@ document.addEventListener("DOMContentLoaded", function() {
 const addBtn = document.querySelector("#shoppingcart_buybtn");
 addBtn.addEventListener("click", addInfo);
 
-// Hämtar produkt (produktens bild) från products.html
+// Hämtar bild + pris från products.html
 function ShowData() {
-  const chosenproduct__product__img = document.querySelector(
-    ".chosenproduct__product__img"
-  );
-  chosenproduct__product__img.src = localStorage.getItem("data");
+
+  // Hämtar produktbild:
+  const chosenproduct__product__img = document.querySelector(".chosenproduct__product__img");
+  chosenproduct__product__img.src = localStorage.getItem("product_img");
+
+  // Hämtar produktpris:
+  const totalSpecProductPrice = document.querySelector(".total__spec__product_price");
+  totalSpecProductPrice.innerHTML = "Produktens pris " + localStorage.getItem("product_price") + ":-";
+
+  // Lägger produktpris i totalsumman
+  const totalSum = document.querySelector(".total__sum");
+  totalSum.innerHTML = localStorage.getItem("product_price");
+  
+
 }
 
 // Skickar vidare info från formen där man fyller i företagsuppgifter
@@ -50,5 +60,65 @@ function addInfo() {
   } else {
     document.querySelector(".buy__warningtext").innerHTML =
       "Du måste läsa igenom våra köpvillkor innan du går vidare.";
+  }
+}
+
+// Tillvals-funktion
+const optionsItemCheckbox = document.querySelectorAll(
+  ".options__item__checkbox"
+);
+const optionsItem = document.querySelectorAll(".options__item");
+
+for (let i = 0; i < optionsItemCheckbox.length; i++) {
+  optionsItemCheckbox[i].addEventListener("change", () => {
+    const createLi = document.createElement("li");
+    const totalSpec = document.querySelector(".total__spec");
+    const totalSum = document.querySelector(".total__sum");
+    const optionsItemHeader = optionsItem[i].children[0].innerHTML; //
+    const optionsItemDesc = optionsItem[i].children[1].innerHTML; // Tänk på att de här är beroende av child-ordningen i .options__item
+    const optionsItemPrice = optionsItem[i].children[2].innerHTML; //
+    const optionsItemPriceSplit = optionsItemPrice.split(":-"); // Splitta här på pris-ändelsen.
+
+    if (optionsItemCheckbox[i].checked) {
+      // Skapa en lista som adderar OptionsItemHeader, Desc och Price på en rad.
+      totalSpec.appendChild(createLi);
+      // Lägger till id i <li> för att kunna ta bort i else.
+      createLi.setAttribute("id", [i]);
+
+      // Set item = Tillvalets pris
+      localStorage.setItem(`option${i + 1}_price`, optionsItemPriceSplit[0]);
+      // Set item = Tillvalets namn
+      localStorage.setItem(`option${i + 1}_name`, optionsItemHeader);
+      // Set item = Tillvalets beskrivning
+      localStorage.setItem(`option${i + 1}_desc`, optionsItemDesc);
+
+      // Fyller i Tillvalets namn och pris i spec-listan.
+      createLi.innerHTML = `${optionsItemHeader}: ${optionsItemPrice}`;
+
+      // Adderar tillvalspriset i Totalsumman.
+      totalSum.innerHTML =
+        Number(totalSum.innerHTML) + Number(optionsItemPriceSplit[0]);
+    } else {
+      // Tar bort elementet med samma ID som skapades i if.
+      totalSpec.removeChild(document.getElementById([i]));
+      // Subtraherar tillvalspriset i Totalsumman.
+      totalSum.innerHTML =
+        Number(totalSum.innerHTML) - Number(optionsItemPriceSplit[0]);
+      // Tar bort itemets pris , namn och beskrivning så det ej hamnar i fakturan.
+      localStorage.removeItem(`option${i + 1}_price`);
+      localStorage.removeItem(`option${i + 1}_name`);
+      localStorage.removeItem(`option${i + 1}_desc`);
+    }
+  });
+}
+
+// TESTAR FUNKTION
+// Ifall data finns = console.log
+
+function testfunk() {
+  if (localStorage.getItem("Tillval1")) {
+    console.log("Det finns data!");
+  } else {
+    console.log("Det finns inte data");
   }
 }
