@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Varukorg</title>
-    <link rel="stylesheet" href="../styles/css/shoppingcart.css">
+    <!-- <link rel="stylesheet" href="../styles/css/shoppingcart.css"> -->
     </link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
 
     <!-- fannys font -->
@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="/styles/css/styles.css">
 </head>
 
-<body>
+<body class="shoppingcart_body">
 
     <header class="header">
         <nav class="navmenu"></nav>
     </header>
 
+
+<div class="shoppingcart_wrapper">
 
     <!-- Vald produkt -->
 
@@ -33,46 +35,70 @@
             <img class="chosenproduct__product__img" src=""><!-- Hämtar src från JS script-->
         </div>
 
+    </section>
+
+
+    <!-- Tillval -->
+
+    <section class="options-section">
+
+
         <div class="chosenproduct__productinfo">
             <h1 class="chosenproduct__productinfo__header">Info om din produkt:</h1>
             <p class="chosenproduct__productinfo__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
                 praesentium ullam reiciendis numquam officiis nam blanditiis magnam accusamus architecto distinctio!
             </p>
         </div>
+
+
+        <div class="options-container">
+            <!-- <h1 class="options__header">Tillval:</h1> -->
+
+            <div class="options__item_container">
+                <label>
+                    <input type="checkbox" class="options__item__checkbox"> <!-- Den här knappen är gömd -->
+                    <div class="options__item">
+                        <h3 class="options__item__header">Tillval 1</h3>
+                        <p class="options__item__desc">Beskrivning av tillval 1.</p>
+                        <p class="options__item__price">100kr</p>
+                    </div>
+                </label>
+            </div>
+
+
+            <div class="options__item_container">
+                <label>
+                    <input type="checkbox" class="options__item__checkbox"> <!-- Den här knappen är gömd -->
+                    <div class="options__item">
+                        <h3 class="options__item__header">Tillval 2</h3>
+                        <p class="options__item__desc">Beskrivning av tillval 2.</p>
+                        <p class="options__item__price">200kr</p>
+                    </div>
+                </label>
+            </div>
+
+
+            <div class="options__item_container">
+                <label>
+                    <input type="checkbox" class="options__item__checkbox"> <!-- Den här knappen är gömd -->
+                    <div class="options__item">
+                        <h3 class="options__item__header">Tillval 3</h3>
+                        <p class="options__item__desc">Beskrivning av tillval 3.</p>
+                        <p class="options__item__price">300kr</p>
+                    </div>
+                </label>
+            </div>
+        </div>
     </section>
 
+    <!-- Totalsumma -->
 
-    <!-- Tillval -->
-
-    <section class="options">
-        <h1 class="options__header">Tillval:</h1>
-        <div class="options__item">
-            <!-- Sätt en label så du kan trycka på hela boxen -->
-            <h3 class="options__item__header">Tillval 1</h3>
-            <p class="options__item__desc">Beskrivning av produkten</p>
-            <p class="options__item__price">100:-</p>
-            <input type="checkbox" class="options__item__checkbox">
-
-        </div>
-
-        <div class="options__item">
-            <h3 class="options__item__header">Tillval 2</h3>
-            <p class="options__item__desc">Beskrivning Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, culpa.</p>
-            <p class="options__item__price">200:-</p>
-            <input type="checkbox" class="options__item__checkbox">
-
-        </div>
-
-        <div class="options__item">
-            <h3 class="options__item__header">Tillval 3</h3>
-            <p class="options__item__desc">Beskrivning av tillval.</p>
-            <p class="options__item__price">300:-</p>
-            <input type="checkbox" class="options__item__checkbox">
-
-        </div>
-    </section>
-
+    <section class="total-section">
+            <ul class="total__spec">
+                <li class="total__spec__product_price"></li>
+            </ul>
+            <h1 class="total__header">Totalsumma: <span class="total__sum"></span> kr</h1> 
+        </section>
 
     <!-- Form för att fylla i företagsuppgifter -->
 
@@ -93,15 +119,7 @@
     </section>
 
 
-    <!-- Totalsumma -->
-
-    <section class="total">
-        <ul class="total__spec">
-            <li class="total__spec__product_price"></li>
-        </ul>
-        <h1 class="total__header">Totalsumma:</h1>
-        <div class="total__sum"></div>
-    </section>
+    
 
 
     <!-- Köpknapp (samma som från products.html just nu!) -->
@@ -116,6 +134,7 @@
         <input type="checkbox" class="buy__readterms">Jag har läst igenom <a href="">köpvillkoren</a>.
     </section>
 
+</div> <!-- wrapper ends -->
 
     <footer class="footer"></footer>
 

@@ -1,97 +1,179 @@
-body {
+.shoppingcart_body {
   background: $dark-col;
-  margin: 0; /* Nollställer margin från main.scss */
+  margin: 0;
+  padding: 0;
 }
 
-// section{
-//   background: $light2-col;
-//   padding: 30px;
-//   margin: 1rem;
-// }
+.shoppingcart_wrapper {
+}
 
-/* Chosen product (Den valda produkten) */
+// extends
+.center_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shoppingcontainer {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+// styles
 
 .chosenproduct {
-  background: $light2-col;
-  padding: 30px;
-  margin: 1rem;
-  display: grid;
-  grid-template-areas:
-    "chosenproduct__header chosenproduct__header"
-    "chosenproduct__product chosenproduct__productinfo";
+  padding: 2rem;
+  // margin: 1rem;
+  // display: grid;
+  // grid-template-areas:
+  //   "chosenproduct__header chosenproduct__header"
+  //   "chosenproduct__product chosenproduct__productinfo";
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 5rem 1fr;
 }
 
 .chosenproduct__header {
   grid-area: chosenproduct__header;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 3rem;
 }
 
 .chosenproduct__product {
   grid-area: chosenproduct__product;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .chosenproduct__productinfo {
   grid-area: chosenproduct__productinfo;
+  padding: 1rem;
+  
 }
 
 .chosenproduct__product__img {
-  height: 10rem;
-  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  height: 15rem;
+  box-shadow: $shadow;
 }
 
 /* Options (tillvals-sektionen) */
 
-.options{
+.options-section {
+  @extend .shoppingcontainer;
+  border-radius: 10px;
   background: $light2-col;
   padding: 30px;
-  margin: 1rem;
+  // margin-left: 4rem;
+  // margin-right: 4rem;
+  display: grid;
+  grid-template-areas: "chosenproduct__productinfo options-container";
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
 }
 
-.options__item{
+.options-container {
+  grid-area: options-container;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.options__item__checkbox {
+  display: none;
+
+  &:checked + div {
+    // border: 1.2px solid $font-col;
+    background: #90bfe4;
+  }
+}
+
+.options__item {
   border: 1px solid $box-col;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 1rem;
-  width: 80%;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 0.7rem;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $shadow;
+    border: 1px solid lightgray;
+  }
 }
 
-.options__item__desc{
-  font-size: 80%;
+.options__item__header {
+  text-align: left;
 }
 
-.options__item__checkbox{
-  display: hidden;
+.options__item__desc {
+  @extend .center_item;
+  text-align: center;
+  font-size: 0.8rem;
 }
 
-.options__item:hover{
-  border: 1px solid $dark-col;
+.options__item__price {
+  text-align: right;
+
 }
 
+/* Total (total-sektionen) */
 
+.total-section {
+  @extend .shoppingcontainer;
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: auto;
+}
+
+.total__spec {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+}
+
+.total__spec li {
+  font-family: "Poppins", sans-serif;
+  text-align: right;
+}
+
+.total__header{
+  text-align: center;
+  font-size: 2rem;
+}
 
 /* Personal details (Fyll i din info-sektion) */
 
 .personaldetails {
+  @extend .shoppingcontainer;
+  border-radius: 10px;
   padding: 30px;
-  margin: 1rem;
   background: $light2-col;
+  text-align: center;
+  width: 40%;
 
   .PD__item__input {
     width: 50%;
   }
 }
 
-
 /* Buy section */
 
-.buy{
+.buy {
   text-align: center;
 }
 
-.buy__readterms{
+.buy__readterms {
   margin: 0.2rem;
 }
 
-.buy__warningtext{
-color: red;
+.buy__warningtext {
+  color: red;
 }

@@ -16,7 +16,7 @@ function ShowData() {
 
   // Hämtar produktpris:
   const totalSpecProductPrice = document.querySelector(".total__spec__product_price");
-  totalSpecProductPrice.innerHTML = "Produktens pris " + localStorage.getItem("product_price") + ":-";
+  totalSpecProductPrice.innerHTML = "Produktens pris " + localStorage.getItem("product_price") + "kr";
 
   // Lägger produktpris i totalsumman
   const totalSum = document.querySelector(".total__sum");
@@ -77,7 +77,7 @@ for (let i = 0; i < optionsItemCheckbox.length; i++) {
     const optionsItemHeader = optionsItem[i].children[0].innerHTML; //
     const optionsItemDesc = optionsItem[i].children[1].innerHTML; // Tänk på att de här är beroende av child-ordningen i .options__item
     const optionsItemPrice = optionsItem[i].children[2].innerHTML; //
-    const optionsItemPriceSplit = optionsItemPrice.split(":-"); // Splitta här på pris-ändelsen.
+    const optionsItemPriceSplit = optionsItemPrice.split("kr"); // Splitta här på pris-ändelsen.
 
     if (optionsItemCheckbox[i].checked) {
       // Skapa en lista som adderar OptionsItemHeader, Desc och Price på en rad.
@@ -85,11 +85,11 @@ for (let i = 0; i < optionsItemCheckbox.length; i++) {
       // Lägger till id i <li> för att kunna ta bort i else.
       createLi.setAttribute("id", [i]);
 
-      // Set item = Tillvalets pris
+      // Set item = Tillvalets pris (t.ex option1_price)
       localStorage.setItem(`option${i + 1}_price`, optionsItemPriceSplit[0]);
-      // Set item = Tillvalets namn
+      // Set item = Tillvalets namn (t.ex option1_name)
       localStorage.setItem(`option${i + 1}_name`, optionsItemHeader);
-      // Set item = Tillvalets beskrivning
+      // Set item = Tillvalets beskrivning (t.ex option1_desc)
       localStorage.setItem(`option${i + 1}_desc`, optionsItemDesc);
 
       // Fyller i Tillvalets namn och pris i spec-listan.
@@ -98,6 +98,13 @@ for (let i = 0; i < optionsItemCheckbox.length; i++) {
       // Adderar tillvalspriset i Totalsumman.
       totalSum.innerHTML =
         Number(totalSum.innerHTML) + Number(optionsItemPriceSplit[0]);
+
+      // loggar i konsollen
+      console.log(`Tillval ${i+1} tillagd i localStorage`)
+      console.log(`namn = option${i + 1}_name`);
+      console.log(`pris = option${i + 1}_price`);
+      console.log(`beskrivning = option${i + 1}_desc`);
+
     } else {
       // Tar bort elementet med samma ID som skapades i if.
       totalSpec.removeChild(document.getElementById([i]));
@@ -108,11 +115,16 @@ for (let i = 0; i < optionsItemCheckbox.length; i++) {
       localStorage.removeItem(`option${i + 1}_price`);
       localStorage.removeItem(`option${i + 1}_name`);
       localStorage.removeItem(`option${i + 1}_desc`);
+
+      // loggar i konsollen
+      console.log(`Tillval ${i+1} borttagen från localStorage`);
     }
   });
 }
 
-// TESTAR FUNKTION
+// ---------- TEST-SEKTION -------------
+
+// Testar funktion:
 // Ifall data finns = console.log
 
 function testfunk() {
@@ -122,3 +134,7 @@ function testfunk() {
     console.log("Det finns inte data");
   }
 }
+
+
+// Test: tillval skall bli knapp.
+const clicktestDiv = document.querySelector(".clicktest");
