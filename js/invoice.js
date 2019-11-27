@@ -17,7 +17,7 @@ function ShowDataonInvoice() {
     const tillval = document.querySelector(".invoice__spec-tillval");
     const med = document.querySelector(".invoice__spec-med");
 
-    //section 4 - pris på produkt och tillval
+    //section 4 - Pris på produkt och tillval.
     const produktsumma = document.querySelector(".invoice__sum-produkt");
     const tillvalsumma = document.querySelector(".invoice__sum-tillval");
 
@@ -46,9 +46,19 @@ function ShowDataonInvoice() {
     pers.innerHTML = localStorage.getItem("contact_name");
     tel.innerHTML = localStorage.getItem("contact_phone");
     mail.innerHTML = localStorage.getItem("contact_email");
-
-    //Hämta produkt och tillval info från varukorgen
     med.innerHTML = localStorage.getItem("message");
+
+    //Hämta produktnamn och tillval.
+    produkt.innerHTML = localStorage.getItem("product_name")
+    produktsumma.innerHTML = localStorage.getItem("product_price")
+
+    tillval.innerHTML = localStorage.getItem("option_name1") // GÖR OBEROENDE 
+    tillvalsumma.innerHTML = localStorage.getItem("option_price1") // GÖR OBEROENDE
+
+    // Hämta totalsumma
+    totalsumma.innerHTML = `${localStorage.getItem("total")} kr`;
+
+    
 }
 
 document.addEventListener("DOMContentLoaded", function () {

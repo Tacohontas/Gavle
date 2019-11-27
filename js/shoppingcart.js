@@ -34,7 +34,8 @@ function addInfo() {
   const contactPhoneValue = document.querySelector("#contact_phone").value;
   const contactEmailValue = document.querySelector("#contact_email").value;
   const messageValue = document.querySelector("#message").value;
-
+  const totalSum = document.querySelector(".total__sum").innerHTML; //totalsumma
+ 
   // Kollar så att alla fält är ifyllda.
   const inputs = document.getElementsByClassName("PD__item__input");
   for (var i = 0; i < inputs.length; i++) {
@@ -55,12 +56,16 @@ function addInfo() {
     localStorage.setItem("contact_phone", contactPhoneValue);
     localStorage.setItem("contact_email", contactEmailValue);
     localStorage.setItem("message", messageValue);
-
+    //Totalsumma också
+    localStorage.setItem("total", totalSum);
     window.document.location = "../html/invoice.html";
   } else {
     document.querySelector(".buy__warningtext").innerHTML =
       "Du måste läsa igenom våra köpvillkor innan du går vidare.";
   }
+
+
+
 }
 
 // Tillvals-funktion
@@ -120,6 +125,8 @@ for (let i = 0; i < optionsItemCheckbox.length; i++) {
       console.log(`Tillval ${i+1} borttagen från localStorage`);
     }
   });
+
+
 }
 
 // ---------- TEST-SEKTION -------------
@@ -138,3 +145,5 @@ function testfunk() {
 
 // Test: tillval skall bli knapp.
 const clicktestDiv = document.querySelector(".clicktest");
+
+ 
