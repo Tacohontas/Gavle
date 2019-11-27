@@ -73,21 +73,11 @@ function tillbakaTillShoppingcart() {
   window.document.location = "./shoppingcart.html";
 }
 
+//Skriver ut hela sidan
+const printbtn = document.querySelector(".invoice__print");
 
-//Det här funka ej.. 
-/* const printbtn = document.querySelector(".invoice__print");
-const doc = new jsPDF();
+function Skrivut() {
+  window.print();
+}
 
-function PrintInvoice() {
-  
-
-  doc.fromHTML(document.querySelector(".invoice")).html(), 15, 15, {
-    "width": 170,
-  };
-  
-  doc.save("test.pdf");
-
-};
-
-printbtn.addEventListener("click", PrintInvoice);
-*/
+printbtn.addEventListener("click", Skrivut);
