@@ -18,10 +18,14 @@ for (let i = 0; i < buyBtn.length; i++) {
     const productPriceInner = productPrices[i].innerHTML;
     const productPriceSplit = productPriceInner.split("kr");
     const productPrice = productPriceSplit[0];
+    
+    //Produktnamn
+    const productName = document.querySelector(".productinfo__card-name").innerHTML;
 
     // Sätter bild och produktens pris i localStorage.
     localStorage.setItem("product_img", productImgSrc);
     localStorage.setItem("product_price", productPrice);
+    localStorage.setItem("product_name", productName);
     window.document.location = "./shoppingcart.html";
     console.log(productPrice);
   });
