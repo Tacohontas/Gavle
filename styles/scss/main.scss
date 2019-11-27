@@ -1,8 +1,6 @@
 @import "variables.scss";
 
 
-
-
 /* NOLLSTÄLLNING */
  *{
   margin: 0;
@@ -21,10 +19,48 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Barlow Condensed', sans-serif;
 }
 
+// Meny CSS
+
+.header{
+  border: solid blue;
+  height: 200px;
+  width: 500px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+.menu-toggle {
+  display: inline-block;
+  padding: .75em 15px;
+  line-height: 1em;
+  font-size: 1em;
+  color: #333;
+}
+.navmenu {
+  position: absolute;
+  display: none;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: visible;
+  transition: left 0.3s ease,
+    	box-shadow 0.3s ease;
+  z-index: 999;
+}
+
 @import "aboutus.scss";
 @import "checkout.scss";
 @import "faq.scss";
 @import "invoice.scss";
 @import "products.scss";
 @import "shoppingcart.scss";
+@import "index.scss";
 

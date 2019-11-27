@@ -1,7 +1,6 @@
 {
   "name": "javascript",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,5 +23,14 @@
     "gulp-uglify-es": "^2.0.0",
     "jest": "^24.9.0",
     "node-sass": "^4.12.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tacohontas/Gavle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tacohontas/Gavle/issues"
+  },
+  "homepage": "https://github.com/Tacohontas/Gavle#readme",
+  "description": ""
 }

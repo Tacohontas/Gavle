@@ -7,12 +7,29 @@
     <title>Startsida</title>
     <link rel="stylesheet" href="../styles/css/styles.css"></link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src=""></script> 
 </head>
 <body>
     
     <header class="header">
-        <nav class="navmenu"></nav>
+        <a href="#menu" class="menu-toggle" aria-label="Open menu">
+            <span class="sr-only">Öppna meny</span>
+            <span class="fas fa-bars"></span>
+        </a>
+
+        <h1 class="logo">Hamburgaren</h1>
+        
+        <nav id="menu" class="navmenu" aria-label="Meny">
+            <a href="#main-menu-toggle" class="menu-close" aria-label="Stäng meny">
+                <span class="fas fa-times" arial-hidden="true"></span>
+            </a>
+            <ul>
+                <li><a href="#">Produkter</a></li>
+                <li><a href="#">Om oss</a></li>
+            </ul>
+        </nav>
+        <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" arial-hidden="true" hidden></a>
     </header>
 
     <section class="landing">
