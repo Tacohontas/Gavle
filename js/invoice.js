@@ -1,68 +1,89 @@
 function ShowDataonInvoice() {
-    //section 1 - datum, fakturanr, förfallodatum
-    const datum = document.querySelector(".invoice__num-date");
-    const fakturanr = document.querySelector(".invoice__num-invnr");
-    const ffdatum = document.querySelector(".invoice__num-ff");
+  //section 1 - datum, fakturanr, förfallodatum
+  const datum = document.querySelector(".invoice__num-date");
+  const fakturanr = document.querySelector(".invoice__num-invnr");
+  const ffdatum = document.querySelector(".invoice__num-ff");
 
-    //section 2 - Adress, kontakt
-    const fnamn = document.querySelector(".invoice__adress-fnamn");
-    const gata = document.querySelector(".invoice__adress-gata");
-    const postnr = document.querySelector(".invoice__adress-postnr");
-    const pers = document.querySelector(".invoice__adress-pers");
-    const tel = document.querySelector(".invoice__adress-tel");
-    const mail = document.querySelector(".invoice__adress-mail");
+  //section 2 - Adress, kontakt
+  const fnamn = document.querySelector(".invoice__adress-fnamn");
+  const gata = document.querySelector(".invoice__adress-gata");
+  const postnr = document.querySelector(".invoice__adress-postnr");
+  const pers = document.querySelector(".invoice__adress-pers");
+  const tel = document.querySelector(".invoice__adress-tel");
+  const mail = document.querySelector(".invoice__adress-mail");
 
-    //section 3 - Produkt, tillval, meddelande
-    const produkt = document.querySelector(".invoice__spec-produkt");
-    const tillval = document.querySelector(".invoice__spec-tillval");
-    const med = document.querySelector(".invoice__spec-med");
+  //section 3 - Produkt, tillval, meddelande
+  const produkt = document.querySelector(".invoice__spec-produkt");
+  const tillval = document.querySelector(".invoice__spec-tillval");
+  const med = document.querySelector(".invoice__spec-med");
 
-    //section 4 - Pris på produkt och tillval.
-    const produktsumma = document.querySelector(".invoice__sum-produkt");
-    const tillvalsumma = document.querySelector(".invoice__sum-tillval");
+  //section 4 - Pris på produkt och tillval.
+  const produktsumma = document.querySelector(".invoice__sum-produkt");
+  const tillvalsumma = document.querySelector(".invoice__sum-tillval");
 
-    //section 5 - Total summa ex moms
-    const totalsumma = document.querySelector(".invoice__total-total");
+  //section 5 - Total summa ex moms
+  const totalsumma = document.querySelector(".invoice__total-total");
 
-    //Dagens datum
-    thisYear = new Date().getFullYear();
-    thisMonth = new Date().getMonth() +1;
-    thisDate = new Date().getDate();
-    datum.innerHTML = `${thisYear} - ${thisMonth} - ${thisDate}`;
+  //Dagens datum
+  thisYear = new Date().getFullYear();
+  thisMonth = new Date().getMonth() + 1;
+  thisDate = new Date().getDate();
+  datum.innerHTML = `${thisYear} - ${thisMonth} - ${thisDate}`;
+
+  //Fakturanummer
+  fakturanr.innerHTML = Math.floor(Math.random() * 900000) + 100000;
+
+  //Förfallodatum
+  thisYear = new Date().getFullYear();
+  thisMonth = new Date().getMonth() + 1;
+  thisDate = new Date().getDate();
+  ffdatum.innerHTML = `${thisYear} - ${thisMonth} - ${thisDate}`;
+
+  // Nollställer all tidigare info:
+    produkt.innerHTML = "";
+    produktsumma.innerHTML = "";
+    const testtillval = document.querySelector(".testtillval");
+    testtillval.innerHTML = "";
+
+  //Hämta företagsinfo ifylld i varukorgen
+  fnamn.innerHTML = localStorage.getItem("business_name");
+  gata.innerHTML = localStorage.getItem("street");
+  postnr.innerHTML = localStorage.getItem("zip");
+  pers.innerHTML = localStorage.getItem("contact_name");
+  tel.innerHTML = localStorage.getItem("contact_phone");
+  mail.innerHTML = localStorage.getItem("contact_email");
+  med.innerHTML = localStorage.getItem("message");
+
+  //Hämta produktnamn + pris
+  produkt.innerHTML = localStorage.getItem("product_name");
+  produktsumma.innerHTML = localStorage.getItem("product_price") + " kr";
+  // ... och tillvalsnamn + pris
+
+  // Tillvalsnamn
+  for (let i = 0; i < 3; i++) {
     
-    //Fakturanummer
-    fakturanr.innerHTML = Math.floor(Math.random() * 900000) + 100000;
-
-    //Förfallodatum
-    thisYear = new Date().getFullYear();
-    thisMonth = new Date().getMonth() +1;
-    thisDate = new Date().getDate();
-    ffdatum.innerHTML = `${thisYear} - ${thisMonth} - ${thisDate}`;
-
-    //Hämta företagsinfo ifylld i varukorgen
-    fnamn.innerHTML = localStorage.getItem("business_name");
-    gata.innerHTML = localStorage.getItem("street");
-    postnr.innerHTML = localStorage.getItem("zip");
-    pers.innerHTML = localStorage.getItem("contact_name");
-    tel.innerHTML = localStorage.getItem("contact_phone");
-    mail.innerHTML = localStorage.getItem("contact_email");
-    med.innerHTML = localStorage.getItem("message");
-
-    //Hämta produktnamn och tillval.
-    produkt.innerHTML = localStorage.getItem("product_name")
-    produktsumma.innerHTML = localStorage.getItem("product_price")
-
-    tillval.innerHTML = localStorage.getItem("option_name1") // GÖR OBEROENDE 
-    tillvalsumma.innerHTML = localStorage.getItem("option_price1") // GÖR OBEROENDE
-
-    // Hämta totalsumma
-    totalsumma.innerHTML = `${localStorage.getItem("total")} kr`;
-
+    if (localStorage.getItem(`option${i+1}_name`)!=null) {
+      const createLi = document.createElement("li");
+      tillval.appendChild(createLi);
+      createLi.innerHTML = localStorage.getItem(`option${i+1}_name`);
+    }
+}
+  // Tillvalspris
+  for (let i = 0; i < 3; i++) {
     
+    if (localStorage.getItem(`option${i+1}_price`)!=null) {
+      const createLi = document.createElement("li");
+      tillvalsumma.appendChild(createLi);
+      createLi.innerHTML = localStorage.getItem(`option${i+1}_price`) + " kr";
+    }
+  }
+
+  // Hämta totalsumma
+  totalsumma.innerHTML = `${localStorage.getItem("total")} kr`;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    ShowDataonInvoice();
+document.addEventListener("DOMContentLoaded", function() {
+  ShowDataonInvoice();
 });
 
 // En Tillbaka-knapp för att komma tillbaks till shoppingcart (bara för att göra det lättare för oss att gå fram och tillbaka)
@@ -78,6 +99,7 @@ const printbtn = document.querySelector(".invoice__print");
 
 function Skrivut() {
   window.print();
+  localStorage.clear();
 }
 
 printbtn.addEventListener("click", Skrivut);
