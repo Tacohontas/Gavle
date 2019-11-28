@@ -16,7 +16,7 @@
 <body class="container">
 
     <!-- Fakturan -->
-<div class="testtillval">tjena</div>
+    <div class="testtillval">tjena</div>
     <main class="invoice">
 
         <!-- Faktura header med logga och information om fakturan. Datum, fakturanummer, betalningsvilkor, förfallodatumosv -->
@@ -50,7 +50,7 @@
             </table>
         </header>
 
-        <!-- Här hamnar inforamtionen som fylls i i varukorg formet-->
+        <!-- Här hamnar informationen som fylls i i varukorg formet-->
 
         <section class="invoice__adress">
             <div class="invoice__adress-text">
@@ -86,6 +86,11 @@
                 </tr>
                 <tr>
                     <td>
+                        <div class="invoice__spec-antal"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <div class="invoice__spec-tillval"></div>
                     </td>
                 </tr>
@@ -109,6 +114,11 @@
                 </tr>
                 <tr>
                     <td>
+                        <div class="invoice__sum-antal"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <div class="invoice__sum-tillval"></div>
                     </td>
                 </tr>
@@ -118,11 +128,11 @@
         <!-- Att betala -->
 
         <section class="invoice__bet">
-                <table>
-                        <tr>
-                            <th>Att betala:</th>
-                        </tr>
-                </table>
+            <table>
+                <tr>
+                    <th>Att betala:</th>
+                </tr>
+            </table>
         </section>
 
         <!-- Total summa av produkt + tillval med och utan moms-->
@@ -175,9 +185,9 @@
 
     <!-- Skriv ut eller gå tillbaka -->
     <div class="btns">
-    <button class="invoice__back"><i class="fas fa-angle-double-left fa-2px" id="anim1"></i> Tillbaka</button>
-    <button class="invoice__print">Print <i class="fas fa-angle-double-right fa-2px" id="anim2"></i>
-    </button>
+        <button class="invoice__back"><i class="fas fa-angle-double-left fa-2px" id="anim1"></i> Tillbaka</button>
+        <button class="invoice__print">Print <i class="fas fa-angle-double-right fa-2px" id="anim2"></i>
+        </button>
     </div>
 
 </body>

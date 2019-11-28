@@ -16,10 +16,13 @@ function ShowDataonInvoice() {
   const produkt = document.querySelector(".invoice__spec-produkt");
   const tillval = document.querySelector(".invoice__spec-tillval");
   const med = document.querySelector(".invoice__spec-med");
+  const antal = document.querySelector(".invoice__spec-antal");
 
   //section 4 - Pris på produkt och tillval.
   const produktsumma = document.querySelector(".invoice__sum-produkt");
   const tillvalsumma = document.querySelector(".invoice__sum-tillval");
+  const antalsumma = document.querySelector(".invoice__sum-antal");
+
 
   //section 5 - Total summa ex moms
   const totalsumma = document.querySelector(".invoice__total-total");
@@ -33,11 +36,13 @@ function ShowDataonInvoice() {
   //Fakturanummer
   fakturanr.innerHTML = Math.floor(Math.random() * 900000) + 100000;
 
-  //Förfallodatum
-  thisYear = new Date().getFullYear();
-  thisMonth = new Date().getMonth() + 1;
-  thisDate = new Date().getDate();
-  ffdatum.innerHTML = `${thisYear} - ${thisMonth} - ${thisDate}`;
+  // Förfallo datum 
+
+  // ...förfallo datum (30dagar)
+  thisDate = new Date();
+  thisDate.setDate(thisDate.getDate() + 30); 
+  ffdatum.innerHTML = thisDate.getFullYear() + '-' + ("0" + (thisDate.getMonth() + 1)).slice(-2) + '-' + ("0" + thisDate.getDate()).slice(-2)
+
 
   // Nollställer all tidigare info:
     produkt.innerHTML = "";
@@ -45,7 +50,7 @@ function ShowDataonInvoice() {
     const testtillval = document.querySelector(".testtillval");
     testtillval.innerHTML = "";
 
-  //Hämta företagsinfo ifylld i varukorgen
+  // Hämta företagsinfo ifylld i varukorgen
   fnamn.innerHTML = localStorage.getItem("business_name");
   gata.innerHTML = localStorage.getItem("street");
   postnr.innerHTML = localStorage.getItem("zip");
@@ -54,9 +59,14 @@ function ShowDataonInvoice() {
   mail.innerHTML = localStorage.getItem("contact_email");
   med.innerHTML = localStorage.getItem("message");
 
-  //Hämta produktnamn + pris
+  // Hämta produktnamn + pris
   produkt.innerHTML = localStorage.getItem("product_name");
   produktsumma.innerHTML = localStorage.getItem("product_price") + " kr";
+
+  // ... och antal personer + pris
+  antal.innerHTML = localStorage.getItem("product_quantity") + " deltagare";
+  antalsumma.innerHTML = localStorage.getItem("product_quantity_price") + " kr";
+
   // ... och tillvalsnamn + pris
 
   // Tillvalsnamn
@@ -77,6 +87,7 @@ function ShowDataonInvoice() {
       createLi.innerHTML = localStorage.getItem(`option${i+1}_price`) + " kr";
     }
   }
+
 
   // Hämta totalsumma
   totalsumma.innerHTML = `${localStorage.getItem("total")} kr`;

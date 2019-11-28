@@ -21,7 +21,6 @@
 
 .chosenproduct {
   padding: 2rem;
-  // margin: 1rem;
   // display: grid;
   // grid-template-areas:
   //   "chosenproduct__header chosenproduct__header"
@@ -74,11 +73,24 @@
   grid-area: options-container;
   padding: 1rem;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
 }
+
+.quantity__rangeslider{
+  width: 100%;
+  padding: 0.7rem;
+}
+
+.quantity__rangeslider_output-container{
+text-align: center;
+}
+
+.quantity__review{
+  text-align: center;
+}
+
 
 .options__item__checkbox {
   display: none;
@@ -174,3 +186,4 @@
 .buy__warningtext {
   color: red;
 }
+
