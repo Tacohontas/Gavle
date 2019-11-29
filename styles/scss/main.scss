@@ -45,7 +45,11 @@ li{
   padding: .75em 15px;
   line-height: 1em;
   font-size: 1em;
-  color: #333;
+  color: $button-col;
+}
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: gray;
 }
 .navmenu {
   position: absolute;
@@ -59,6 +63,18 @@ li{
     	box-shadow 0.3s ease;
   z-index: 999;
 }
+
+.navmenu__ul {
+  list-style: none;
+  margin: 0;
+  padding: 2.5em 0 0;
+  /* Hide shadow w/ -8px while 'closed' */
+          box-shadow: -8px 0 8px rgba(0,0,0,.5);
+  min-height: 100%;
+  width: 200px;
+  background: #1a1a1a;
+}
+
 
 @import "aboutus.scss";
 @import "checkout.scss";

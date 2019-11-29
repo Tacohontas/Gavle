@@ -23,7 +23,7 @@ gulp.task("styles", async function(){
        console.log("Styles error", err);
    }))
   // .pipe(sourcemaps.init())
-   .pipe(autoprefix())      // gör din kod kompatibel med andra browsers.
+   //.pipe(autoprefix())      // gör din kod kompatibel med andra browsers.
  //  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
    .pipe(sass().on('error', sass.logError))
     .pipe(concat("styles.css")) // kommer ta dina css-filer och baka ihop till en cssfil med namnet "styles.css"
