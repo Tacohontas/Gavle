@@ -2,7 +2,7 @@
   background: $bg-col;
   margin: 0;
   padding: 0;
-}
+} // Nollstäler
 
 // extends
 .center_item {
@@ -17,78 +17,128 @@
   overflow: auto;
 }
 
-// styles
-
-.chosenproduct-section {
-  padding: 2rem;
-}
-
-.chosenproduct__header {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 3rem;
-}
-
-.chosenproduct__productinfo li{
-  list-style: disc;
-  border: 2px solid red;
-}
-
-.chosenproduct-container {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.chosenproduct__product {
+.overview_wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.chosenproduct__product__img {
-  height: 22rem;
-  box-shadow: $shadow;
+// styles
+
+
+.overview-section {
+  margin-top: 3rem * 0.9;
+  margin-bottom: 1rem;
+  background: $box-col;
+  padding: 2rem * 0.9;
+  height: (694px * 0.9);
 }
+
+.overview-container {
+  border: 2px solid white;
+  padding: 2rem * 0.9;
+  background: $box-col;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+
+  .overview__product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .overview__product__header {
+      font-size: 3.5rem * 0.9;
+    }
+
+    .overview__product__img-container {
+      @extend .center_item;
+
+      .overview__product__img {
+        height: auto;
+        width: 100%;
+        max-width: 470px * 0.9;
+        max-height: 394px * 0.9;
+      }
+    }
+  }
+
+  .overview__info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 32px  * 0.9;
+
+    .overview__info__prodinfo-wrapper {
+      display: flex;
+      justify-content: center;
+
+      .overview__info__prodinfo-container {
+        background: $box-col;
+        font-size: 0.9rem  * 0.9;
+        width: 18rem * 0.9;
+
+        .overview__info__prodinfo__h {
+        }
+
+        
+      }
+    }
+  }
+
+  .overview__info__options-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .overview__info__options-container {
+      // border: 2px solid white;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      width: 18rem;
+      height: 21rem;
+
+      .overview__info__options__qty-container {
+      }
+
+      .overview__info__options__item-container{
+        
+        .overview__info__options__item {
+          border: 1px solid rgba(211, 211, 211, 0.486);
+          display: grid;
+          grid-template-rows: 1fr;
+          grid-template-columns: 1fr 2fr 1fr;
+          cursor: pointer;
+          height: 3rem;
+        
+          &:hover {
+            box-shadow: $shadow;
+            border: 1px solid $button-col;
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
 
 /* Options (tillvals-sektionen) */
 
-.options-section {
-  @extend .shoppingcontainer;
-  background: $box-col;
-  padding: 20px;
-  // margin-left: 4rem;
-  // margin-right: 4rem;
-  // display: grid;
-  // grid-template-areas: "chosenproduct__productinfo options-container";
-  // grid-template-columns: 1fr 1fr;
-  width: 32%;
-}
-
-.options-container {
-  border: 2px solid white;
-  padding: 1rem;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  height: 30rem;
-}
-
-.quantity__rangeslider {
+.qty__slider {
   width: 100%;
-  padding: 0.7rem;
 }
 
-.quantity__rangeslider_output-container {
+.overview__info__options__qty__out-container {
   text-align: center;
 }
 
-.quantity__review {
+.qty__review {
   text-align: center;
 }
 
-.options__item__checkbox {
+.overview__info__options__item__input {
   display: none;
 
   &:checked + div {
@@ -97,29 +147,18 @@
   }
 }
 
-.options__item {
-  border: 1px solid rgba(211, 211, 211, 0.486);
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr 1fr;
-  padding: 0.7rem;
-  cursor: pointer;
-  border-radius: 0px;
 
-  &:hover {
-    box-shadow: $shadow;
-    border: 1px solid $button-col;
-  }
-}
 
-.options__item__header {
+.overview__info__options__item__h {
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 
-.options__item__desc {
+.overview__info__options__item__desc {
   @extend .center_item;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.8rem  * 0.9;
 }
 
 .options__item__price {

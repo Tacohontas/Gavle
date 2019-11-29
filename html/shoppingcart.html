@@ -18,161 +18,167 @@
 
 <body class="shoppingcart_body">
 
-    <!-- <header class="header">
+    <header class="header">
         <nav class="navmenu"></nav>
-    </header> -->
+    </header>
 
 
 
 
-    <div class="shoppingcart_wrapper">
+    <div class="overview_wrapper">
 
         <!-- Vald produkt -->
 
-        <section class="chosenproduct-section">
 
-            <h1 class="chosenproduct__header">
-                Din valda produkt:
-            </h1>
-            <div class="chosenproduct-container">
-                <div class="chosenproduct__product">
-                    <img class="chosenproduct__product__img" src=""><!-- Hämtar src från JS script-->
-                </div>
+        <section class="overview-section">
 
 
-                <div class="chosenproduct__productinfo">
-                    <h1 class="chosenproduct__productinfo__header">Info om din produkt:</h1>
-                    <p class="chosenproduct__productinfo__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Amet placeat accusantium tempora sequi distinctio ipsa, libero dolore, delectus ullam deleniti
-                        nisi dicta nobis non, dolor fugit. Est sequi tenetur voluptates?
-                    </p>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                </div>
-            </div>
+            <div class="overview-container">
 
-        </section>
-
-
-        <!-- Tillval -->
-
-        <section class="options-section">
-
-            <div class="options-container">
-                <!-- <h1 class="options__header">Tillval:</h1> -->
-
-                <div class="quantity-container">
-                    <p class="quantity__rangeslider_output-container">
-                        <span class="quantity__header">Antal personer:</span>
-                        <span class="quantity__rangeslider_output">1</span>
-                    </p>
-                    <div class="quantity__rangeslider_container">
-                        <input type="range" min="1" max="20" step="1" value="1" class="quantity__rangeslider">
+                <div class="overview__product-container">
+                    <h1 class="overview__product__header">
+                        Din valda produkt:
+                    </h1>
+                    <div class="overview__product__img-container">
+                        <img class="overview__product__img" src=""><!-- Hämtar src från JS script-->
                     </div>
-                    <p class="quantity__review">
-                        <span class="quantity__value">100</span>
-                        <span>kr</span>
-                    </p>
-
                 </div>
 
-                <div class="options__item_container">
-                    <label>
-                        <input type="checkbox" class="options__item__checkbox"> <!-- Den här knappen är gömd -->
-                        <div class="options__item">
-                            <h3 class="options__item__header">Tillval 1</h3>
-                            <p class="options__item__desc">Beskrivning av tillval 1.</p>
-                            <p class="options__item__price-container">
-                                <span class="options__item__price">100</span>
-                                <span class="options__item__currency">kr</span>
+                <div class="overview__info-container">
+                    <div class="overview__info__prodinfo-wrapper">
+                        <div class="overview__info__prodinfo-container">
+                            <h1 class="overview__info__prodinfo__h">Info om din produkt:</h1>
+                            <p class="overview__info__prodinfo__desc">Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Accusamus aliquam modi eos doloribus rem officiis vero repellat vitae
+                                minima qui.
+                                <li style="list-style: disc;">Lorem ipsum dolor sit amet.</li>
+                                <li style="list-style: disc;">Lorem ipsum dolor sit amet.</li>
                             </p>
                         </div>
-                    </label>
-                </div>
+                    </div>
+
+                    <div class="overview__info__options-wrapper">
+
+                        <div class="overview__info__options-container">
+
+                            <div class="overview__info__options__qty-container">
+                                <p class="overview__info__options__qty__out-container">
+                                    <span class="qty__header">Antal personer:</span>
+                                    <span class="qty__sliderout">1</span>
+                                </p>
+                                <div class="qty__slider-container">
+                                    <input type="range" min="1" max="20" step="1" value="1" class="qty__slider">
+                                </div>
+                                <p class="qty__review">
+                                    <span class="qty__value">100</span>
+                                    <span>kr</span>
+                                </p>
+
+                            </div>
+
+                            <div class="overview__info__options__item-container">
+                                <label>
+                                    <input type="checkbox" class="overview__info__options__item__input">
+                                    <!-- Den här knappen är gömd -->
+                                    <div class="overview__info__options__item">
+                                        <h3 class="overview__info__options__item__h">Tillval 1</h3>
+                                        <p class="overview__info__options__item__desc">Beskrivning av tillval 1.</p>
+                                        <p class="overview__info__options__item__price-container">
+                                            <span class="options__item__price">100</span>
+                                            <span class="options__item__currency">kr</span>
+                                        </p>
+                                    </div>
+                                </label>
+                            </div>
 
 
-                <div class="options__item_container">
-                    <label>
-                        <input type="checkbox" class="options__item__checkbox"> <!-- Den här knappen är gömd -->
-                        <div class="options__item">
-                            <h3 class="options__item__header">Tillval 2</h3>
-                            <p class="options__item__desc">Beskrivning av tillval 2.</p>
-                            <p class="options__item__price-container">
-                                <span class="options__item__price">200</span>
-                                <span class="options__item__currency">kr</span>
-                            </p>
+                            <div class="overview__info__options__item-container">
+                                <label>
+                                    <input type="checkbox" class="overview__info__options__item__input">
+                                    <!-- Den här knappen är gömd -->
+                                    <div class="overview__info__options__item">
+                                        <h3 class="overview__info__options__item__h">Tillval 2</h3>
+                                        <p class="overview__info__options__item__desc">Beskrivning av tillval 2.</p>
+                                        <p class="overview__info__options__item__price-container">
+                                            <span class="options__item__price">200</span>
+                                            <span class="options__item__currency">kr</span>
+                                        </p>
+                                    </div>
+                                </label>
+                            </div>
+
+
+                            <div class="overview__info__options__item-container">
+                                <label>
+                                    <input type="checkbox" class="overview__info__options__item__input">
+                                    <!-- Den här knappen är gömd -->
+                                    <div class="overview__info__options__item">
+                                        <h3 class="overview__info__options__item__h">Tillval 3</h3>
+                                        <p class="overview__info__options__item__desc">Beskrivning av tillval 3.</p>
+                                        <p class="overview__info__options__item__price-container">
+                                            <span class="options__item__price">300</span>
+                                            <span class="options__item__currency">kr</span>
+                                        </p>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
-                    </label>
+                    </div>
                 </div>
+            </div> <!-- overview-section ends-->
 
 
-                <div class="options__item_container">
-                    <label>
-                        <input type="checkbox" class="options__item__checkbox"> <!-- Den här knappen är gömd -->
-                        <div class="options__item">
-                            <h3 class="options__item__header">Tillval 3</h3>
-                            <p class="options__item__desc">Beskrivning av tillval 3.</p>
-                            <p class="options__item__price-container">
-                                <span class="options__item__price">300</span>
-                                <span class="options__item__currency">kr</span>
-                            </p>
-                        </div>
-                    </label>
-                </div>
-            </div>
         </section>
 
-        <!-- Totalsumma -->
+    </div> <!-- Overview wrapper ends -->
+    <!-- Totalsumma -->
 
-        <section class="total-section">
-            <ul class="total__spec">
-                <li class="total__spec__product">Produktens startpris: <span class="total__spec__product_price"></span>
-                    kr</li>
-                <li class="total__spec__product_quantity"></li>
-            </ul>
-            <h1 class="total__header">Totalsumma: <span class="total__sum"></span> kr</h1>
-        </section>
+    <section class="total-section">
+        <ul class="total__spec">
+            <li class="total__spec__product">Produktens startpris: <span class="total__spec__product_price"></span>
+                kr</li>
+            <li class="total__spec__product_quantity"></li>
+        </ul>
+        <h1 class="total__header">Totalsumma: <span class="total__sum"></span> kr</h1>
+    </section>
 
-        <!-- Form för att fylla i företagsuppgifter -->
 
-        <section class="personaldetails">
 
-            <h3>Fyll i din info:</h3>
-            <div class="PD__item"><input type="text" class="PD__item__input" id="business_name"
-                    placeholder="Företagsnamn">
-            </div>
-            <div class="PD__item"><input type="text" class="PD__item__input" id="street" placeholder="Gata"></div>
-            <div class="PD__item"><input type="text" class="PD__item__input" id="zip" placeholder="Postadress"></div>
-            <div class="PD__item"><input type="text" class="PD__item__input" id="contact_name"
-                    placeholder="Kontaktperson">
-            </div>
-            <div class="PD__item"><input type="number" class="PD__item__input" id="contact_phone"
-                    placeholder="Mobilnummer">
-            </div>
-            <div class="PD__item"><input type="email" class="PD__item__input" id="contact_email"
-                    placeholder="Emailadress">
-            </div>
-            <div class="PD__item"><textarea class="PD__item__input" id="message" placeholder="Meddelande"></textarea>
-            </div>
-        </section>
+    <!-- Form för att fylla i företagsuppgifter -->
 
+    <section class="personaldetails">
+
+        <h3>Fyll i din info:</h3>
+        <div class="PD__item"><input type="text" class="PD__item__input" id="business_name" placeholder="Företagsnamn">
+        </div>
+        <div class="PD__item"><input type="text" class="PD__item__input" id="street" placeholder="Gata"></div>
+        <div class="PD__item"><input type="text" class="PD__item__input" id="zip" placeholder="Postadress"></div>
+        <div class="PD__item"><input type="text" class="PD__item__input" id="contact_name" placeholder="Kontaktperson">
+        </div>
+        <div class="PD__item"><input type="number" class="PD__item__input" id="contact_phone" placeholder="Mobilnummer">
+        </div>
+        <div class="PD__item"><input type="email" class="PD__item__input" id="contact_email" placeholder="Emailadress">
+        </div>
+        <div class="PD__item"><textarea class="PD__item__input" id="message" placeholder="Meddelande"></textarea>
+        </div>
+    </section>
 
 
 
 
-        <!-- Köpknapp (samma som från products.html just nu!) -->
 
-        <section class="buy">
+    <!-- Köpknapp (samma som från products.html just nu!) -->
 
-            <!-- Här läggs meddelande ifall terms ej är lästa -->
+    <section class="buy">
 
-            <p class="buy__warningtext"></p>
-            <button class="productinfo__card-btn" id="shoppingcart_buybtn">Köp</button>
+        <!-- Här läggs meddelande ifall terms ej är lästa -->
 
-            <input type="checkbox" class="buy__readterms">Jag har läst igenom <a href="">köpvillkoren</a>.
-        </section>
+        <p class="buy__warningtext"></p>
+        <button class="productinfo__card-btn" id="shoppingcart_buybtn">Köp</button>
 
-    </div> <!-- wrapper ends -->
+        <input type="checkbox" class="buy__readterms">Jag har läst igenom <a href="">köpvillkoren</a>.
+    </section>
+
 
     <footer class="footer"></footer>
 

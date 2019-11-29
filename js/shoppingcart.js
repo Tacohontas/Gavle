@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function ShowData() {
   // Hämtar produktbild:
-  const chosenproduct__product__img = document.querySelector(
-    ".chosenproduct__product__img"
+  const overview__product__img = document.querySelector(
+    ".overview__product__img"
   );
-  chosenproduct__product__img.src = localStorage.getItem("product_img");
+  overview__product__img.src = localStorage.getItem("product_img");
 
   // Hämtar produktpris:
   const totalSpecProductPrice = document.querySelector(
@@ -35,8 +35,8 @@ function ShowData() {
 
 // ---------------- Range Slider-funktion ----------------- //
 
-const rangeSlider = document.querySelector(".quantity__rangeslider");
-const quantityValue = document.querySelector(".quantity__value");
+const rangeSlider = document.querySelector(".qty__slider");
+const quantityValue = document.querySelector(".qty__value");
 
 // Sätter range slider-output till 1 som default.
 // rangeSliderOutput.innerHTML = rangeSlider.value;
@@ -45,7 +45,7 @@ const quantityValue = document.querySelector(".quantity__value");
 // När man drar range slider-knappen så ändras antal personer-fältet och summan under själva slidern. 
 rangeSlider.oninput = function() {
   const rangeSliderOutput = document.querySelector(
-    ".quantity__rangeslider_output"
+    ".qty__sliderout"
   );
   rangeSliderOutput.innerHTML = this.value;
   quantityValue.innerHTML = this.value * 100;
@@ -68,8 +68,8 @@ rangeSlider.oninput = function() {
 
 
 // ---------------- Tillvals-funktion --------------------- //
-const optionsItemCheckbox = document.querySelectorAll(".options__item__checkbox");
-const optionsItem = document.querySelectorAll(".options__item");
+const optionsItemCheckbox = document.querySelectorAll(".overview__info__options__item__input");
+const optionsItem = document.querySelectorAll(".overview__info__options__item");
 
 for (let i = 0; i < optionsItemCheckbox.length; i++) {
   optionsItemCheckbox[i].addEventListener("change", () => {
@@ -77,7 +77,7 @@ for (let i = 0; i < optionsItemCheckbox.length; i++) {
     const totalSpec = document.querySelector(".total__spec");
     const totalSum = document.querySelector(".total__sum");
     const optionsItemHeader = optionsItem[i].children[0].innerHTML; //
-    const optionsItemDesc = optionsItem[i].children[1].innerHTML; // Tänk på att de här är beroende av child-ordningen i .options__item
+    const optionsItemDesc = optionsItem[i].children[1].innerHTML; // Tänk på att de här är beroende av child-ordningen i .overview__info__options__item
     const optionsItemPrice = optionsItem[i].children[2].children[0].innerHTML; //
     const optionsItemCurrency = optionsItem[i].children[2].children[1].innerHTML;
 
