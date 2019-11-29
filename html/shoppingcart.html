@@ -29,16 +29,27 @@
 
         <!-- Vald produkt -->
 
-        <section class="chosenproduct">
+        <section class="chosenproduct-section">
+
             <h1 class="chosenproduct__header">
                 Din valda produkt:
             </h1>
-            <div class="chosenproduct__product">
-                <img class="chosenproduct__product__img" src=""><!-- Hämtar src från JS script-->
+            <div class="chosenproduct-container">
+                <div class="chosenproduct__product">
+                    <img class="chosenproduct__product__img" src=""><!-- Hämtar src från JS script-->
+                </div>
+
+
+                <div class="chosenproduct__productinfo">
+                    <h1 class="chosenproduct__productinfo__header">Info om din produkt:</h1>
+                    <p class="chosenproduct__productinfo__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Amet placeat accusantium tempora sequi distinctio ipsa, libero dolore, delectus ullam deleniti
+                        nisi dicta nobis non, dolor fugit. Est sequi tenetur voluptates?
+                    </p>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </div>
             </div>
-
-
-
 
         </section>
 
@@ -46,21 +57,6 @@
         <!-- Tillval -->
 
         <section class="options-section">
-
-
-
-            <div class="chosenproduct__productinfo">
-                <h1 class="chosenproduct__productinfo__header">Info om din produkt:</h1>
-                <p class="chosenproduct__productinfo__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                    praesentium ullam reiciendis numquam officiis nam blanditiis magnam accusamus architecto distinctio!
-                </p>
-            </div>
-
-
-
-
-
-
 
             <div class="options-container">
                 <!-- <h1 class="options__header">Tillval:</h1> -->
@@ -130,7 +126,8 @@
 
         <section class="total-section">
             <ul class="total__spec">
-                <li class="total__spec__product">Produktens startpris: <span class="total__spec__product_price"></span> kr</li>
+                <li class="total__spec__product">Produktens startpris: <span class="total__spec__product_price"></span>
+                    kr</li>
                 <li class="total__spec__product_quantity"></li>
             </ul>
             <h1 class="total__header">Totalsumma: <span class="total__sum"></span> kr</h1>
