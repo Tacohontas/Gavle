@@ -43,7 +43,7 @@ li{
   max-width: 7rem;
   margin: 1rem;
   border-radius: 50% 50% 50% 50%;
-  box-shadow: 4px 0 8px rgba(0,0,0,.5);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.452);
 }
 .menu-toggle {
   display: inline-block;
@@ -51,7 +51,7 @@ li{
   padding: .75em 15px;
   line-height: 1rem;
   font-size: 2.5em;
-  color: gray;
+  color: black;
 }
 #nav__close {
   font-size: 2rem;
