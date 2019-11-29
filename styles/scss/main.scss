@@ -12,7 +12,7 @@ body {
   background: $bg-col;
   color: $font-col;
 }
-p {
+p, a, div{
   font-family: 'Poppins', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -21,15 +21,14 @@ h1, h2, h3, h4, h5, h6 {
 
 li{
   list-style: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 // Meny CSS
-
-.header{
-  border: solid blue;
-  height: 200px;
-  width: 500px;
-}
+.header {
+  display: flex;
+  flex-direction: row;
+} 
 .sr-only {
   position: absolute;
   width: 1px;
@@ -40,16 +39,31 @@ li{
   clip: rect(0,0,0,0);
   border: 0;
 }
+.logo {
+  max-width: 7rem;
+  margin: 1rem;
+  border-radius: 50% 50% 50% 50%;
+  box-shadow: 4px 0 8px rgba(0,0,0,.5);
+}
 .menu-toggle {
   display: inline-block;
+  margin: 1.5rem 0 0 0;
   padding: .75em 15px;
-  line-height: 1em;
-  font-size: 1em;
+  line-height: 1rem;
+  font-size: 2.5em;
+  color: gray;
+}
+#nav__close {
+  font-size: 2rem;
+  padding: 1rem;
+  color: gray;
+}
+#nav__close:hover {
   color: $button-col;
 }
 .menu-toggle:hover,
 .menu-toggle:focus {
-  color: gray;
+  color: $button-col;
 }
 .navmenu {
   position: absolute;
@@ -57,25 +71,59 @@ li{
   left: -200px;
   top: 0;
   height: 100%;
-  overflow-y: scroll;
   overflow-x: visible;
   transition: left 0.3s ease,
     	box-shadow 0.3s ease;
   z-index: 999;
 }
-
 .navmenu__ul {
   list-style: none;
   margin: 0;
   padding: 2.5em 0 0;
-  /* Hide shadow w/ -8px while 'closed' */
-          box-shadow: -8px 0 8px rgba(0,0,0,.5);
+  box-shadow: -8px 0 8px rgba(0,0,0,.5);
   min-height: 100%;
   width: 200px;
-  background: #1a1a1a;
+  background: $dark-col;
 }
+.navmenu__a {
+  display: block;
+  padding: .75em 15px;
+  line-height: 1em;
+  font-size: 1.3em;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #383838;
+}
+.navmenu__a:hover{
+  color: $button-col;
+}
+.navmenu .menu-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.navmenu:target {
+  display: block;
+  left: 0;
+  outline: none;
+  box-shadow: 3px 0 12px rgba(0,0,0,.25);
+}
+.navmenu:target .menu-close {
+  z-index: 1001;
+}
+.navmenu__ul:target {
+  position: relative;
+  z-index: 1000;
+}
+.navmenu:target .backdrop {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 
-
+}
 @import "aboutus.scss";
 @import "checkout.scss";
 @import "faq.scss";
