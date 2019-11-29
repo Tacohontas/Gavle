@@ -25,6 +25,8 @@ function ShowDataonInvoice() {
 
 
   //section 5 - Total summa ex moms
+  const totalsummaexmoms = document.querySelector(".invoice__total-exmoms");
+  const totalmoms = document.querySelector(".invoice__total-moms");
   const totalsumma = document.querySelector(".invoice__total-total");
 
   //Dagens datum
@@ -47,8 +49,6 @@ function ShowDataonInvoice() {
   // Nollställer all tidigare info:
     produkt.innerHTML = "";
     produktsumma.innerHTML = "";
-    const testtillval = document.querySelector(".testtillval");
-    testtillval.innerHTML = "";
 
   // Hämta företagsinfo ifylld i varukorgen
   fnamn.innerHTML = localStorage.getItem("business_name");
@@ -89,8 +89,16 @@ function ShowDataonInvoice() {
   }
 
 
-  // Hämta totalsumma
-  totalsumma.innerHTML = `${localStorage.getItem("total")} kr`;
+  // Hämta totalsumma ex moms 
+  totalsummaexmoms.innerHTML = `${localStorage.getItem("total")} kr`;
+
+  // Specar moms
+  totalmoms.innerHTML = `${localStorage.getItem("total")*0.25} kr`;
+
+
+  // Räknar total ink moms.
+  totalsumma.innerHTML = `${localStorage.getItem("total")*1.25} kr`;
+
 }
 
 document.addEventListener("DOMContentLoaded", function() {
