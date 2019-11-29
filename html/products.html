@@ -9,13 +9,30 @@
     <link rel="stylesheet" href="../styles/css/styles.css">
     </link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../js/products.js" defer></script>
 </head>
 
 <body>
-    <header class="header">
-        <nav class="navmenu"></nav>
-    </header>
+        <header class="header">
+                <div> <img src="../img/logo_jpg.jpg" alt="logo" class="logo"></div>
+            <a href="#menu" class="menu-toggle">
+                <span class="sr-only">Öppna meny</span>
+                <span class="fas fa-bars"></span>
+            </a>
+            
+            <nav id="menu" class="navmenu" aria-label="Meny">
+                <a href="#main-menu-toggle" class="menu-close">
+                    <span id="nav__close" class="fas fa-times"></span>
+                </a>
+                <ul class="navmenu__ul">
+                    <li><a href="#" class="navmenu__a">Produkter</a></li>
+                    <li><a href="#" class="navmenu__a">Om oss</a></li>
+                </ul>
+            </nav>
+            <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" hidden></a>
+        </header>
+
     <section class="productinfo">
         <h1 class="productinfo__h1">Produkter</h1>
         <div class="productinfo__card">
