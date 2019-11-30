@@ -11,6 +11,7 @@
 body {
   background: $bg-col;
   color: $font-col;
+  scroll-behavior: smooth;
 }
 p, a, div{
   font-family: 'Poppins', sans-serif;
@@ -23,6 +24,14 @@ li{
   list-style: none;
   font-family: 'Poppins', sans-serif;
 }
+a:link, a:visited, a:active {
+  text-decoration: none;
+}
+a:hover {
+  
+}
+
+
 
 // Meny CSS
 .header {
@@ -83,7 +92,8 @@ li{
   box-shadow: -8px 0 8px rgba(0,0,0,.5);
   min-height: 100%;
   width: 200px;
-  background: $dark-col;
+  background: $bg-col;
+  
 }
 .navmenu__a {
   display: block;
