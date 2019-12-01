@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="../styles/css/styles.css"></link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src=""></script> 
+    <script src="../js/products.js" defer></script>
 </head>
-<body>
+<body class="bg" id="startsida">
     <section class="landing">
         <div class="landing__bg">
-
             <!-- Här börjar menyn -->
             <header class="header">
             <div> <img src="../img/logo_jpg.jpg" alt="logo" class="logo"></div>
@@ -26,48 +25,67 @@
                 <span id="nav__close" class="fas fa-times"></span>
                 </a>
                 <ul class="navmenu__ul">
-                <li><a href="#" class="navmenu__a">Produkter</a></li>
-                <li><a href="#" class="navmenu__a">Om oss</a></li>
+                <li><a href="#startsida"><img src="../img/logo_jpg.jpg" alt="logo" class="logo"></a></li>
+                <li><a href="#produkter_start" class="navmenu__a">Produkter</a></li>
+                <li><a href="#omoss" class="navmenu__a">Om oss</a></li>
                 </ul>
              </nav>
                 <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" hidden></a>
             </header>
             <!--Meny slut -->
             <div class="landing__box">
-                <h1>Välkommen till TeamClimbing</h1>
+                <h1 class="landing__box-h1">Välkommen till TeamClimbing</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo cupiditate minus incidunt corrupti provident, doloribus dolorem at ut! Ipsam repudiandae, inventore id culpa est consequatur. Delectus culpa suscipit rerum!</p>
+                <a href="#produkter_start"><button class="landing__box-btn">Produkter</button></a>
             </div>
-    </div>
+        </div>
     </section>
 
-    <section class="productinfo">
-            <h1 class="productinfo__h1">Produkter</h1>
-            <div class="productinfo__card">
-                    <div class="productinfo__card-1">
-                    <img class="productinfo__card-img" src="../img/small.jpg" alt="small">
-                    <h2 class="productinfo__card-name">Paket SMALL</h2>
-                    <p class="productinfo__card-text">Information om paket small</p>
-                    <p class="productinfo__card-price">1000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
-                    <button class="productinfo__card-btn">Köp</button>
-                </div>
-                <div class="productinfo__card-2">
-                    <img class="productinfo__card-img" src="../img/medium.jpg" alt="medium">
-                    <h2 class="productinfo__card-name">Paket MEDIUM</h2>
-                    <p class="productinfo__card-text">Information om paket medium</p>
-                    <p class="productinfo__card-price">2000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
-                    <button class="productinfo__card-btn">Köp</button>
-                </div>
-                <div class="productinfo__card-3">
-                    <img class="productinfo__card-img" src="../img/large2.jpg" alt="large">
-                    <h2 class="productinfo__card-name">Paket LARGE</h2>
-                    <p class="productinfo__card-text">Information om paket large</p>
-                    <p class="productinfo__card-price">3000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
-                    <button class="productinfo__card-btn">Köp</button>
-                </div>
+    <section class="productinfo" id="produkter_start">
+        <div class="productinfo__card">
+            <div class="productinfo__card-1">
+                <img class="productinfo__card-img" src="../img/small.jpg" alt="small">
+                 <h2 class="productinfo__card-name">Paket SMALL</h2>
+                  <p class="productinfo__card-text">Information om paket small</p>
+                  <p class="productinfo__card-price">1000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
+                 <button class="productinfo__card-btn">Köp</button>
             </div>
-        </section>
+            <div class="productinfo__card-2">
+                <img class="productinfo__card-img" src="../img/medium.jpg" alt="medium">
+                 <h2 class="productinfo__card-name">Paket MEDIUM</h2>
+                  <p class="productinfo__card-text">Information om paket medium</p>
+                  <p class="productinfo__card-price">2000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
+                 <button class="productinfo__card-btn">Köp</button>
+            </div>
+            <div class="productinfo__card-3">
+                <img class="productinfo__card-img" src="../img/large2.jpg" alt="large">
+                 <h2 class="productinfo__card-name">Paket LARGE</h2>
+                  <p class="productinfo__card-text">Information om paket large</p>
+                  <p class="productinfo__card-price">3000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
+                 <button class="productinfo__card-btn">Köp</button>
+            </div>
+        </div>
+    </section>
     
-    <section class="reviews"></section>
+    <section class="omoss" id="omoss">
+        <div class="omoss__container">
+            <div class="omoss__card">
+            <img src="../img/Erik.jpg" alt="erik" class="omoss__card-img">
+            <h2>Erik</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, impedit!</p>
+            </div>
+            <div class="omoss__card">
+            <img src="../img/Nina.jpg" alt="nina" class="omoss__card-img">
+            <h2>Nina</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, harum!</p>
+            </div>
+            <div class="omoss__card">
+            <img src="../img/James.jpg" alt="james" class="omoss__card-img">
+            <h2>James</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, sunt?</p>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer"></footer>
 

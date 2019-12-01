@@ -1,3 +1,7 @@
+.bg {
+    background-color: black;
+    scroll-behavior: smooth;
+}
 .landing {
     background: url(/img/rock_climbing.jpg);
     height: 100vh;
@@ -7,14 +11,101 @@
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
     
 }
-.landing__bg {
+/* .landing__bg {
     height: 100vh;
     background-color: rgba(32, 42, 51, 0.39);
-}
+} */
 .landing__box {
-    margin: 5.5rem auto 2rem 4rem;
-    width: 22rem;
+    margin: 0 auto;
+    width: 24rem;
+    height: 24rem;
     padding: 2.5rem;
     background-color: rgba(32, 42, 51, 0.527);
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.747);
+}
+.landing__box-h1 {
+    font-size: 28px;
+    margin: 0 0 1rem 0;
+}
+.landing__box-btn {
+        width: 8rem;
+        height: 3rem;
+        background-color: $button-col;
+        border: none;
+        margin: 2rem 0 0 0;
+        color: $bg-col;
+        font-size: 1.5rem;
+        font-family: 'Barlow Condensed', sans-serif;
+        box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.452);
+        opacity: .9;
+}
+.landing__box-btn:hover {
+    opacity: 1;
+}
+
+//Produkt cards 
+.productinfo {
+    background-color: $bg-col;
+    margin: 2rem 2rem 2rem 2rem;
+    padding: 1rem 0 1rem 0;
+}
+.productinfo__card {
+    margin: 2rem auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 2rem;
+    justify-items: center;
+}
+.productinfo__card-1, .productinfo__card-2, .productinfo__card-3 {
+    width: 18rem;
+    background-color: $box-col;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.384);
+}
+.productinfo__card-img {
+    max-width: 100%;
+    height: auto;
+}
+.productinfo__card-text, .productinfo__card-name, .productinfo__card-price {
+    margin: 1rem;
+}
+.productinfo__card-btn {
+    width: 6rem;
+    height: 2.5rem;
+    background-color: $button-col;
+    border: none;
+    margin: 1rem;
+    color: $bg-col;
+    font-size: 1.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.452);
+    opacity: .9;
+}
+.productinfo__card-btn:hover {
+    opacity: 1;
+}
+//Om Oss
+.omoss {
+    background-color: $bg-col;
+    margin: 2rem;
+    padding: 1rem 0 1rem 0;
+}
+.omoss__container {
+    margin: 2rem auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-row-gap: 2rem;
+    justify-items: center;
+}
+.omoss__card {
+    width: 18rem;
+    text-align: center;
+}
+.omoss__card-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.384);
 }
