@@ -135,7 +135,7 @@ function addInfo() {
   const totalSum = document.querySelector(".total__sum").innerHTML; //totalsumma
 
   // Kollar så att alla fält är ifyllda.
-  const inputs = document.getElementsByClassName("PD__item__input");
+  const inputs = document.getElementsByClassName("PD__item-input");
   for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].value == "") {
       document.querySelector(".buy__warningtext").innerHTML =

@@ -109,7 +109,7 @@
 
 
 
-                            
+
                             <div class="overview__info__options__item-container">
                                 <label>
                                     <input type="checkbox" class="overview__info__options__item__input">
@@ -148,20 +148,20 @@
 
     <!-- Form för att fylla i företagsuppgifter -->
 
-    <section class="personaldetails">
+    <section class="personaldetails-section">
 
         <h3>Fyll i din info:</h3>
-        <div class="PD__item"><input type="text" class="PD__item__input" id="business_name" placeholder="Företagsnamn">
+        <div class="PD__item"><input type="text" class="PD__item-input" id="business_name" placeholder="Företagsnamn">
         </div>
-        <div class="PD__item"><input type="text" class="PD__item__input" id="street" placeholder="Gata"></div>
-        <div class="PD__item"><input type="text" class="PD__item__input" id="zip" placeholder="Postadress"></div>
-        <div class="PD__item"><input type="text" class="PD__item__input" id="contact_name" placeholder="Kontaktperson">
+        <div class="PD__item"><input type="text" class="PD__item-input" id="street" placeholder="Gata"></div>
+        <div class="PD__item"><input type="text" class="PD__item-input" id="zip" placeholder="Postadress"></div>
+        <div class="PD__item"><input type="text" class="PD__item-input" id="contact_name" placeholder="Kontaktperson">
         </div>
-        <div class="PD__item"><input type="number" class="PD__item__input" id="contact_phone" placeholder="Mobilnummer">
+        <div class="PD__item"><input type="number" class="PD__item-input" id="contact_phone" placeholder="Mobilnummer">
         </div>
-        <div class="PD__item"><input type="email" class="PD__item__input" id="contact_email" placeholder="Emailadress">
+        <div class="PD__item"><input type="email" class="PD__item-input" id="contact_email" placeholder="Emailadress">
         </div>
-        <div class="PD__item"><textarea class="PD__item__input" id="message" placeholder="Meddelande"></textarea>
+        <div class="PD__item"><textarea class="PD__item-input" id="message" placeholder="Meddelande"></textarea>
         </div>
     </section>
 
@@ -171,14 +171,19 @@
 
     <!-- Köpknapp (samma som från products.html just nu!) -->
 
-    <section class="buy">
+    <section class="buy-section">
 
         <!-- Här läggs meddelande ifall terms ej är lästa -->
 
         <p class="buy__warningtext"></p>
+
+        <div class="buy__checkbox">
+            <input type="checkbox" class="buy__readterms"><p>Jag har läst igenom <a href="">köpvillkoren</a>.</p>
+            
+        </div>
+
         <button class="productinfo__card-btn" id="shoppingcart_buybtn">Köp</button>
 
-        <input type="checkbox" class="buy__readterms">Jag har läst igenom <a href="">köpvillkoren</a>.
     </section>
 
 
