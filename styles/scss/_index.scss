@@ -1,3 +1,4 @@
+
 .bg {
     background-color: black;
     scroll-behavior: smooth;
@@ -22,6 +23,7 @@
     padding: 2.5rem;
     background-color: rgba(32, 42, 51, 0.527);
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.747);
+    border: 2px solid white;
 }
 .landing__box-h1 {
     font-size: 28px;
@@ -48,27 +50,35 @@
     background-color: $bg-col;
     margin: 2rem 2rem 2rem 2rem;
     padding: 1rem 0 1rem 0;
+    opacity: 0.3;
+    transition: opacity .3s ease-in;
+}
+.productinfo:hover {
+    opacity: 1;
 }
 .productinfo__card {
     margin: 2rem auto;
     max-width: 1170px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    grid-column-gap: 1rem;
     grid-row-gap: 2rem;
     justify-items: center;
 }
 .productinfo__card-1, .productinfo__card-2, .productinfo__card-3 {
-    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
     background-color: $box-col;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.384);
+    border: 2px solid white;
 }
 .productinfo__card-img {
     max-width: 100%;
     height: auto;
 }
 .productinfo__card-text, .productinfo__card-name, .productinfo__card-price {
-    margin: 1rem;
+    margin: .5rem;
 }
 .productinfo__card-btn {
     width: 6rem;
@@ -90,6 +100,11 @@
     background-color: $bg-col;
     margin: 2rem;
     padding: 1rem 0 1rem 0;
+    opacity: 0.3;
+    transition: opacity .3s ease-in;
+}
+.omoss:hover {
+    opacity: 1;
 }
 .omoss__container {
     margin: 2rem auto;
@@ -108,4 +123,26 @@
     height: auto;
     border-radius: 50%;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.384);
+    border: 2px solid white;
 }
+
+//Fördjupning i produkterna
+.products {
+    background-color: $bg-col;
+    margin: 2rem;
+    padding: 1rem 0 1rem 0;
+    opacity: 0.3;
+    transition: opacity .3s ease-in;
+}
+.products:hover {
+    opacity: 1;
+}
+.products__container {
+    margin: 2rem auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-row-gap: 2rem;
+    justify-items: center;
+}
+
