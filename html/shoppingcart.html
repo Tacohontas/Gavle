@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Varukorg</title>
-    <!-- <link rel="stylesheet" href="../styles/css/shoppingcart.css"> -->
-    </link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
 
     <!-- fannys font -->
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
+    <!-- ikoner -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
     <script src="../js/shoppingcart.js" defer></script>
     <link rel="stylesheet" href="/styles/css/styles.css">
@@ -64,13 +64,13 @@
                             <div class="overview__info__options__qty-container">
                                 <p class="overview__info__options__qty__out-container">
                                     <span class="qty__header">Antal personer:</span>
-                                    <span class="qty__sliderout">1</span>
+                                    <span class="qty__sliderout"></span>
                                 </p>
                                 <div class="qty__slider-container">
                                     <input type="range" min="1" max="20" step="1" value="1" class="qty__slider">
                                 </div>
                                 <p class="qty__review">
-                                    <span class="qty__value">100</span>
+                                    <span class="qty__value"></span>
                                     <span>kr</span>
                                 </p>
 
@@ -163,6 +163,26 @@
         </div>
         <div class="PD__item"><textarea class="PD__item-input" id="message" placeholder="Meddelande"></textarea>
         </div>
+
+
+        <section class="buy-section">
+
+                <!-- Här läggs meddelande ifall terms ej är lästa -->
+        
+                <p class="buy__warningtext"></p>
+        
+                <div class="buy__checkbox">
+                    <input type="checkbox" class="buy__readterms">
+                    <p>Jag har läst igenom <a href="#"
+                            onClick="MyWindow=window.open('/html/terms.html','MyWindow','width=600,height=600'); return false;">köpvillkoren</a>.</p>
+                </div>
+        
+                <button class="productinfo__card-btn" id="shoppingcart_buybtn">Köp</button>
+        
+            </section>
+
+
+
     </section>
 
 
@@ -171,24 +191,60 @@
 
     <!-- Köpknapp (samma som från products.html just nu!) -->
 
-    <section class="buy-section">
+   
 
-        <!-- Här läggs meddelande ifall terms ej är lästa -->
 
-        <p class="buy__warningtext"></p>
 
-        <div class="buy__checkbox">
-            <input type="checkbox" class="buy__readterms"><p>Jag har läst igenom <a href="">köpvillkoren</a>.</p>
-            
-        </div>
 
-        <button class="productinfo__card-btn" id="shoppingcart_buybtn">Köp</button>
 
+    <section class="footer-section">
+
+         
+
+<footer class="footer">
+
+        
+
+            <article class="footer__linknav">
+              <ul>
+                <li class="footer__linknav__link"><a href="#home">Hem</a></li>
+                <li class="footer__linknav__link"><a href="#services">Tjänster</a></li>
+                <li class="footer__linknav__link"><a href="#contact">Om oss</a></li>
+                <li class="footer__linknav__link"><a href="#aboutus">Kontakt</a></li>
+              </ul>
+            </article>
+      
+            <article class="footer__follow">
+              <ul>
+                <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
+              </ul>
+            </article>
+      
+      
+      
+          </footer>
+      
+          <section class="aboutus" id="aboutus">
+                <article class="aboutus__desc">
+                  <h3 class="aboutus__desc__header">Om oss</h3>
+                  <p class="aboutus__desc__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos,
+                    deleniti itaque inventore eaque explicabo iure id eum hic repellat, animi illo tempore provident voluptas
+                    dolores praesentium perferendis, facilis commodi!</p>
+                </article>
+                <div class="aboutus__mapcontainer">
+                  <iframe class="aboutus__map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.2136680003184!2d18.05583961606917!3d59.34608108166471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6c1f42b387%3A0xdfa8086ea7907082!2sTulegatan%2041%2C%20113%2053%20Stockholm!5e0!3m2!1ssv!2sse!4v1571398987011!5m2!1ssv!2sse"
+                    style="border:0;" allowfullscreen=""></iframe>
+                </div>
+          
+              </section>
+
+
+          <footer class="footer__copyright"><p><span>&copy;</span>2019 Gävle Entertainment</p></footer>
     </section>
-
-
-    <footer class="footer"></footer>
-
 </body>
 
 </html>
