@@ -1,7 +1,5 @@
-
 .bg {
     background-color: $bg-col; 
-    scroll-behavior: smooth;
 }
 .landing {
     //background: url(/img/rock_climbing.jpg);
@@ -10,21 +8,20 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     //box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
     
 }
-/* .landing__bg {
-    height: 100vh;
-    background-color: rgba(32, 42, 51, 0.39);
-} */
 .landing__box {
-    margin: 0 auto;
+
     width: 24rem;
     height: 24rem;
     padding: 2.5rem;
     background-color: rgba(32, 42, 51, 0.527);
-    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.747);
-    border: 2px solid white;
+    box-shadow: $shadow2;
+    border: 2px solid $font-2nd;
 }
 .landing__box-h1 {
     font-size: 28px;
@@ -132,7 +129,7 @@
     background-color: $bg-col;
     margin: 2rem;
     padding: 1rem 0 1rem 0;
-    opacity: 0.3;
+    //opacity: 0.3;
     transition: opacity .3s ease-in;
 }
 .products:hover {
@@ -146,4 +143,18 @@
     grid-row-gap: 2rem;
     justify-items: center;
 }
+.products__card {
+    width: 18rem;
+    display: flex;
+    grid-column: 1 / span 3;
+
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    
+}
+
 
