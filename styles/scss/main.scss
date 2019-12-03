@@ -6,12 +6,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   background: $bg-col;
   color: $font-col;
-  scroll-behavior: smooth;
+  
 }
 p, a, div{
   font-family: 'Poppins', sans-serif;
@@ -31,9 +32,11 @@ a:hover {
   
 }
 
-
-
 // Meny CSS
+.sticky {
+  position: sticky;
+  top:0;
+}
 .header {
   display: flex;
   flex-direction: row;
@@ -52,7 +55,8 @@ a:hover {
   max-width: 7rem;
   margin: 1rem;
   border-radius: 50% 50% 50% 50%;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.452);
+  //box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.452);
+
 }
 .menu-toggle {
   display: inline-block;
@@ -60,12 +64,12 @@ a:hover {
   padding: .75em 15px;
   line-height: 1rem;
   font-size: 2.5em;
-  color: black;
+  color: $font-2nd;
 }
 #nav__close {
   font-size: 2rem;
   padding: 1rem;
-  color: gray;
+  color: $font-2nd;
 }
 #nav__close:hover {
   color: $button-col;
@@ -92,7 +96,7 @@ a:hover {
   box-shadow: -8px 0 8px rgba(0,0,0,.5);
   min-height: 100%;
   width: 200px;
-  background: $bg-col;
+  background: $box-col;
   
 }
 .navmenu__a {
@@ -134,8 +138,6 @@ a:hover {
   height: 100%;
 
 }
-
-
 
 @import "footer.scss";
 @import "aboutus.scss";

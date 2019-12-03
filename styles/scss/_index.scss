@@ -1,16 +1,16 @@
 
 .bg {
-    background-color: black;
+    background-color: $bg-col; 
     scroll-behavior: smooth;
 }
 .landing {
-    background: url(/img/rock_climbing.jpg);
-    // background: url(/img/rock_climbing2.jpg); // Gjort ny bild i photoshop! 
+    //background: url(/img/rock_climbing.jpg);
+    background: url(/img/rock_climbing2.jpg); // Gjort ny bild i photoshop! 
     height: 100vh;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+    //box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
     
 }
 /* .landing__bg {
@@ -72,7 +72,7 @@
     width: 20rem;
     background-color: $box-col;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.384);
-    border: 2px solid white;
+    //border: 2px solid white;
 }
 .productinfo__card-img {
     max-width: 100%;
@@ -124,7 +124,7 @@
     height: auto;
     border-radius: 50%;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.384);
-    border: 2px solid white;
+    border: 2px solid $font-2nd;
 }
 
 //Fördjupning i produkterna
