@@ -22,11 +22,20 @@ for (let i = 0; i < buyBtn.length; i++) {
     //Produktnamn
     const productName = document.querySelector(".productinfo__card-name").innerHTML;
 
+    //Produktbeskrivning
+    const productDescAll = document.querySelectorAll(".productinfo__card-desc");
+    const productDesc = productDescAll[i].innerHTML;
+
+
     // Sätter bild och produktens pris i localStorage.
     localStorage.setItem("product_img", productImgSrc);
     localStorage.setItem("product_price", productPrice);
     localStorage.setItem("product_name", productName);
+    localStorage.setItem("product_desc", productDesc);
+
+    // Länkas vidare till shoppingcart.
     window.document.location = "./shoppingcart.html";
     console.log(productPrice);
   });
 }
+

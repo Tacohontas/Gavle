@@ -9,10 +9,10 @@ const totalBtn = document.querySelector("#total__button");
 totalBtn.addEventListener("click", ShowForm);
 
 function ShowForm(){
-const personalSection = document.querySelector(".personaldetails-section");
+const personalSectionWrapper = document.querySelector(".personaldetails-wrapper");
 
-if(personalSection.style.visibility !== "hidden"){
-personalSection.style.visibility = "visible";
+if(personalSectionWrapper.style.display !== "none"){
+personalSectionWrapper.style.display = "grid";
 
 }
 }
@@ -40,6 +40,10 @@ function ShowData() {
     ".total__spec__product_price"
   );
   totalSpecProductPrice.innerHTML = localStorage.getItem("product_price");
+
+  // Hämtar produktbeskrivning:
+  const overview__product__desc = document.querySelector(".overview__info__prodinfo__desc");
+  overview__product__desc.innerHTML = localStorage.getItem("product_desc");
 
   // Lägger produktpris i totalsumman
   const totalSum = document.querySelector(".total__sum");
