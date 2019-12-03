@@ -4,6 +4,19 @@
 const addBtn = document.querySelector("#shoppingcart_buybtn");
 addBtn.addEventListener("click", addInfo);
 
+// Visa form-knappen
+const totalBtn = document.querySelector("#total__button");
+totalBtn.addEventListener("click", ShowForm);
+
+function ShowForm(){
+const personalSection = document.querySelector(".personaldetails-section");
+
+if(personalSection.style.visibility !== "hidden"){
+personalSection.style.visibility = "visible";
+
+}
+}
+
 
 // --------- Hämta bild + pris från products-funktion ---------- //
 

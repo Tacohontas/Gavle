@@ -200,6 +200,9 @@
 
 /* Personal details (Fyll i din info-sektion) */
 
+
+
+
 .personaldetails-section {
   box-shadow: $shadow2;
   border-radius: 5px;
@@ -215,6 +218,12 @@
   margin-bottom: 1rem;
   justify-content: center;
 
+}
+
+
+// Testar att gömma formen
+.personaldetails-section{
+  visibility: hidden;
 }
 
 .PD__item-input {
