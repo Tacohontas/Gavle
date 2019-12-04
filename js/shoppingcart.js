@@ -1,5 +1,3 @@
-
-
 // Köpknappen
 const addBtn = document.querySelector("#shoppingcart_buybtn");
 addBtn.addEventListener("click", addInfo);
@@ -8,18 +6,17 @@ addBtn.addEventListener("click", addInfo);
 const totalBtn = document.querySelector("#total__button");
 totalBtn.addEventListener("click", ShowForm);
 
-function ShowForm(){
-const personalSectionWrapper = document.querySelector(".personaldetails-wrapper");
+function ShowForm() {
+  const personalSectionWrapper = document.querySelector(
+    ".personaldetails-wrapper"
+  );
 
-if(personalSectionWrapper.style.display !== "none"){
-personalSectionWrapper.style.display = "grid";
-
+  if (personalSectionWrapper.style.display !== "none") {
+    personalSectionWrapper.style.display = "grid";
+  }
 }
-}
-
 
 // --------- Hämta bild + pris från products-funktion ---------- //
-
 
 // När hela sidan laddats färdigt: (DOMContentLoaded):
 document.addEventListener("DOMContentLoaded", function() {
@@ -42,7 +39,9 @@ function ShowData() {
   totalSpecProductPrice.innerHTML = localStorage.getItem("product_price");
 
   // Hämtar produktbeskrivning:
-  const overview__product__desc = document.querySelector(".overview__info__prodinfo__desc");
+  const overview__product__desc = document.querySelector(
+    ".overview__info__prodinfo__desc"
+  );
   overview__product__desc.innerHTML = localStorage.getItem("product_desc");
 
   // Lägger produktpris i totalsumman
@@ -58,34 +57,29 @@ const quantityValue = document.querySelector(".qty__value");
 // Sätter range slider-output till 1 som default.
 // rangeSliderOutput.innerHTML = rangeSlider.value;
 
-
-// När man drar range slider-knappen så ändras antal personer-fältet och summan under själva slidern. 
+// När man drar range slider-knappen så ändras antal personer-fältet och summan under själva slidern.
 rangeSlider.oninput = function() {
-  const rangeSliderOutput = document.querySelector(
-    ".qty__sliderout"
-  );
+  const productQuantity = document.querySelector(".total__spec__product_quantity");
+  const rangeSliderOutput = document.querySelector(".qty__sliderout");
   rangeSliderOutput.innerHTML = this.value;
   quantityValue.innerHTML = this.value * 100;
+  productQuantity.style.display = "none";
 
   rangeSlider.addEventListener("change", getInfoFromRangeThumb);
 
-// När man släpper range slider-knappen så sätts pris i total-specen
+  // När man släpper range slider-knappen så sätts pris i total-specen
   function getInfoFromRangeThumb() {
-    const productQuantity = document.querySelector(
-      ".total__spec__product_quantity"
-    );
-    productQuantity.innerHTML = `${rangeSliderOutput.innerHTML} deltagare: <span class="total__spec__option_price">${quantityValue.innerHTML}</span> kr`;
+    productQuantity.style.display = "block";
+    productQuantity.innerHTML = `${rangeSliderOutput.innerHTML} deltagare: <span class="total__spec__option_price">${quantityValue.innerHTML}</span>`;
     localStorage.setItem("product_quantity_price", quantityValue.innerHTML);
     localStorage.setItem("product_quantity", rangeSliderOutput.innerHTML);
   }
-
-  // totalSum.innerHTML = (Number(totalSum.innerHTML)) + (Number(quantityValue.innerHTML));
 };
 
-
-
 // ---------------- Tillvals-funktion --------------------- //
-const optionsItemCheckbox = document.querySelectorAll(".overview__info__options__item__input");
+const optionsItemCheckbox = document.querySelectorAll(
+  ".overview__info__options__item__input"
+);
 const optionsItem = document.querySelectorAll(".overview__info__options__item");
 
 for (let i = 0; i < optionsItemCheckbox.length; i++) {
@@ -96,7 +90,6 @@ for (let i = 0; i < optionsItemCheckbox.length; i++) {
     const optionsItemHeader = optionsItem[i].children[0].innerHTML; //
     const optionsItemDesc = optionsItem[i].children[1].innerHTML; // Tänk på att de här är beroende av child-ordningen i .overview__info__options__item
     const optionsItemPrice = optionsItem[i].children[2].children[0].innerHTML; //
-    const optionsItemCurrency = optionsItem[i].children[2].children[1].innerHTML;
 
     if (optionsItemCheckbox[i].checked) {
       // Skapa en lista som adderar OptionsItemHeader, Desc och Price på en rad.
@@ -112,7 +105,7 @@ for (let i = 0; i < optionsItemCheckbox.length; i++) {
       localStorage.setItem(`option${i + 1}_desc`, optionsItemDesc);
 
       // Fyller i Tillvalets namn och pris(i en span), och valuta i spec-listan.
-      createLi.innerHTML = `${optionsItemHeader}: <span class="total__spec__option_price">${optionsItemPrice}</span> ${optionsItemCurrency} `;
+      createLi.innerHTML = `${optionsItemHeader}: <span class="total__spec__option_price">${optionsItemPrice}</span>`;
 
       // Adderar tillvalspriset i Totalsumman.
       // totalSum.innerHTML =
@@ -180,8 +173,7 @@ function addInfo() {
   }
 }
 
-
-// ----------------- Totalsumman-funktion ----------------- //
+// ------------------------------ Totalsumman-funktion ------------------------- //
 
 // När något ändras i .total__spec (pris-specifikationen innan totalsumman) så uppdateras totalsumman.
 const totalSpec = document.querySelector(".total__spec");
@@ -204,16 +196,4 @@ function updateTotal() {
     Number(totalSpecProductPrice.innerHTML) + Number(spanSum);
 }
 
-
-
-
-
-
-
-
-
 // ---------- TEST-SEKTION -------------
-
-
-
-
