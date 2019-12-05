@@ -4,8 +4,8 @@
     justify-items: center;
 }
 .invoice {
-    //margin: 1rem;
-    max-width: 38rem;
+    margin: 1rem;
+    width: 38rem;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -120,4 +120,17 @@
 }
 #anim2:hover {
     transform: translate(10px);
+}
+
+@media screen and (max-width: 630px) {
+    .invoice {
+        width: auto;
+        margin:0;
+    }
+    
+    .invoice__header-logo {
+        max-width: 5rem;
+    
+    }
+
 }
