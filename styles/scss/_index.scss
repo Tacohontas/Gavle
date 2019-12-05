@@ -25,20 +25,7 @@
   font-size: 28px;
   margin: 0 0 1rem 0;
 }
-.landing__box-btn {
-  width: 8rem;
-  height: 3rem;
-  background-color: $button-col;
-  border: none;
-  margin: 2rem 0 0 0;
-  color: $bg-col;
-  font-size: 1.5rem;
-  font-family: "Barlow Condensed", sans-serif;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.452);
-}
-.landing__box-btn:hover {
-  background-color: rgb(255, 187, 16);
-}
+
 
 //Produkt cards
 .productinfo {
@@ -80,21 +67,7 @@
 .productinfo__card-price {
   margin: 0.5rem;
 }
-.productinfo__card-btn {
-  width: 6rem;
-  height: 2.5rem;
-  background-color: $button-col;
-  border: none;
-  margin: 1rem;
-  color: $bg-col;
-  font-size: 1.5rem;
-  font-family: "Barlow Condensed", sans-serif;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.452);
-  opacity: 0.9;
-}
-.productinfo__card-btn:hover {
-  opacity: 1;
-}
+
 //Om Oss
 .omoss {
   background-color: $bg-col;
