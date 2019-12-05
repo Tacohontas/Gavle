@@ -2,6 +2,7 @@
   background: $bg-col;
   margin: 0;
   padding: 0;
+
 } // Nollstäler
 
 // extends
@@ -255,19 +256,11 @@ span::after{
   }
 }
 
-.total__button {
-  margin: 1rem auto;
-  width: 10rem;
-  height: 3rem;
-  background-color: $button-col;
-  border: none;
-  font-size: 1rem;
-  box-shadow: $shadow2;
-  color: $font-col;
-    &:hover{
-cursor: pointer;
-    }
-}
+
+// #total__button{
+//   box-shadow: $shadow2;
+//   margin: 1rem auto;
+// }
 
 /* Personal details (Fyll i din info-sektion) */
 
