@@ -31,9 +31,7 @@ li{
 a:link, a:visited, a:active {
   text-decoration: none;
 }
-a:hover {
-  
-}
+
 
 // Meny CSS
 
@@ -84,7 +82,7 @@ a:hover {
   color: $button-col;
 }
 .navmenu {
-  position: absolute;
+  position: fixed;
   display: none;
   left: -200px;
   top: 0;

@@ -1,69 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Produktsida</title>
-    <link rel="stylesheet" href="../styles/css/styles.css">
-    </link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../js/products.js" defer></script>
-</head>
+  </head>
 
-<body>
-        <header class="header">
-                <div> <img src="../img/logo_jpg.jpg" alt="logo" class="logo"></div>
-            <a href="#menu" class="menu-toggle">
-                <span class="sr-only">Öppna meny</span>
-                <span class="fas fa-bars"></span>
-            </a>
-            
-            <nav id="menu" class="navmenu" aria-label="Meny">
-                <a href="#main-menu-toggle" class="menu-close">
-                    <span id="nav__close" class="fas fa-times"></span>
-                </a>
-                <ul class="navmenu__ul">
-                    <li><a href="#" class="navmenu__a">Produkter</a></li>
-                    <li><a href="#" class="navmenu__a">Om oss</a></li>
-                </ul>
-            </nav>
-            <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" hidden></a>
-        </header>
+  <body>
+    <header class="header">
+      <div><img src="../img/logo_jpg.jpg" alt="logo" class="logo" /></div>
+      <a href="#menu" class="menu-toggle">
+        <span class="sr-only">Öppna meny</span>
+        <span class="fas fa-bars"></span>
+      </a>
+
+      <nav id="menu" class="navmenu" aria-label="Meny">
+        <a href="#main-menu-toggle" class="menu-close">
+          <span id="nav__close" class="fas fa-times"></span>
+        </a>
+        <ul class="navmenu__ul">
+          <li><a href="#" class="navmenu__a">Produkter</a></li>
+          <li><a href="#" class="navmenu__a">Om oss</a></li>
+        </ul>
+      </nav>
+      <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" hidden></a>
+    </header>
 
     <section class="productinfo">
-        <h1 class="productinfo__h1">Produkter</h1>
-        <div class="productinfo__card">
-                <div class="productinfo__card-1">
-                <img class="productinfo__card-img" src="../img/small.jpg" alt="small">
-                <h2 class="productinfo__card-name">Paket SMALL</h2>
-                <p class="productinfo__card-text">Information om paket small</p>
-                <p class="productinfo__card-price">1000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
-                <button class="productinfo__card-btn">Köp</button>
-            </div>
-            <div class="productinfo__card-2">
-                <img class="productinfo__card-img" src="../img/medium.jpg" alt="medium">
-                <h2 class="productinfo__card-name">Paket MEDIUM</h2>
-                <p class="productinfo__card-text">Information om paket medium</p>
-                <p class="productinfo__card-price">2000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
-                <button class="productinfo__card-btn">Köp</button>
-            </div>
-            <div class="productinfo__card-3">
-                <img class="productinfo__card-img" src="../img/large2.jpg" alt="large">
-                <h2 class="productinfo__card-name">Paket LARGE</h2>
-                <p class="productinfo__card-text">Information om paket large</p>
-                <p class="productinfo__card-price">3000kr</p> <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
-                <button class="productinfo__card-btn">Köp</button>
-            </div>
+      <h1 class="productinfo__h1">Produkter</h1>
+      <div class="productinfo__card">
+        <div class="productinfo__card-1">
+          <img
+            class="productinfo__card-img"
+            src="../img/small.jpg"
+            alt="small"
+          />
+          <h2 class="productinfo__card-name">Paket SMALL</h2>
+          <p class="productinfo__card-text">Information om paket small</p>
+          <p class="productinfo__card-price">1000kr</p>
+          <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
+          <button class="productinfo__card-btn">Köp</button>
         </div>
+        <div class="productinfo__card-2">
+          <img
+            class="productinfo__card-img"
+            src="../img/medium.jpg"
+            alt="medium"
+          />
+          <h2 class="productinfo__card-name">Paket MEDIUM</h2>
+          <p class="productinfo__card-text">Information om paket medium</p>
+          <p class="productinfo__card-price">2000kr</p>
+          <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
+          <button class="productinfo__card-btn">Köp</button>
+        </div>
+        <div class="productinfo__card-3">
+          <img
+            class="productinfo__card-img"
+            src="../img/large2.jpg"
+            alt="large"
+          />
+          <h2 class="productinfo__card-name">Paket LARGE</h2>
+          <p class="productinfo__card-text">Information om paket large</p>
+          <p class="productinfo__card-price">3000kr</p>
+          <!-- BARA TILLFÄLLIGT FÖR ATT TESTA JS -->
+          <button class="productinfo__card-btn">Köp</button>
+        </div>
+      </div>
     </section>
-    <section class="compare">
-    
-    </section>
+    <section class="compare"></section>
     <footer class="footer"></footer>
-
-</body>
-
+  </body>
 </html>

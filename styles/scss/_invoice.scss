@@ -4,8 +4,8 @@
     justify-items: center;
 }
 .invoice {
-    margin: 1rem;
-    width: 38rem;
+    //margin: 1rem;
+    max-width: 38rem;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -24,7 +24,7 @@
 
 }
 .invoice__header-logo {
-    max-width: 8rem;
+    max-width: 7rem;
     margin: 5% 0 5% 15%;
     border-radius: 50% 50% 50% 50%;
     
@@ -109,15 +109,15 @@
     margin: 1rem;
     color: $bg-col;
     font-size: 1.5rem;
+    
 }
-.btns {
-    display: flex;
-    justify-content: center;
+#anim1, #anim2 {
+    transition: transform 1s ease-in-out;
 }
 
-/* #anim1:hover {
- transform: translate(20px);
+#anim1:hover{
+    transform: translate(-8px);
 }
 #anim2:hover {
-
-} */
+    transform: translate(10px);
+}

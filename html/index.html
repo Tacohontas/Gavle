@@ -1,193 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Startsida</title>
-    <link rel="stylesheet" href="../styles/css/styles.css">
-    </link> <!-- Här är .css-filen som vi gulp skapat åt oss. -->
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../js/index.js" defer></script>
-</head>
+  </head>
 
-<body class="bg" id="startsida">
-
+  <body class="bg" id="startsida">
     <!-- Här börjar menyn -->
     <header class="header">
-        <div> <img src="../img/logo_jpg.jpg" alt="logo" class="logo"></div>
-        <a href="#menu" class="menu-toggle">
-            <span class="sr-only">Öppna meny</span>
-            <span class="fas fa-bars"></span>
+      <div><img src="../img/logo_jpg.jpg" alt="logo" class="logo" /></div>
+      <a href="#menu" class="menu-toggle">
+        <span class="sr-only">Öppna meny</span>
+        <span class="fas fa-bars"></span>
+      </a>
+      <nav id="menu" class="navmenu" aria-label="Meny">
+        <a href="#main-menu-toggle" class="menu-close">
+          <span id="nav__close" class="fas fa-times"></span>
         </a>
-        <nav id="menu" class="navmenu" aria-label="Meny">
-            <a href="#main-menu-toggle" class="menu-close">
-                <span id="nav__close" class="fas fa-times"></span>
-            </a>
-            <ul class="navmenu__ul">
-                <li><a href="/html/index.html#startsida"><img src="../img/logo_jpg.jpg" alt="logo" class="logo"></a>
-                </li>
-                <li><a href="/html/index.html#startsida" class="navmenu__a">Hem</a></li>
-                <li><a href="/html/index.html#produkter_start" class="navmenu__a">Produkter</a></li>
-                <li><a href="/html/index.html#omoss" class="navmenu__a">Om oss</a></li>
-            </ul>
-        </nav>
-        <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" hidden></a>
+        <ul class="navmenu__ul">
+          <li>
+            <a href="/html/index.html#startsida"
+              ><img src="../img/logo_jpg.jpg" alt="logo" class="logo"
+            /></a>
+          </li>
+          <li>
+            <a href="/html/index.html#startsida" class="navmenu__a">Hem</a>
+          </li>
+          <li>
+            <a href="/html/index.html#produkter_start" class="navmenu__a"
+              >Produkter</a
+            >
+          </li>
+          <li>
+            <a href="/html/index.html#omoss" class="navmenu__a">Om oss</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" hidden></a>
     </header>
     <!--Meny slut -->
 
-            <!-- Välkommen -->
+    <!-- Välkommen -->
 
     <section class="landing">
-
-
-        <div class="landing__box">
-            <h1 class="landing__box-h1">Välkommen till TeamClimbing</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo cupiditate minus incidunt
-                corrupti provident, doloribus dolorem at ut! Ipsam repudiandae, inventore id culpa est consequatur.
-                Delectus culpa suscipit rerum!</p>
-            <a href="#produkter_start"><button class="landing__box-btn">Produkter</button></a>
-        </div>
+      <div class="landing__box">
+        <h1 class="landing__box-h1">Välkommen till TeamClimbing</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+          explicabo cupiditate minus incidunt corrupti provident, doloribus
+          dolorem at ut! Ipsam repudiandae, inventore id culpa est consequatur.
+          Delectus culpa suscipit rerum!
+        </p>
+        <a href="#produkter_start"
+          ><button class="landing__box-btn">Produkter</button></a
+        >
+      </div>
     </section>
 
     <!-- Snabb vy över våra produkter -->
 
     <section class="productinfo" id="produkter_start">
-        <div class="productinfo__card">
-            <div class="productinfo__card-1">
-                <img class="productinfo__card-img" src="../img/small.jpg" alt="small">
-                <h2 class="productinfo__card-name">PAKET SMALL</h2>
-                <!-- Här är en div-container för all beskrivning av produkt-->
-                <div class="productinfo__card-desc">
-                    <p class="productinfo__card-text">Information om paket small</p>
-                </div>
-                <p class="productinfo__card-price">1000kr</p>
-                <button class="productinfo__card-btn">Köp</button>
-            </div>
-            <div class="productinfo__card-2">
-                <img class="productinfo__card-img" src="../img/medium.jpg" alt="medium">
-                <h2 class="productinfo__card-name">PAKET MEDIUM</h2>
-                <div class="productinfo__card-desc">
-                    <p class="productinfo__card-text">Information om paket medium</p>
-                </div>
-                <p class="productinfo__card-price">2000kr</p>
-
-                <button class="productinfo__card-btn">Köp</button>
-            </div>
-            <div class="productinfo__card-3">
-                <img class="productinfo__card-img" src="../img/large2.jpg" alt="large">
-                <h2 class="productinfo__card-name">PAKET LARGE</h2>
-                <div class="productinfo__card-desc">
-                    <p class="productinfo__card-text">Information om paket large</p>
-                </div>
-                <p class="productinfo__card-price">3000kr</p>
-
-                <button class="productinfo__card-btn">Köp</button>
-            </div>
+      <div class="productinfo__card">
+        <div class="productinfo__card-1">
+          <img
+            class="productinfo__card-img"
+            src="../img/small.jpg"
+            alt="small"
+          />
+          <h2 class="productinfo__card-name">PAKET SMALL</h2>
+          <!-- Här är en div-container för all beskrivning av produkt-->
+          <div class="productinfo__card-desc">
+            <p class="productinfo__card-text">Information om paket small</p>
+          </div>
+          <p class="productinfo__card-price">1000kr</p>
+          <button class="productinfo__card-btn">Köp</button>
         </div>
+        <div class="productinfo__card-2">
+          <img
+            class="productinfo__card-img"
+            src="../img/medium.jpg"
+            alt="medium"
+          />
+          <h2 class="productinfo__card-name">PAKET MEDIUM</h2>
+          <div class="productinfo__card-desc">
+            <p class="productinfo__card-text">Information om paket medium</p>
+          </div>
+          <p class="productinfo__card-price">2000kr</p>
+
+          <button class="productinfo__card-btn">Köp</button>
+        </div>
+        <div class="productinfo__card-3">
+          <img
+            class="productinfo__card-img"
+            src="../img/large2.jpg"
+            alt="large"
+          />
+          <h2 class="productinfo__card-name">PAKET LARGE</h2>
+          <div class="productinfo__card-desc">
+            <p class="productinfo__card-text">Information om paket large</p>
+          </div>
+          <p class="productinfo__card-price">3000kr</p>
+
+          <button class="productinfo__card-btn">Köp</button>
+        </div>
+      </div>
     </section>
 
     <!-- Om oss och vår personal -->
-    
+
     <section class="omoss" id="omoss">
-        <h1 class="omoss__heading">Om oss</h1>
-        <p class="omoss__heading--txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere blanditiis distinctio, magni illo minus in saepe error soluta libero.</p>
-        <div class="omoss__container">
-            <div class="omoss__card">
-                <img src="../img/Erik.jpg" alt="erik" class="omoss__card-img">
-                <h2>Erik</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, impedit!</p>
-            </div>
-            <div class="omoss__card">
-                <img src="../img/Nina.jpg" alt="nina" class="omoss__card-img">
-                <h2>Nina</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, harum!</p>
-            </div>
-            <div class="omoss__card">
-                <img src="../img/James.jpg" alt="james" class="omoss__card-img">
-                <h2>James</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, sunt?</p>
-            </div>
+      <div class="omoss__container">
+        <div class="omoss__card">
+          <img src="../img/Erik.jpg" alt="erik" class="omoss__card-img" />
+          <h2>Erik</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem,
+            impedit!
+          </p>
         </div>
+        <div class="omoss__card">
+          <img src="../img/Nina.jpg" alt="nina" class="omoss__card-img" />
+          <h2>Nina</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, harum!
+          </p>
+        </div>
+        <div class="omoss__card">
+          <img src="../img/James.jpg" alt="james" class="omoss__card-img" />
+          <h2>James</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur, sunt?
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Mer information om våra produkter-->
 
-<section class="products">
-    <div class="products__container">
-         <div class="products__container--img">
-             <img class="products__container--img" src="/img/small.jpg" alt="">
+    <section class="products">
+      <div class="products__container">
+          <img class="products__container--img" src="/img/small.jpg" alt="" />
+        <div class="products__container--txt">
+          <h2>Mer info om paket Small</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque,
+            consequuntur qui laboriosam rem nisi velit atque praesentium fugiat
+            quis similique!
+          </p>
         </div>
         <div class="products__container--txt">
-            <h2>Mer info om paket Small</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, consequuntur qui laboriosam rem nisi velit atque praesentium fugiat quis similique!</p>
+          <h2>Mer info om paket Medium</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+            quos pariatur sit iure maiores minus vitae voluptatum quibusdam,
+            accusantium alias.
+          </p>
         </div>
+          <img class="products__container--img2" src="/img/medium.jpg" alt="" />
+          <img class="products__container--img" src="/img/large2.jpg" alt="" />
         <div class="products__container--txt">
-            <h2>Mer info om paket Medium</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quos pariatur sit iure maiores minus vitae voluptatum quibusdam, accusantium alias.</p>
+          <h2>Mer info om paket Large</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+            sed ab dolore labore quaerat repudiandae tempora odit nesciunt quia
+            molestias.
+          </p>
         </div>
-        <div class="products__container--img"> 
-                <img class="products__container--img" src="/img/medium.jpg" alt="">
-            </div>
-        <div class="products__container--img">
-            <img class="products__container--img" src="/img/large2.jpg" alt="">
-        </div>
-        <div class="products__container--txt">
-            <h2>Mer info om paket Large</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sed ab dolore labore quaerat repudiandae tempora odit nesciunt quia molestias.</p>
-        </div>
+      </div>
     </section>
 
     <!-- Footer start -->
     <footer class="footer">
-        <div class="footer__linknav">
-            <div class="footer__linknav__item">
-                <img src="../img/logo_jpg.jpg" alt="logo" class="footer__linknav__logo">
-            </div>
-            <div class="footer__linknav__item">
-                <li class="footer__linknav__link"><a href="/html/index.html">Hem</a></li>
-                <li class="footer__linknav__link"><a href="/html/index.html#produkter_start">Produkter</a></li>
-                <li class="footer__linknav__link"><a href="/html/index.html#">Om oss</a></li>
-                <li class="footer__linknav__link"><a href="/html/index.html#">Kontakt</a></li>
-            </div>
-            <div class="footer__linknav__item">
-                <p><span>&copy;</span>2019 Gävle Entertainment</p>
-            </div>
+      <div class="footer__linknav">
+        <div class="footer__linknav__item">
+          <img
+            src="../img/logo_jpg.jpg"
+            alt="logo"
+            class="footer__linknav__logo"
+          />
         </div>
-        <div class="footer__contact">
-            <div class="footer__contact__item">
-                <i class="fas fa-map-marker-alt fa-lg"></i>
-                <p><span>Exempelgatan 25</span>123 45 Exempelstaden</p>
-            </div>
-            <div class="footer__contact__item">
-                <i class="fas fa-phone-alt fa-lg"></i>
-                <p>08 - 123 45 67</p>
-            </div>
-            <div class="footer__contact__item">
-                <i class="fas fa-envelope fa-lg"></i>
-                <p>Hej@TeamClimbing.se</p>
-            </div>
+        <div class="footer__linknav__item">
+          <li class="footer__linknav__link">
+            <a href="/html/index.html">Hem</a>
+          </li>
+          <li class="footer__linknav__link">
+            <a href="/html/index.html#produkter_start">Produkter</a>
+          </li>
+          <li class="footer__linknav__link">
+            <a href="/html/index.html#">Om oss</a>
+          </li>
+          <li class="footer__linknav__link">
+            <a href="/html/index.html#">Kontakt</a>
+          </li>
         </div>
-        <div class="footer__aboutus">
-            <div class="footer__aboutus-wrapper">
-                <div class="footer__aboutus__desc">
-                    <h2 class="aboutus__desc__header">Om oss</h2>
-                    <p class="aboutus__desc__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-                        sit
-                        asperiores, cum quaerat officiis omnis!</p>
-                </div>
-                <div class="footer__aboutus__icons-container">
-                    <li class="footer__aboutus__icon"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
-                    <li class="footer__aboutus__icon"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
-                    <li class="footer__aboutus__icon"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
-                    <li class="footer__aboutus__icon"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                </div>
-            </div>
+        <div class="footer__linknav__item">
+          <p><span>&copy;</span>2019 Gävle Entertainment</p>
         </div>
+      </div>
+      <div class="footer__contact">
+        <div class="footer__contact__item">
+          <i class="fas fa-map-marker-alt fa-lg"></i>
+          <p><span>Exempelgatan 25</span>123 45 Exempelstaden</p>
+        </div>
+        <div class="footer__contact__item">
+          <i class="fas fa-phone-alt fa-lg"></i>
+          <p>08 - 123 45 67</p>
+        </div>
+        <div class="footer__contact__item">
+          <i class="fas fa-envelope fa-lg"></i>
+          <p>Hej@TeamClimbing.se</p>
+        </div>
+      </div>
+      <div class="footer__aboutus">
+        <div class="footer__aboutus-wrapper">
+          <div class="footer__aboutus__desc">
+            <h2 class="aboutus__desc__header">Om oss</h2>
+            <p class="aboutus__desc__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              sit asperiores, cum quaerat officiis omnis!
+            </p>
+          </div>
+          <div class="footer__aboutus__icons-container">
+            <li class="footer__aboutus__icon">
+              <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            </li>
+            <li class="footer__aboutus__icon">
+              <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            </li>
+            <li class="footer__aboutus__icon">
+              <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            </li>
+            <li class="footer__aboutus__icon">
+              <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+            </li>
+          </div>
+        </div>
+      </div>
     </footer>
     <!-- Footer end -->
-</body>
-
+  </body>
 </html>
