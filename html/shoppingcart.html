@@ -71,7 +71,8 @@
                     </div>
 
                     <div class="overview__product__img-container">
-                        <img class="overview__product__img" src=""><!-- Hämtar src från JS script-->
+                        <img class="overview__product__img" src="#" alt="Produktbild"><!-- Hämtar src från JS script-->
+
                     </div>
                 </div>
 
@@ -93,7 +94,6 @@
                                 </div>
                                 <p class="qty__review">
                                     <span class="qty__value"></span>
-                            
                                 </p>
 
                             </div>
@@ -169,8 +169,9 @@
 
     <section class="total-section">
 
-
-        <a href="#personaldetails-section"><button class="total__button" id="total__button">Gå vidare</button></a>
+        <!-- Här läggs meddelande ifall man inte valt antal personer -->
+        <p class="total__warningtext"></p>
+        <button id="total__button">Gå vidare</button>
     </section>
 
 
@@ -206,6 +207,7 @@
                 <!-- Här läggs meddelande ifall terms ej är lästa -->
                 <p class="buy__warningtext"></p>
 
+
                 <div class="buy__checkbox">
                     <input type="checkbox" class="buy__readterms">
                     <p>Jag har läst igenom <a href="#"
@@ -213,11 +215,11 @@
                     </p>
                 </div>
 
-                <button class="productinfo__card-btn" id="shoppingcart_buybtn">Köp</button>
-
+                <button id="shoppingcart_buybtn">Köp</button>
+            </section>
         </div>
 
-    </section>
+ 
 
 
 
@@ -246,12 +248,11 @@
             <div class="footer__linknav__item">
                 <img src="../img/logo_jpg.jpg" alt="logo" class="footer__linknav__logo">
             </div>
-            <div class="footer__linknav__item">
+            <ul class="footer__linknav__item">
                 <li class="footer__linknav__link"><a href="/html/index.html">Hem</a></li>
                 <li class="footer__linknav__link"><a href="/html/index.html#produkter_start">Produkter</a></li>
                 <li class="footer__linknav__link"><a href="/html/index.html#omoss">Om oss</a></li>
-                <!-- <li class="footer__linknav__link"><a href="/html/index.html#">Kontakt</a></li> -->
-            </div>
+            </ul>
             <div class="footer__linknav__item">
                 <p><span>&copy;</span>2019 Gävle Entertainment</p>
             </div>
@@ -284,12 +285,12 @@
                         sit
                         asperiores, cum quaerat officiis omnis!</p>
                 </div>
-                <div class="footer__aboutus__icons-container">
+                <ul class="footer__aboutus__icons-container">
                     <li class="footer__aboutus__icon"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
                     <li class="footer__aboutus__icon"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
                     <li class="footer__aboutus__icon"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
                     <li class="footer__aboutus__icon"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                </div>
+                </ul>
             </div>
         </div>
 

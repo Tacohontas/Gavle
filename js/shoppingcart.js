@@ -6,15 +6,23 @@ addBtn.addEventListener("click", addInfo);
 const totalBtn = document.querySelector("#total__button");
 totalBtn.addEventListener("click", ShowForm);
 
-function ShowForm() {
-  const personalSectionWrapper = document.querySelector(
-    ".personaldetails-wrapper"
-  );
+// if (personalSectionWrapper.style.display !== "none") {
+//   personalSectionWrapper.style.display = "grid";
+// }
 
-  if (personalSectionWrapper.style.display !== "none") {
-    personalSectionWrapper.style.display = "grid";
+function ShowForm() {
+  const psWrapper = document.querySelector(".personaldetails-wrapper");
+  const SliderOutput = document.querySelector(".qty__sliderout").innerHTML;
+  const warningTextBox = document.querySelector(".total__warningtext");
+
+  if (SliderOutput == "") {
+    warningTextBox.innerHTML = "Vänligen välj antal personer."
+    return false;
+  } 
+    document.querySelector('#personaldetails-section').scrollIntoView();
+    psWrapper.style.display = "grid";
+    warningTextBox.innerHTML = "";
   }
-}
 
 // --------- Hämta bild + pris från products-funktion ---------- //
 
@@ -59,7 +67,9 @@ const quantityValue = document.querySelector(".qty__value");
 
 // När man drar range slider-knappen så ändras antal personer-fältet och summan under själva slidern.
 rangeSlider.oninput = function() {
-  const productQuantity = document.querySelector(".total__spec__product_quantity");
+  const productQuantity = document.querySelector(
+    ".total__spec__product_quantity"
+  );
   const rangeSliderOutput = document.querySelector(".qty__sliderout");
   rangeSliderOutput.innerHTML = this.value;
   quantityValue.innerHTML = this.value * 100;
