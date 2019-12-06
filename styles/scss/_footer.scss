@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.footer__linknav__item {
+.linknav__griditem {
   display: flex;
 
   p {
@@ -30,7 +30,7 @@
   color: $font-col;
 }
 
-.footer__linknav__link a {
+.linknav_link a {
   padding: 0.5rem;
   text-decoration: none;
   color: $font-col;
@@ -39,7 +39,7 @@
   }
 }
 
-.footer__linknav__logo {
+.footer__logo {
   max-width: 7rem;
   max-height: 7rem;
   margin: 1rem;
@@ -54,7 +54,7 @@
   align-items: center;
 }
 
-.footer__contact__item {
+.contact__griditem {
   display: flex;
   align-items: center;
   width: 220px;
@@ -84,7 +84,7 @@
   align-items: center;
 }
 
-.footer__aboutus-wrapper {
+.aboutus-wrapper {
   div {
     width: 16rem;
   }
@@ -95,7 +95,7 @@
   }
 }
 
-.footer__aboutus__icons-container {
+.aboutus__icons-container {
   display: flex;
 
   li {
@@ -153,7 +153,7 @@
     
   }
 
-  .footer__linknav__item {
+  .linknav__griditem {
   
     p {
       display: none;
@@ -172,7 +172,7 @@
   .footer__aboutus{
     grid-row: 2/3;
 
-    .footer__aboutus__icons-container{
+    .aboutus__icons-container{
       justify-content: space-evenly;
 
       .footer__aboutus__icon{

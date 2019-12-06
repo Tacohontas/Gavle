@@ -20,7 +20,7 @@ for (let i = 0; i < buyBtn.length; i++) {
     const productPrice = productPriceSplit[0];
     
     //Produktnamn
-    const productName = document.querySelector(".productinfo__card-name").innerHTML;
+    const productName = document.querySelectorAll(".productinfo__card-name")[i].innerHTML;
 
     //Produktbeskrivning
     const productDescAll = document.querySelectorAll(".productinfo__card-desc");

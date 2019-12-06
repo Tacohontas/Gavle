@@ -2,24 +2,9 @@
   background: $bg-col;
   margin: 0;
   padding: 0;
-} // Nollstäler
-
-// extends
-.center_item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.shoppingcontainer {
-  width: 90%;
-  margin: 0 auto;
-  overflow: auto;
-}
-
-// --------- Styles --------- //
-
-// -- Överblick
+// -- Överblick på vald produkt etc
 
 .overview-wrapper {
   display: flex;
@@ -43,60 +28,59 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
+}
 
-  // Vald produkt
-  .overview__product-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+// ----------- Vald produkt ---------- //
+.overview__product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-    .overview__product__header {
-      font-size: 3.5rem * 0.9;
-    }
+.chosenproduct__header {
+  font-size: 3.15rem;
+}
+
+.chosenproduct__info-container {
+  background: $box-col;
+  width: 18rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  .product__header {
+    padding-bottom: 5px;
   }
+  .product__info {
+    font-size: 0.8rem;
+    padding-bottom: 5px;
 
-  .overview__product__info-container {
-    background: $box-col;
-    width: 18rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-
-    .overview__product__info__h {
-      padding-bottom: 5px;
+    p {
+      margin: 0; // Resettar margin på p-class som hämtas från index.html.
     }
-    .overview__product__info__desc {
-      font-size: 0.8rem;
-      padding-bottom: 5px;
-
-      p {
-        margin: 0; // Resettar margin på p-class som hämtas från index.html.
-      }
-    }
-  }
-
-  .overview__product__img {
-    height: auto;
-    width: 100%;
-    max-width: 380px;
-    max-height: 320px;
-    border: 2px solid rgba(255, 255, 255, 0.911);
-  }
-
-  // Info (Antal , Tillval och totalsumma)
-  .overview__info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 }
 
-// Överblick på Antal deltagare och Tillval
-.overview__info__options-wrapper {
+.product__img {
+  height: auto;
+  width: 100%;
+  max-width: 380px;
+  max-height: 320px;
+  border: 2px solid rgba(255, 255, 255, 0.911);
+}
+
+//------ (Antal , Tillval och totalsumma) ------//
+.overview__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.options-wrapper {
   display: flex;
   justify-content: flex-end;
 }
 
-.overview__info__options-container {
+.options-container {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: flex-end;
@@ -104,17 +88,16 @@
   height: 21rem;
 }
 
-// --- Antal deltagare
-.overview__info__options__qty__out-container {
+// ----------- Antal deltagare (slider) ---------- //
+.slider__qty-container {
   text-align: center;
 }
 
-// Antal deltagare - Slider
-.qty__slider-container {
+.slider-container {
   display: flex;
 }
 
-.qty__slider {
+.slider__input {
   background: $box-col;
   border-radius: 25px;
   width: 100%;
@@ -220,7 +203,7 @@
   }
 }
 
-.qty__review {
+.slider__output-container {
   text-align: center;
 
   span::after {
@@ -228,9 +211,8 @@
   }
 }
 
-// --- Tillval
-
-.overview__info__options__item__input {
+// ----------- Tillval ---------- //
+.addon__checkbox {
   display: none;
 
   &:checked + div {
@@ -240,7 +222,7 @@
   }
 }
 
-.overview__info__options__item {
+.addon__info-container {
   border: 1px solid rgba(211, 211, 211, 0.486);
   border-radius: 4px;
   display: grid;
@@ -254,23 +236,23 @@
     transition: 0.3s;
     background: rgba(239, 171, 0, 0.637);
   }
+
+  .addon__title {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .addon__desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.72rem;
+  }
 }
 
-.overview__info__options__item__h {
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overview__info__options__item__desc {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.72rem;
-}
-
-.overview__info__options__item__price-container {
+.addon__price-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -280,14 +262,16 @@
   }
 }
 
-.overview__info__total-container {
+// ------ Totalsumma ex moms ------ //
+
+.total-container {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   margin-top: 1.2rem;
 }
 
-.overview__info__total__spec {
+.total__spec {
   list-style: none;
   margin: 0;
   text-align: right;
@@ -295,10 +279,10 @@
   font-size: 90%;
 
   // Produktens startpris- & antal personer-innertext.
-  .overview__info__total__spec__product {
+  .total__product-desc {
     color: white;
   }
-  .overview__info__total__spec__product_quantity {
+  .total__product-qty {
     color: white;
   }
 
@@ -333,11 +317,12 @@
   }
 }
 
+// ------ Gå vidare ------ //
 
-/* Total (total-sektionen) */
-
-.total-section {
-  @extend .shoppingcontainer;
+.continue-section {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
   display: grid;
   grid-template-rows: 1fr;
   justify-content: center;
@@ -347,13 +332,21 @@
   margin-bottom: 10rem;
 }
 
-.total__warningtext {
+.continue__warningtext {
   color: red;
 }
 
-/* Personal details (Fyll i din info-sektion) */
+// ------ Form för kunduppgifter ------ //
 
-.personaldetails-wrapper {
+.customerform-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customerform-wrapper {
   box-shadow: $shadow2;
   border-radius: 5px;
   margin: 0 auto;
@@ -367,27 +360,18 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   justify-content: center;
-
-  h2 {
-    text-align: center;
-  }
 }
 
-.personaldetails-section {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.customerform__header {
+  text-align: center;
 }
 
-.PD__item-input {
+.customerform-input {
   height: 100%;
   width: 20rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: 1rem; /* för att "nollställa" font-size. */
-  // box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
   background: $box-col;
   border: none; // Tar bort default input border
   border-bottom: 1px solid white;
@@ -407,14 +391,14 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* Buy section */
+// ------ Checkout ------ //
 
-.buy-section {
+.checkout-section {
   text-align: center;
   background: $box-col;
 }
 
-.buy__checkbox {
+.checkout__checkbox-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -432,29 +416,29 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-.buy__readterms {
+.checkbox__input {
   margin: 0.2rem;
 }
 
-.buy__warningtext {
+.checkout__warningtext {
   color: red;
 }
 
-// Animationer
+// -------  Animationer ------- //
 
-.overview__info__total__spec li {
+.total__spec li {
   animation: fadein 2s;
   -moz-animation: fadein 2s; /* Firefox */
-  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -webkit-animation: fadein 2s; /* Safari och Chrome */
 }
 
-.personaldetails-wrapper {
+.customerform-wrapper {
   animation: fadein 2.5s;
   -moz-animation: fadein 2.5s; /* Firefox */
-  -webkit-animation: fadein 2.5s; /* Safari and Chrome */
+  -webkit-animation: fadein 2.5s; /* Safari och Chrome */
 }
 
-// Keyframes
+// -- Keyframes
 
 @keyframes fadein {
   from {
@@ -514,17 +498,5 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
     width: auto;
     padding: 0;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .total-section {
-    .total__spec {
-      font-size: 90%;
-    }
-
-    .total__header {
-      font-size: 1.5rem;
-    }
   }
 }
