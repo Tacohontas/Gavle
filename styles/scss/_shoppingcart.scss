@@ -2,7 +2,6 @@
   background: $bg-col;
   margin: 0;
   padding: 0;
-
 } // Nollstäler
 
 // extends
@@ -18,12 +17,14 @@
   overflow: auto;
 }
 
+// --------- Styles --------- //
+
+// -- Överblick
+
 .overview-wrapper {
   display: flex;
   justify-content: center;
 }
-
-// styles
 
 .overview-section {
   box-shadow: $shadow2;
@@ -31,19 +32,19 @@
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   background: $box-col;
-  padding: 2rem * 0.9;
-  height: (694px * 0.9);
+  padding: 1.8rem;
+  height: 627px;
   width: 900px;
 }
 
 .overview-container {
-  // border: 2px solid white;
   padding: 1.4rem;
   background: $box-col;
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
 
+  // Vald produkt
   .overview__product-container {
     display: flex;
     flex-direction: column;
@@ -52,49 +53,36 @@
     .overview__product__header {
       font-size: 3.5rem * 0.9;
     }
-
-    .overview__product__img-container {
-      max-width: 470px * 0.9;
-      max-height: 394px * 0.9;
-
-      .overview__product__img {
-        height: auto;
-        width: 100%;
-        max-width: 470px * 0.8;
-        max-height: 394px * 0.8;
-        border: 2px solid rgba(255, 255, 255, 0.911);
-      }
-    }
   }
 
-  .overview__info__prodinfo-wrapper {
-    // display: flex;
-    // justify-content: center;
+  .overview__product__info-container {
+    background: $box-col;
+    width: 18rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
-    .overview__info__prodinfo-container {
-      background: $box-col;
-      width: 18rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+    .overview__product__info__h {
+      padding-bottom: 5px;
+    }
+    .overview__product__info__desc {
+      font-size: 0.8rem;
+      padding-bottom: 5px;
 
       p {
-        margin: 0;
-      }
-
-      li {
-        font-size: 0.8rem;
-      }
-
-      .overview__info__prodinfo__h {
-        padding-bottom: 5px;
-      }
-      .overview__info__prodinfo__desc {
-        font-size: 0.8rem;
-        padding-bottom: 5px;
+        margin: 0; // Resettar margin på p-class som hämtas från index.html.
       }
     }
   }
 
+  .overview__product__img {
+    height: auto;
+    width: 100%;
+    max-width: 380px;
+    max-height: 320px;
+    border: 2px solid rgba(255, 255, 255, 0.911);
+  }
+
+  // Info (Antal , Tillval och totalsumma)
   .overview__info-container {
     display: flex;
     flex-direction: column;
@@ -102,19 +90,154 @@
   }
 }
 
+// Överblick på Antal deltagare och Tillval
 .overview__info__options-wrapper {
   display: flex;
   justify-content: flex-end;
 }
 
 .overview__info__options-container {
-  // border: 2px solid white;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  // justify-content: center;
   align-items: flex-end;
   width: 18rem;
   height: 21rem;
+}
+
+// --- Antal deltagare
+.overview__info__options__qty__out-container {
+  text-align: center;
+}
+
+// Antal deltagare - Slider
+.qty__slider-container {
+  display: flex;
+}
+
+.qty__slider {
+  background: $box-col;
+  border-radius: 25px;
+  width: 100%;
+  margin: 6.55px 0;
+  box-shadow: $shadow2;
+
+  //----- Webkit
+  -webkit-appearance: none;
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6.9px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
+    background: #efac00;
+    border-radius: 25px;
+    border: 0px solid rgba(51, 67, 80, 0);
+  }
+  &::-webkit-slider-thumb {
+    box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
+      0px 0px 1.4px rgba(61, 80, 96, 0.76);
+    border: 2.1px solid rgba(51, 67, 80, 0);
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: #efac00;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6.55px;
+  }
+  &:focus::-webkit-slider-runnable-track {
+    background: #ffc01e;
+  }
+
+  //----- Firefox
+  &::-moz-range-track {
+    width: 100%;
+    height: 6.9px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
+    background: #efac00;
+    border-radius: 25px;
+    border: 0px solid rgba(51, 67, 80, 0);
+  }
+  &::-moz-range-thumb {
+    box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
+      0px 0px 1.4px rgba(61, 80, 96, 0.76);
+    border: 2.1px solid rgba(51, 67, 80, 0);
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: #efac00;
+    cursor: pointer;
+  }
+  &:focus::-moz-range-track {
+    background: #ffc01e;
+  }
+  // Tar bort default-border på focus.
+  &::-moz-focus-outer {
+    border: 0;
+  }
+  // Gömmer number picker för Firefox
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  //----- Internet Explorer
+  &::-ms-track {
+    width: 100%;
+    height: 6.9px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  &::-ms-fill-lower {
+    background: #c18b00;
+    border: 0px solid rgba(51, 67, 80, 0);
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
+  }
+  &::-ms-fill-upper {
+    background: #efac00;
+    border: 0px solid rgba(51, 67, 80, 0);
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
+  }
+  &::-ms-thumb {
+    box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
+      0px 0px 1.4px rgba(61, 80, 96, 0.76);
+    border: 2.1px solid rgba(51, 67, 80, 0);
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: #efac00;
+    cursor: pointer;
+    height: 6.9px;
+  }
+  &:focus::-ms-fill-upper {
+    background: #ffc01e;
+  }
+  &:focus::-ms-fill-lower {
+    background: #efac00;
+  }
+}
+
+.qty__review {
+  text-align: center;
+
+  span::after {
+    content: " kr";
+  }
+}
+
+// --- Tillval
+
+.overview__info__options__item__input {
+  display: none;
+
+  &:checked + div {
+    background: $button-col;
+    box-shadow: $shadow;
+    border: 1px solid $button-col;
+  }
 }
 
 .overview__info__options__item {
@@ -133,36 +256,6 @@
   }
 }
 
-/* Options (tillvals-sektionen) */
-
-.qty__slider {
-  width: 100%;
-}
-
-.overview__info__options__qty__out-container {
-  text-align: center;
-}
-
-.qty__review {
-  text-align: center;
-
-span::after{
-  content: " kr";
-}
-
-}
-
-.overview__info__options__item__input {
-  display: none;
-
-  &:checked + div {
-    // border: 1.2px solid $font-col;
-    background: $button-col;
-    box-shadow: $shadow;
-    border: $button-col;
-  }
-}
-
 .overview__info__options__item__h {
   text-align: left;
   display: flex;
@@ -174,7 +267,7 @@ span::after{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem * 0.9;
+  font-size: 0.72rem;
 }
 
 .overview__info__options__item__price-container {
@@ -187,58 +280,42 @@ span::after{
   }
 }
 
-/* Total (total-sektionen) */
-
-.total-section {
-  @extend .shoppingcontainer;
-  display: grid;
-  grid-template-rows: 1fr;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  height: auto;
-  margin-bottom: 10rem;
-}
-
-.total__spec-container {
+.overview__info__total-container {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   margin-top: 1.2rem;
 }
 
-.total__spec {
+.overview__info__total__spec {
   list-style: none;
   margin: 0;
   text-align: right;
   width: 18rem;
   font-size: 90%;
 
-  li{
+  // Produktens startpris- & antal personer-innertext.
+  .overview__info__total__spec__product {
+    color: white;
+  }
+  .overview__info__total__spec__product_quantity {
+    color: white;
+  }
+
+  li {
     font-family: "Poppins", sans-serif;
     text-align: left;
-    color: #F3C245;
-  
+    color: #f3c245;
+
     span::after {
       content: " kr";
     }
-  
+
     span {
       float: right;
     }
   }
-
-  .total__spec__product{
-    color: white;
-  }
-
-  .total__spec__product_quantity{
-    color: white;
-  }
-
 }
-
-
 
 .total__header {
   text-align: left;
@@ -257,7 +334,20 @@ span::after{
 }
 
 
-.total__warningtext{
+/* Total (total-sektionen) */
+
+.total-section {
+  @extend .shoppingcontainer;
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: auto;
+  margin-bottom: 10rem;
+}
+
+.total__warningtext {
   color: red;
 }
 
@@ -294,34 +384,28 @@ span::after{
 .PD__item-input {
   height: 100%;
   width: 20rem;
-  padding: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-size: 1rem; /* för att "nollställa" font-size. */
   // box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
   background: $box-col;
   border: none; // Tar bort default input border
   border-bottom: 1px solid white;
   color: white;
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: "Poppins", sans-serif;
+  resize: none;
 }
 
-::placeholder{
+::placeholder {
   color: $font-2nd;
 }
 
-textarea,
-input {
-  resize: none;
-  border: 1px solid $bg-col;
-}
-
 // Tar bort pilarna i number-input i form.
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-
 
 /* Buy section */
 
@@ -356,115 +440,9 @@ input[type=number]::-webkit-outer-spin-button {
   color: red;
 }
 
-// Slider:
-input[type="range"].qty__slider {
-  -webkit-appearance: none;
-  width: 100%;
-  margin: 6.55px 0;
-}
-input[type="range"].qty__slider:focus {
-  outline: none;
-}
-input[type="range"].qty__slider::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 6.9px;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
-  background: #efac00;
-  border-radius: 25px;
-  border: 0px solid rgba(51, 67, 80, 0);
-}
-input[type="range"].qty__slider::-webkit-slider-thumb {
-  box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
-    0px 0px 1.4px rgba(61, 80, 96, 0.76);
-  border: 2.1px solid rgba(51, 67, 80, 0);
-  height: 20px;
-  width: 20px;
-  border-radius: 12px;
-  background: #efac00;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -6.55px;
-}
-input[type="range"].qty__slider:focus::-webkit-slider-runnable-track {
-  background: #ffc01e;
-}
-input[type="range"].qty__slider::-moz-range-track {
-  width: 100%;
-  height: 6.9px;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
-  background: #efac00;
-  border-radius: 25px;
-  border: 0px solid rgba(51, 67, 80, 0);
-}
-input[type="range"].qty__slider::-moz-range-thumb {
-  box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
-    0px 0px 1.4px rgba(61, 80, 96, 0.76);
-  border: 2.1px solid rgba(51, 67, 80, 0);
-  height: 20px;
-  width: 20px;
-  border-radius: 12px;
-  background: #efac00;
-  cursor: pointer;
-}
-input[type="range"].qty__slider::-ms-track {
-  width: 100%;
-  height: 6.9px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-input[type="range"].qty__slider::-ms-fill-lower {
-  background: #c18b00;
-  border: 0px solid rgba(51, 67, 80, 0);
-  border-radius: 50px;
-  box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
-}
-input[type="range"].qty__slider::-ms-fill-upper {
-  background: #efac00;
-  border: 0px solid rgba(51, 67, 80, 0);
-  border-radius: 50px;
-  box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
-}
-input[type="range"].qty__slider::-ms-thumb {
-  box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
-    0px 0px 1.4px rgba(61, 80, 96, 0.76);
-  border: 2.1px solid rgba(51, 67, 80, 0);
-  height: 20px;
-  width: 20px;
-  border-radius: 12px;
-  background: #efac00;
-  cursor: pointer;
-  height: 6.9px;
-}
-input[type="range"].qty__slider:focus::-ms-fill-lower {
-  background: #efac00;
-}
-input[type="range"].qty__slider:focus::-ms-fill-upper {
-  background: #ffc01e;
-}
-
-.qty__slider {
-  background: $box-col;
-}
-
-.qty__slider-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-input[type="range"] {
-  border-radius: 25px;
-}
-
 // Animationer
 
-
-
-.total__spec li {  
+.overview__info__total__spec li {
   animation: fadein 2s;
   -moz-animation: fadein 2s; /* Firefox */
   -webkit-animation: fadein 2s; /* Safari and Chrome */
@@ -484,7 +462,6 @@ input[type="range"] {
   }
   to {
     opacity: 1;
-
   }
 }
 @-moz-keyframes fadein {
@@ -509,8 +486,8 @@ input[type="range"] {
 // --------- MEDIAQUERIES -------- //
 
 @media screen and (max-width: 1380px) {
-  .overview-wrapper {
-    margin-top: 6.2rem;
+  .overview-section {
+    margin-top: 7.7rem;
   }
 }
 

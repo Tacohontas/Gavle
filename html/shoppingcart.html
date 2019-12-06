@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Varukorg</title>
-
-    <!-- fannys font -->
+    <!-- FONT från googlefonts -->
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
-    <!-- ikoner -->
+    <!-- Ikoner från font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-
     <script src="../js/shoppingcart.js" defer></script>
     <link rel="stylesheet" href="/styles/css/styles.css">
 </head>
@@ -19,7 +17,7 @@
 <body class="shoppingcart_body">
 
     <header class="header">
-        <div> <img src="../img/logo_jpg.jpg" alt="logo" class="logo"></div>
+        <div><img src="../img/logo_jpg.jpg" alt="logo" class="logo"></div>
         <a href="#menu" class="menu-toggle">
             <span class="sr-only">Öppna meny</span>
             <span class="fas fa-bars"></span>
@@ -39,51 +37,30 @@
         <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" hidden></a>
     </header>
 
-
-
-
+    <!-- Överblick på vald produkt med mera -->
     <div class="overview-wrapper">
-
-        <!-- Vald produkt -->
-
-
         <section class="overview-section">
-
-
             <div class="overview-container">
 
+                <!----------- Vald Produkt ---------->
                 <div class="overview__product-container">
-                    <h1 class="overview__product__header">
-                        Din valda produkt:
-                    </h1>
-
-                    <div class="overview__info__prodinfo-wrapper">
-                        <div class="overview__info__prodinfo-container">
-                            <!-- Här ska info hämtas från index -->
-                            <h1 class="overview__info__prodinfo__h">Info om din produkt:</h1>
-                            <p class="overview__info__prodinfo__desc">Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Accusamus aliquam modi eos doloribus rem officiis vero repellat vitae
-                                minima qui.
-                                <!-- <li style="list-style: disc;">Lorem ipsum dolor sit amet.</li>
-                                    <li style="list-style: disc;">Lorem ipsum dolor sit amet.</li> -->
-                            </p>
+                    <h1 class="overview__product__header">Din valda produkt: </h1>
+                    <div class="overview__product__info-container">
+                        <h1 class="overview__product__info__h">Info om din produkt:</h1>
+                        <div class="overview__product__info__desc">
+                            <!-- Här hamnar produktbeskrivning från index.html via js -->
                         </div>
                     </div>
-
-                    <div class="overview__product__img-container">
-                        <img class="overview__product__img" src="#" alt="Produktbild"><!-- Hämtar src från JS script-->
-
-                    </div>
+                    <img class="overview__product__img" src="#" alt="Produktbild"><!-- Hämtar src från JS-->
                 </div>
 
+                <!----------- Info (Antal , Tillval och totalsumma) ---------->
                 <div class="overview__info-container">
 
-
-                    <!----------- Tillval ---------->
+                    <!----------- Överblick på Antal deltagare och Tillval ---------->
                     <div class="overview__info__options-wrapper">
-
                         <div class="overview__info__options-container">
-
+                            <!----- Antal deltagare (Slider) ------>
                             <div class="overview__info__options__qty-container">
                                 <p class="overview__info__options__qty__out-container">
                                     <span class="qty__header">Antal personer:</span>
@@ -93,15 +70,15 @@
                                     <input type="range" min="1" max="20" step="1" value="1" class="qty__slider">
                                 </div>
                                 <p class="qty__review">
-                                    <span class="qty__value"></span>
+                                    <span class="qty__value">
+                                        <!-- Här hamnar värde från slider via JS --></span>
                                 </p>
-
                             </div>
 
+                            <!-- Tillval -->
                             <div class="overview__info__options__item-container">
                                 <label>
                                     <input type="checkbox" class="overview__info__options__item__input">
-                                    <!-- Den här knappen är gömd -->
                                     <div class="overview__info__options__item">
                                         <h3 class="overview__info__options__item__h">Tillval 1</h3>
                                         <p class="overview__info__options__item__desc">Beskrivning av tillval 1.</p>
@@ -112,11 +89,9 @@
                                 </label>
                             </div>
 
-
                             <div class="overview__info__options__item-container">
                                 <label>
                                     <input type="checkbox" class="overview__info__options__item__input">
-                                    <!-- Den här knappen är gömd -->
                                     <div class="overview__info__options__item">
                                         <h3 class="overview__info__options__item__h">Tillval 2</h3>
                                         <p class="overview__info__options__item__desc">Beskrivning av tillval 2.</p>
@@ -127,13 +102,9 @@
                                 </label>
                             </div>
 
-
-
-
                             <div class="overview__info__options__item-container">
                                 <label>
                                     <input type="checkbox" class="overview__info__options__item__input">
-                                    <!-- Den här knappen är gömd -->
                                     <div class="overview__info__options__item">
                                         <h3 class="overview__info__options__item__h">Tillval 3</h3>
                                         <p class="overview__info__options__item__desc">Beskrivning av tillval 3.</p>
@@ -144,25 +115,25 @@
                                 </label>
                             </div>
                         </div>
-
                     </div>
 
-
-                    <div class="total__spec-container">
-                        <ul class="total__spec">
-                            <li class="total__spec__product">Produktens startpris: <span
-                                    class="total__spec__product_price"></span>
+                    <!---- Totalsumma ex moms ----->
+                    <div class="overview__info__total-container">
+                        <!-- döp om denna + childs till overview__info_totalspec -->
+                        <ul class="overview__info__total__spec">
+                            <li class="overview__info__total__spec__product">Produktens startpris: <span
+                                    class="overview__info__total__spec__product_price"></span>
                             </li>
-                            <li class="total__spec__product_quantity"></li>
+                            <li class="overview__info__total__spec__product_quantity"></li>
                         </ul>
                         <h1 class="total__header">Totalt ex. moms: <span class="total__sum"></span></h1>
                     </div>
 
-                </div>
-            </div> <!-- overview-section ends-->
+                </div> <!-- overview info-container ends-->
+            </div> <!-- overview-container ends-->
 
 
-        </section>
+        </section> <!-- overview section ends-->
 
     </div> <!-- Overview wrapper ends -->
     <!-- Totalsumma -->
@@ -219,25 +190,7 @@
             </section>
         </div>
 
- 
-
-
-
     </section>
-
-
-
-
-
-    <!-- Köpknapp (samma som från products.html just nu!) -->
-
-
-
-
-
-
-
-
 
 
     <footer class="footer">
@@ -301,9 +254,6 @@
         </div>
 
     </footer>
-
-
-
 </body>
 
 </html>

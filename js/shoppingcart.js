@@ -42,13 +42,13 @@ function ShowData() {
 
   // Hämtar produktpris:
   const totalSpecProductPrice = document.querySelector(
-    ".total__spec__product_price"
+    ".overview__info__total__spec__product_price"
   );
   totalSpecProductPrice.innerHTML = localStorage.getItem("product_price");
 
   // Hämtar produktbeskrivning:
   const overview__product__desc = document.querySelector(
-    ".overview__info__prodinfo__desc"
+    ".overview__product__info__desc"
   );
   overview__product__desc.innerHTML = localStorage.getItem("product_desc");
 
@@ -68,7 +68,7 @@ const quantityValue = document.querySelector(".qty__value");
 // När man drar range slider-knappen så ändras antal personer-fältet och summan under själva slidern.
 rangeSlider.oninput = function() {
   const productQuantity = document.querySelector(
-    ".total__spec__product_quantity"
+    ".overview__info__total__spec__product_quantity"
   );
   const rangeSliderOutput = document.querySelector(".qty__sliderout");
   rangeSliderOutput.innerHTML = this.value;
@@ -95,7 +95,7 @@ const optionsItem = document.querySelectorAll(".overview__info__options__item");
 for (let i = 0; i < optionsItemCheckbox.length; i++) {
   optionsItemCheckbox[i].addEventListener("change", () => {
     const createLi = document.createElement("li");
-    const totalSpec = document.querySelector(".total__spec");
+    const totalSpec = document.querySelector(".overview__info__total__spec");
     const totalSum = document.querySelector(".total__sum");
     const optionsItemHeader = optionsItem[i].children[0].innerHTML; //
     const optionsItemDesc = optionsItem[i].children[1].innerHTML; // Tänk på att de här är beroende av child-ordningen i .overview__info__options__item
@@ -185,8 +185,8 @@ function addInfo() {
 
 // ------------------------------ Totalsumman-funktion ------------------------- //
 
-// När något ändras i .total__spec (pris-specifikationen innan totalsumman) så uppdateras totalsumman.
-const totalSpec = document.querySelector(".total__spec");
+// När något ändras i total__spec (pris-specifikationen innan totalsumman) så uppdateras totalsumman.
+const totalSpec = document.querySelector(".overview__info__total__spec");
 totalSpec.addEventListener("DOMSubtreeModified", updateTotal);
 
 function updateTotal() {
@@ -194,14 +194,14 @@ function updateTotal() {
   const allaSpan = document.querySelectorAll(".total__spec__option_price");
   const totalSum = document.querySelector(".total__sum");
   const totalSpecProductPrice = document.querySelector(
-    ".total__spec__product_price"
+    ".overview__info__total__spec__product_price"
   );
 
   for (let i = 0; i < allaSpan.length; i++) {
     spanSum += Number(allaSpan[i].innerHTML);
   }
 
-  // Lägger samman produktpris från spec med alla spans som har klassen ".total__spec__option_price".
+  // Lägger samman produktpris från spec med alla spans som har klassen ".overview__info__total__spec__product_price".
   totalSum.innerHTML =
     Number(totalSpecProductPrice.innerHTML) + Number(spanSum);
 }
