@@ -30,10 +30,11 @@ function ShowDataonInvoice() {
   const totalsumma = document.querySelector(".invoice__total-total");
 
   //Dagens datum
-  thisYear = new Date().getFullYear();
-  thisMonth = new Date().getMonth() + 1;
-  thisDate = new Date().getDate();
-  datum.innerHTML = `${thisYear} - ${thisMonth} - ${thisDate}`;
+  // thisYear = new Date().getFullYear();
+  // thisMonth = new Date().getMonth() + 1;
+  // thisDate = new Date().getDate();
+  // datum.innerHTML = `${thisYear} - ${thisMonth} - ${thisDate}`;
+  datum.innerHTML = new Date().toLocaleDateString();
 
   //Fakturanummer
   fakturanr.innerHTML = Math.floor(Math.random() * 900000) + 100000;
@@ -41,9 +42,11 @@ function ShowDataonInvoice() {
   // Förfallo datum 
 
   // ...förfallo datum (30dagar)
-  thisDate = new Date();
+  const thisDate = new Date();
   thisDate.setDate(thisDate.getDate() + 30); 
-  ffdatum.innerHTML = thisDate.getFullYear() + '-' + ("0" + (thisDate.getMonth() + 1)).slice(-2) + '-' + ("0" + thisDate.getDate()).slice(-2)
+  ffdatum.innerHTML = thisDate.toLocaleDateString();
+
+  // ffdatum.innerHTML = thisDate.getFullYear() + '-' + ("0" + (thisDate.getMonth() + 1)).slice(-2) + '-' + ("0" + thisDate.getDate()).slice(-2)
 
 
   // Nollställer all tidigare info:
