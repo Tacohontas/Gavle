@@ -1,4 +1,3 @@
-
 /* När hela sidan laddats färdigt: (DOMContentLoaded): */
 document.addEventListener("DOMContentLoaded", ShowData());
 
@@ -33,11 +32,12 @@ rangeSlider.oninput = function() {
   const quantityValue = document.querySelector(".slider__output");
   const productQuantity = document.querySelector(".total__product-qty");
   const rangeSliderOutput = document.querySelector(".slider__qty");
-  /* Visar antal personer + pris vid slider-container */ 
+  /* Visar antal personer + pris vid slider-container */
+
   rangeSliderOutput.innerHTML = this.value;
-  quantityValue.innerHTML = this.value * 100; // 100kr per person 
+  quantityValue.innerHTML = this.value * 100; // 100kr per person
   /* Väljer display:none på element för att få fade-in animationen vid ändring */
-  productQuantity.style.display = "none"; 
+  productQuantity.style.display = "none";
   /* Sätter pris + namn i total-specifikationen när man släppt slider-knappen. */
   rangeSlider.addEventListener("change", function() {
     productQuantity.style.display = "block";
@@ -51,18 +51,22 @@ rangeSlider.oninput = function() {
 const addonCheckbox = document.querySelectorAll(".addon__checkbox");
 const addonTitleAll = document.querySelectorAll(".addon__title");
 const addonDescAll = document.querySelectorAll(".addon__desc");
-const addonPriceAll= document.querySelectorAll(".addon__price");
+const addonPriceAll = document.querySelectorAll(".addon__price");
+const optionsAddonAll = document.querySelectorAll(".options__addon");
+//
 
 /* Lägger in tillval i total-spec */
 for (let i = 0; i < addonCheckbox.length; i++) {
-  addonCheckbox[i].addEventListener("change", () => {
+  optionsAddonAll[i].addEventListener("click", () => {
     const createLi = document.createElement("li");
     const totalSpec = document.querySelector(".total__spec");
-    const addonTitle = addonTitleAll[i].innerHTML; 
-    const addonDesc = addonDescAll[i].innerHTML; 
-    const addonPrice = addonPriceAll[i].innerHTML; 
+    const addonTitle = addonTitleAll[i].innerHTML;
+    const addonDesc = addonDescAll[i].innerHTML;
+    const addonPrice = addonPriceAll[i].innerHTML;
 
-    if (addonCheckbox[i].checked) {
+    if (!addonCheckbox[i].checked) {
+      // Checkar in checkbox för att styla css etc.
+      addonCheckbox[i].checked = true;
       // Skapa li-element som adderar addonTitle, -Desc och -Price.
       totalSpec.appendChild(createLi);
       // Lägger till id i <li> för att kunna ta bort i else-statement.
@@ -77,8 +81,9 @@ for (let i = 0; i < addonCheckbox.length; i++) {
 
       // Fyller i Tillvalets namn och pris (i en span).
       createLi.innerHTML = `${addonTitle}: <span class="total__addon-price">${addonPrice}</span>`;
-
     } else {
+      // Checkar av checkbox för att styla css etc.
+      addonCheckbox[i].checked = false;
       // Tar bort elementet med samma ID som skapades i if.
       totalSpec.removeChild(document.getElementById([i]));
 
@@ -90,6 +95,13 @@ for (let i = 0; i < addonCheckbox.length; i++) {
   });
 }
 
+// optionsAddonAll[0].addEventListener("click", () =>{
+//   if (!addonCheckbox[0].checked) {
+//     addonCheckbox[0].checked = true;
+//   } else {
+//     addonCheckbox[0].checked = false;
+//   }
+// });
 //----------------- Kunduppgifter form (checkout) ------------------//
 
 // Gå vidare-knapp
@@ -176,4 +188,3 @@ function updateTotal() {
   totalSum.innerHTML =
     Number(totalSpecProductPrice.innerHTML) + Number(spanSum);
 }
-
