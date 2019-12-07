@@ -14,10 +14,11 @@
     <script src="../js/index.js" defer></script>
   </head>
 
-  <body class="bg" id="startsida">
+  <body id="startsida">
     <!-- Här börjar menyn -->
     <header class="header">
-      <div><img src="../img/logo_jpg.jpg" alt="logo" class="logo" /></div>
+      <a href="/html/index.html#startsida"
+      ><img src="../img/logo_jpg.jpg" alt="logo" class="logo"/></a>
       <a href="#menu" class="menu-toggle">
         <span class="sr-only">Öppna meny</span>
         <span class="fas fa-bars"></span>
@@ -28,15 +29,13 @@
         </a>
         <ul class="navmenu__ul">
           <li>
-            <a href="/html/index.html#startsida"
-              ><img src="../img/logo_jpg.jpg" alt="logo" class="logo"
-            /></a>
+            <a href="/html/index.html#startsida"><img src="../img/logo_jpg.jpg" alt="logo" class="logo"/></a>
           </li>
           <li>
             <a href="/html/index.html#startsida" class="navmenu__a">Hem</a>
           </li>
           <li>
-            <a href="/html/index.html#produkter_start" class="navmenu__a"
+            <a href="/html/index.html#produkter" class="navmenu__a"
               >Produkter</a
             >
           </li>
@@ -60,13 +59,13 @@
           dolorem at ut! Ipsam repudiandae, inventore id culpa est consequatur.
           Delectus culpa suscipit rerum!
         </p>
-        <a href="#produkter_start"
+        <a href="#produkter"
           ><button class="landing__box-btn">Produkter</button></a
         >
       </div>
     </section>
 
-    <!-- Snabb vy över våra produkter -->
+    <!-- Våra produkter -->
 
     <section class="productinfo" id="produkter_start">
       <div class="productinfo__card">
@@ -77,11 +76,15 @@
             alt="small"
           />
           <h2 class="productinfo__card-name">PAKET SMALL</h2>
-          <!-- Här är en div-container för all beskrivning av produkt-->
           <div class="productinfo__card-desc">
-            <p class="productinfo__card-text">Information om paket small</p>
+            <p class="productinfo__card-text">
+              Paketet för er som vill testa på att klättra, kanske för första
+              gången! Ta med hela ditt företag till våra lokaler för en
+              fullspäckad dag med teambuilding, skratt och träning. Just nu från
+              endast:
+            </p>
           </div>
-          <p class="productinfo__card-price">1000kr</p>
+          <p class="productinfo__card-price">10000kr</p>
           <button class="productinfo__card-btn">Köp</button>
         </div>
         <div class="productinfo__card-2">
@@ -92,10 +95,13 @@
           />
           <h2 class="productinfo__card-name">PAKET MEDIUM</h2>
           <div class="productinfo__card-desc">
-            <p class="productinfo__card-text">Information om paket medium</p>
+            <p class="productinfo__card-text">
+              En heldag hos oss på TeamClimbing, frukost, utrustning och lunch
+              ingår för hela sällskapet. Det ända ni behöver tänka på att ta med
+              är ett öppet sinne, oömtåliga kläder och ett glatt humör!
+            </p>
           </div>
-          <p class="productinfo__card-price">2000kr</p>
-
+          <p class="productinfo__card-price">12000kr</p>
           <button class="productinfo__card-btn">Köp</button>
         </div>
         <div class="productinfo__card-3">
@@ -106,57 +112,33 @@
           />
           <h2 class="productinfo__card-name">PAKET LARGE</h2>
           <div class="productinfo__card-desc">
-            <p class="productinfo__card-text">Information om paket large</p>
+            <p class="productinfo__card-text">
+              Ni har flera vana klättrare eller frilufts personer med er och
+              vill göra en ordentlig utflykt. Vi står för mat och utrustning för
+              hela dagen. Boka den ultimata teambuilding upplevelsen idag!
+            </p>
           </div>
-          <p class="productinfo__card-price">3000kr</p>
-
+          <p class="productinfo__card-price">20000kr</p>
           <button class="productinfo__card-btn">Köp</button>
         </div>
       </div>
     </section>
 
+    <!-- Omdömen -->
+
     <section class="reviews">
-      <p class="reviews__quote">
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit."</p>
-    </section>
-
-  <!-- Mer information om våra produkter-->
-
-    <section class="products">
-      <div class="products__container">
-          <img class="products__container--img" src="/img/small.jpg" alt="" />
-        <div class="products__container--txt">
-          <h2>Mer info om paket Small</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque,
-            consequuntur qui laboriosam rem nisi velit atque praesentium fugiat
-            quis similique!
-          </p>
-        </div>
-        <div class="products__container--txt2">
-          <h2 class="products__container--txt2">Mer info om paket Medium</h2>
-          <p class="products__container--txt2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            quos pariatur sit iure maiores minus vitae voluptatum quibusdam,
-            accusantium alias.
-          </p>
-        </div>
-          <img class="products__container--img2" src="/img/medium.jpg" alt="" />
-          <img class="products__container--img" src="/img/large2.jpg" alt="" />
-        <div class="products__container--txt">
-          <h2>Mer info om paket Large</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            sed ab dolore labore quaerat repudiandae tempora odit nesciunt quia
-            molestias.
-          </p>
-        </div>
-      </div>
+      <div class="reviews__quote">
+       
+        "Fysisk aktivitet leder till nya ideer och hjälper människor att
+        knyta an till varandra och agera mer avslappnat i grupp."
+     
+    </div>
     </section>
 
     <!-- Om oss och vår personal -->
 
     <section class="omoss" id="omoss">
+      <h1>TeamClimbing Staff</h1>
       <div class="omoss__container">
         <div class="omoss__card">
           <img src="../img/Erik.jpg" alt="erik" class="omoss__card-img" />
@@ -184,60 +166,57 @@
       </div>
     </section>
 
-    <!-- Mer information om våra produkter-->
-
-    <!-- Footer start -->
-    <footer class="footer">
-        <div class="footer__linknav">
-            <div class="linknav__griditem">
-                <img src="../img/logo_jpg.jpg" alt="logo" class="footer__logo">
-            </div>
-            <ul class="linknav__griditem">
-                <li class="linknav_link"><a href="/html/index.html">Hem</a></li>
-                <li class="linknav_link"><a href="/html/index.html#produkter_start">Produkter</a></li>
-                <li class="linknav_link"><a href="/html/index.html#omoss">Om oss</a></li>
-            </ul>
-            <div class="linknav__griditem">
-                <p><span>&copy;</span>2019 Gävle Entertainment</p>
-            </div>
-        </div>
-        <div class="footer__contact">
-            <div class="contact__griditem">
-                <i class="fas fa-map-marker-alt fa-lg"></i>
-                <p><span>Exempelgatan 25</span>123 45 Exempelstaden</p>
-            </div>
-            <div class="contact__griditem">
-                <i class="fas fa-phone-alt fa-lg"></i>
-                <p>08 - 123 45 67</p>
-
-            </div>
-            <div class="contact__griditem">
-                <i class="fas fa-envelope fa-lg"></i>
-                <p>Hej@TeamClimbing.se</p>
-            </div>
-        </div>
-        <div class="footer__aboutus">
-            <div class="aboutus-wrapper">
-                <div class="aboutus-container">
-                    <h2 class="aboutus__header">Om oss</h2>
-                    <p class="aboutus__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-                        sit
-                        asperiores, cum quaerat officiis omnis!</p>
-                </div>
-                <ul class="aboutus__icons-container">
-                    <li class="aboutus__icon"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
-                    <li class="aboutus__icon"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
-                    <li class="aboutus__icon"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
-                    <li class="aboutus__icon"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Den här visas vid mediaquerias max-width 800px -->
-        <div class="footer__copy-hidden">
-            <p><span>&copy;</span>2019 Gävle Entertainment</p>
-        </div>
-
-    </footer>
-    
+       <!-- Footer -->
+       <footer class="footer">
+          <div class="footer__linknav">
+              <div class="linknav__griditem">
+                  <img src="../img/logo_jpg.jpg" alt="logo" class="footer__logo">
+              </div>
+              <ul class="linknav__griditem">
+                  <li class="linknav_link"><a href="/html/index.html">Hem</a></li>
+                  <li class="linknav_link"><a href="/html/index.html#produkter">Produkter</a></li>
+                  <li class="linknav_link"><a href="/html/index.html#omoss">Om oss</a></li>
+              </ul>
+              <div class="linknav__griditem">
+                  <p><span>&copy;</span>2019 Gävle Entertainment</p>
+              </div>
+          </div>
+          <div class="footer__contact">
+              <div class="contact__griditem">
+                  <i class="fas fa-map-marker-alt fa-lg"></i>
+                  <p><span>Exempelgatan 25</span>123 45 Exempelstaden</p>
+              </div>
+              <div class="contact__griditem">
+                  <i class="fas fa-phone-alt fa-lg"></i>
+                  <p>08 - 123 45 67</p>
+  
+              </div>
+              <div class="contact__griditem">
+                  <i class="fas fa-envelope fa-lg"></i>
+                  <p>Hej@TeamClimbing.se</p>
+              </div>
+          </div>
+          <div class="footer__aboutus">
+              <div class="aboutus-wrapper">
+                  <div class="aboutus-container">
+                      <h2 class="aboutus__header">Om oss</h2>
+                      <p class="aboutus__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+                          sit
+                          asperiores, cum quaerat officiis omnis!</p>
+                  </div>
+                  <ul class="aboutus__icons-container">
+                      <li class="aboutus__icon"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                      <li class="aboutus__icon"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+                      <li class="aboutus__icon"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                      <li class="aboutus__icon"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+          <!-- Den här visas vid mediaquerias max-width 800px -->
+          <div class="footer__copy-hidden">
+              <p><span>&copy;</span>2019 Gävle Entertainment</p>
+          </div>
+  
+      </footer>
   </body>
 </html>
