@@ -30,10 +30,6 @@ function ShowDataonInvoice() {
   const totalsumma = document.querySelector(".invoice__total-total");
 
   //Dagens datum
-  // thisYear = new Date().getFullYear();
-  // thisMonth = new Date().getMonth() + 1;
-  // thisDate = new Date().getDate();
-  // datum.innerHTML = `${thisYear} - ${thisMonth} - ${thisDate}`;
   datum.innerHTML = new Date().toLocaleDateString();
 
   //Fakturanummer
@@ -45,9 +41,6 @@ function ShowDataonInvoice() {
   const thisDate = new Date();
   thisDate.setDate(thisDate.getDate() + 30); 
   ffdatum.innerHTML = thisDate.toLocaleDateString();
-
-  // ffdatum.innerHTML = thisDate.getFullYear() + '-' + ("0" + (thisDate.getMonth() + 1)).slice(-2) + '-' + ("0" + thisDate.getDate()).slice(-2)
-
 
   // Nollställer all tidigare info:
     produkt.innerHTML = "";
@@ -75,19 +68,19 @@ function ShowDataonInvoice() {
   // Tillvalsnamn
   for (let i = 0; i < 3; i++) {
     
-    if (localStorage.getItem(`option${i+1}_name`)!=null) {
+    if (localStorage.getItem(`addon${i+1}_name`)!=null) {
       const createLi = document.createElement("li");
       tillval.appendChild(createLi);
-      createLi.innerHTML = localStorage.getItem(`option${i+1}_name`);
+      createLi.innerHTML = localStorage.getItem(`addon${i+1}_name`);
     }
 }
   // Tillvalspris
   for (let i = 0; i < 3; i++) {
     
-    if (localStorage.getItem(`option${i+1}_price`)!=null) {
+    if (localStorage.getItem(`addon${i+1}_price`)!=null) {
       const createLi = document.createElement("li");
       tillvalsumma.appendChild(createLi);
-      createLi.innerHTML = localStorage.getItem(`option${i+1}_price`) + " kr";
+      createLi.innerHTML = localStorage.getItem(`addon${i+1}_price`) + " kr";
     }
   }
 
