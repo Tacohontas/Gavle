@@ -1,136 +1,114 @@
-
 .container {
-    display: grid;
-    justify-items: center;
+  display: grid;
+  justify-items: center;
 }
 .invoice {
-    margin: 1rem;
-    width: 38rem;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
-    background-color: white;
-    color: black;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-
+  margin: 1rem;
+  width: 38rem;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
+  background-color: white;
+  color: $bg-col;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
 }
 .invoice__header {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    border-bottom: 2px solid black;
-    margin: 0 0 0 1rem;
-
+  grid-column: 1/2;
+  grid-row: 1/2;
+  border-bottom: 2px solid black;
+  margin: 0 0 0 1rem;
 }
 .invoice__header-logo {
-    max-width: 7rem;
-    margin: 5% 0 5% 15%;
-    border-radius: 50% 50% 50% 50%;
-    
+  max-width: 7rem;
+  margin: 5% 0 5% 15%;
+  border-radius: 50% 50% 50% 50%;
+  box-shadow: $shadow2;
 }
 .invoice__num {
-    grid-column: 2/3;
-    padding: 1.5rem 0 0 0;
-    margin: 0 1rem 0 0;
-    border-bottom: 2px solid black;
+  grid-column: 2/3;
+  padding: 1.5rem 0 0 0;
+  margin: 0 1rem 0 0;
+  border-bottom: 2px solid black;
 }
 .invoice__num-table {
-    text-align: left;
+  text-align: left;
 }
 
-.invoice__adress{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    border-bottom: 2px solid black;
-    margin: 0 0 0 1rem;
-}
-.invoice__adress-text {
-    margin: 0 0 5% 10%;
-
-}
-.invoice__details {
-    grid-column: 2/3;
-    grid-row: 2/3;
-    border-bottom: 2px solid black;
-    margin: 0 1rem 0 0;
+.invoice__adress {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border-bottom: 2px solid black;
+  margin: 0 0 0 1rem;
   
 }
+.invoice__adress-text {
+  margin: 0 0 5% 10%;
+}
+.invoice__details {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border-bottom: 2px solid black;
+  margin: 0 1rem 0 0;
+}
 .invoice__spec {
-    grid-column: 1/2;
-    grid-row: 3/4;
-    border-bottom: 2px solid black;
-    margin: 0 0 0 1rem;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  border-bottom: 2px solid black;
+  margin: 0 0 0 1rem;
+
+  h3 {
+      margin-top: 5rem;
+  }
 }
 
 .invoice__sum {
-    display: flex;
-    justify-content: flex-end;
-    border-bottom: 2px solid black;
-    margin: 0 1rem 0 0;
-
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 2px solid black;
+  margin: 0 1rem 0 0;
 }
 .invoice__sum-table {
-    text-align: right;
+  text-align: right;
 }
 .invoice__bet {
-    border-bottom: 2px solid black;
-    margin: 0 0 0 1rem;
-    text-align: left;
+  border-bottom: 2px solid black;
+  margin: 0 0 0 1rem;
+  text-align: left;
 }
-
 .invoice__total {
-    display: flex;
-    justify-content: flex-end;
-    border-bottom: 2px solid black;
-    margin: 0 1rem 0 0;
-   text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 2px solid black;
+  margin: 0 1rem 0 0;
+  text-align: right;
 }
 .invoice__footer {
-    margin: 0 0 1rem 1rem;
+  margin: 0 0 1rem 1rem;
 }
 .invoice__footer-detail {
-    text-align: left;
+  text-align: left;
 }
+.invoice__back,
 .invoice__print {
-    width: 8rem;
-    height: 3rem;
-    background-color: $button-col;
-    border: none;
-    margin: 1rem;
-    color: $bg-col;
-    font-size: 1.5rem;
-}
-.invoice__back {
-    width: 8rem;
-    height: 3rem;
-    background-color: $button-col;
-    border: none;
-    margin: 1rem;
-    color: $bg-col;
-    font-size: 1.5rem;
-    
-}
-#anim1, #anim2 {
-    transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 
-#anim1:hover{
-    transform: translate(-8px);
+.invoice__back:hover {
+  transform: translate(-15px);
 }
-#anim2:hover {
-    transform: translate(10px);
+.invoice__print:hover {
+  transform: translate(15px);
 }
 
 @media screen and (max-width: 630px) {
-    .invoice {
-        width: auto;
-        margin:0;
-    }
-    
-    .invoice__header-logo {
-        max-width: 5rem;
-    
-    }
+  .invoice {
+    width: auto;
+    margin: 0;
+  }
 
+  .invoice__header-logo {
+    max-width: 5rem;
+  }
 }
