@@ -1,37 +1,45 @@
 @import "variables.scss";
 
-
 /* NOLLSTÄLLNING */
- *{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  &:focus{ 
-  outline: none;
+  &:focus {
+    outline: none;
   }
 }
-
 body {
   background: $bg-col;
   color: $font-col;
-  
 }
-p, a, div{
-  font-family: 'Poppins', sans-serif;
+p,
+a,
+div {
+  font-family: "Poppins", sans-serif;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Barlow Condensed', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Barlow Condensed", sans-serif;
 }
 
-li{
+li {
   list-style: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-a:link, a:visited, a:active {
+a,
+a:link,
+a:visited,
+a:active {
   text-decoration: none;
 }
 
+// ---- Standard-knapp ---- //
 button {
   width: 8rem;
   height: 3rem;
@@ -49,39 +57,23 @@ button:hover {
   cursor: pointer;
 }
 
-
-// Meny CSS
+// ---- Meny CSS ---- //
 
 .header {
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: row;
-  height: 100vh;
-  
-} 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
 }
 .logo {
   max-width: 6rem;
   margin: 1rem;
   border-radius: 50% 50% 50% 50%;
   box-shadow: $shadow2;
-
 }
 .menu-toggle {
-  display: inline-block;
   margin: 10px 0 0 0;
-  padding: .75em 15px;
+  padding: 0.75em 15px;
   line-height: 1rem;
   font-size: 2.5em;
   color: $font-2nd;
@@ -105,30 +97,26 @@ button:hover {
   top: 0;
   height: 100%;
   overflow-x: visible;
-  transition: left 0.3s ease,
-    	box-shadow 0.3s ease;
   z-index: 999;
 }
 .navmenu__ul {
   list-style: none;
-  margin: 0;
   padding: 2.5em 0 0;
-  box-shadow: -8px 0 8px rgba(0,0,0,.5);
+  box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
   min-height: 100%;
   width: 200px;
   background: $box-col;
-  
 }
 .navmenu__a {
   display: block;
-  padding: .75em 15px;
+  padding: 0.75em 15px;
   line-height: 1em;
   font-size: 1.3em;
   color: #fff;
   text-decoration: none;
   border-bottom: 1px solid #383838;
 }
-.navmenu__a:hover{
+.navmenu__a:hover {
   color: $button-col;
 }
 .navmenu .menu-close {
@@ -140,7 +128,7 @@ button:hover {
   display: block;
   left: 0;
   outline: none;
-  box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
 }
 .navmenu:target .menu-close {
   z-index: 1001;
@@ -156,11 +144,9 @@ button:hover {
   top: 0;
   width: 100%;
   height: 100%;
-
 }
 
 @import "footer.scss";
 @import "invoice.scss";
 @import "shoppingcart.scss";
 @import "index.scss";
-
