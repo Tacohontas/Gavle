@@ -1,8 +1,12 @@
 const buyBtn = document.querySelectorAll(".productinfo__card-btn");
-
+const productsBtn = document.querySelector(".btn-products");
 const productPrices = document.querySelectorAll(".productinfo__card-price");
 const productPriceInner = productPrices[0].innerHTML;
 const productPriceSplit = productPriceInner.split("kr");
+
+productsBtn.addEventListener("click", function(){
+  window.document.location = "#produkter";
+})
 
 for (let i = 0; i < buyBtn.length; i++) {
   buyBtn[i].addEventListener("click", () => {

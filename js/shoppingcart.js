@@ -95,13 +95,6 @@ for (let i = 0; i < addonCheckbox.length; i++) {
   });
 }
 
-// optionsAddonAll[0].addEventListener("click", () =>{
-//   if (!addonCheckbox[0].checked) {
-//     addonCheckbox[0].checked = true;
-//   } else {
-//     addonCheckbox[0].checked = false;
-//   }
-// });
 //----------------- Kunduppgifter form (checkout) ------------------//
 
 // Gå vidare-knapp
