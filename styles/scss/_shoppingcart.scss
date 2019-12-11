@@ -258,8 +258,12 @@
   align-items: center;
 
   .addon__price::after {
-    content: " kr";
+    content: " kr*";
   }
+}
+
+.overview__fineprint{
+  font-size: 0.5rem;
 }
 
 // ------ Totalsumma ex moms ------ //

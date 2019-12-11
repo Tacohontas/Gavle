@@ -21,27 +21,36 @@ function ShowData() {
 
   /* Lägger produktpris i totalsumman */
   const totalSum = document.querySelector(".total__sum");
-  totalSum.innerHTML = localStorage.getItem("product_price");
+  totalSum.innerHTML = (+localStorage.getItem("product_price"));
 }
 
 //--------------------- Range Slider ----------------------//
 const rangeSlider = document.querySelector(".slider__input");
+
+// Nollställning av Slider:
+const totalSum = document.querySelector(".total__sum");
+const rangeSliderOutput = document.querySelector(".slider__qty");
+const quantityValue = document.querySelector(".slider__output");
+rangeSliderOutput.innerHTML = 1;
+quantityValue.innerHTML = 500;
+totalSum.innerHTML = (+totalSum.innerHTML) + (+quantityValue.innerHTML);
+
 
 // Lägger till antal personer + pris med hjälp av en range-slider.
 rangeSlider.oninput = function() {
   const quantityValue = document.querySelector(".slider__output");
   const productQuantity = document.querySelector(".total__product-qty");
   const rangeSliderOutput = document.querySelector(".slider__qty");
+  
   /* Visar antal personer + pris vid slider-container */
-
   rangeSliderOutput.innerHTML = this.value;
-  quantityValue.innerHTML = this.value * 100; // 100kr per person
+  quantityValue.innerHTML = this.value * 500; // 100kr per person
   /* Väljer display:none på element för att få fade-in animationen vid ändring */
   productQuantity.style.display = "none";
   /* Sätter pris + namn i total-specifikationen när man släppt slider-knappen. */
   rangeSlider.addEventListener("change", function() {
     productQuantity.style.display = "block";
-    productQuantity.innerHTML = `${rangeSliderOutput.innerHTML} deltagare: <span class="total__addon-price">${quantityValue.innerHTML}</span>`;
+    productQuantity.innerHTML = `${rangeSliderOutput.innerHTML} deltagare <span class="total__addon-price">${quantityValue.innerHTML}</span>`;
     localStorage.setItem("product_quantity_price", quantityValue.innerHTML);
     localStorage.setItem("product_quantity", rangeSliderOutput.innerHTML);
   });
@@ -62,7 +71,8 @@ for (let i = 0; i < addonCheckbox.length; i++) {
     const totalSpec = document.querySelector(".total__spec");
     const addonTitle = addonTitleAll[i].innerHTML;
     const addonDesc = addonDescAll[i].innerHTML;
-    const addonPrice = addonPriceAll[i].innerHTML;
+    const rangeSliderOutput = document.querySelector(".slider__qty");
+    let addonPrice = addonPriceAll[i].innerHTML * (Number(rangeSliderOutput.innerHTML));
 
     if (!addonCheckbox[i].checked) {
       // Checkar in checkbox för att styla css etc.
@@ -80,7 +90,15 @@ for (let i = 0; i < addonCheckbox.length; i++) {
       localStorage.setItem(`addon${i + 1}_desc`, addonDesc);
 
       // Fyller i Tillvalets namn och pris (i en span).
-      createLi.innerHTML = `${addonTitle}: <span class="total__addon-price">${addonPrice}</span>`;
+      createLi.innerHTML = `${addonTitle} <span class="total__addon-price">${addonPrice}</span>`;
+
+      // När vi ändra antal personer så ändras tillvalspriser (baserat på antal personer).
+      rangeSliderOutput.addEventListener("DOMSubtreeModified", function(){
+        let addonPrice = addonPriceAll[i].innerHTML * rangeSliderOutput.innerHTML;
+        createLi.innerHTML = `${addonTitle} <span class="total__addon-price">${addonPrice}</span>`;
+        localStorage.setItem(`addon${i + 1}_price`, addonPrice);
+      });
+
     } else {
       // Checkar av checkbox för att styla css etc.
       addonCheckbox[i].checked = false;
@@ -176,6 +194,7 @@ function updateTotal() {
   for (let i = 0; i < allaSpan.length; i++) {
     spanSum += Number(allaSpan[i].innerHTML);
   }
+  
 
   /* Lägger samman produktpris från spec med alla spans som har klassen ".total__product-price". */
   totalSum.innerHTML =
