@@ -20,7 +20,7 @@
   height: 100vh;
   top: 0;
   left: 0;
-  background: url(/img/rock_climbing2.jpg);
+  background: url(/img/rock_climbing2.jpeg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -84,6 +84,7 @@
 .productinfo__card-text {
   font-size: 0.8rem;
   margin: 0 1.5rem 0 1.5rem;
+  height: 90px;
 }
 .productinfo__card-name,
 .productinfo__card-price {
@@ -91,7 +92,7 @@
 }
 // ---- Reviews, kort citat från företaget ----//
 .reviews {
-  background: url(/img/climb2_red.jpg);
+  background: url(/img/climb2_red.jpeg);
   height: 40vh;
   width: 100%;
   background-size: cover;
