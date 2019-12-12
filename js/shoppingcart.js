@@ -21,7 +21,7 @@ function ShowData() {
 
   /* Lägger produktpris i totalsumman */
   const totalSum = document.querySelector(".total__sum");
-  totalSum.innerHTML = (+localStorage.getItem("product_price"));
+  totalSum.innerHTML = +localStorage.getItem("product_price");
 }
 
 //--------------------- Range Slider ----------------------//
@@ -31,29 +31,35 @@ const rangeSlider = document.querySelector(".slider__input");
 const totalSum = document.querySelector(".total__sum");
 const rangeSliderOutput = document.querySelector(".slider__qty");
 const quantityValue = document.querySelector(".slider__output");
-rangeSliderOutput.innerHTML = 1;
-quantityValue.innerHTML = 500;
-totalSum.innerHTML = (+totalSum.innerHTML) + (+quantityValue.innerHTML);
-
+rangeSliderOutput.innerHTML = 1; // Antal deltagare = 1
+quantityValue.innerHTML = 500; // Startpris för antal deltagare = 500kr
+totalSum.innerHTML = +totalSum.innerHTML + +quantityValue.innerHTML;
 
 // Lägger till antal personer + pris med hjälp av en range-slider.
 rangeSlider.oninput = function() {
   const quantityValue = document.querySelector(".slider__output");
   const productQuantity = document.querySelector(".total__product-qty");
   const rangeSliderOutput = document.querySelector(".slider__qty");
-  
+
   /* Visar antal personer + pris vid slider-container */
   rangeSliderOutput.innerHTML = this.value;
   quantityValue.innerHTML = this.value * 500; // 100kr per person
-  /* Väljer display:none på element för att få fade-in animationen vid ändring */
-  productQuantity.style.display = "none";
-  /* Sätter pris + namn i total-specifikationen när man släppt slider-knappen. */
-  rangeSlider.addEventListener("change", function() {
-    productQuantity.style.display = "block";
+
+  /* Sätter pris + namn (antal deltagare) i total-specifikationen när man drar i slider-knappen. */
+  // .. Via Mutation observer:
+
+  const updateQtyObserver = new MutationObserver(updateQty);
+  const config = { childList: true, subtree: true };
+
+  function updateQty() {
     productQuantity.innerHTML = `${rangeSliderOutput.innerHTML} deltagare <span class="total__addon-price">${quantityValue.innerHTML}</span>`;
-    localStorage.setItem("product_quantity_price", quantityValue.innerHTML);
-    localStorage.setItem("product_quantity", rangeSliderOutput.innerHTML);
-  });
+  }
+
+  updateQtyObserver.observe(rangeSliderOutput, config);
+
+  // Sätter local storage
+  localStorage.setItem("product_quantity_price", quantityValue.innerHTML);
+  localStorage.setItem("product_quantity", rangeSliderOutput.innerHTML);
 };
 
 //-------------------------- Tillval ---------------------//
@@ -72,7 +78,8 @@ for (let i = 0; i < addonCheckbox.length; i++) {
     const addonTitle = addonTitleAll[i].innerHTML;
     const addonDesc = addonDescAll[i].innerHTML;
     const rangeSliderOutput = document.querySelector(".slider__qty");
-    let addonPrice = addonPriceAll[i].innerHTML * (Number(rangeSliderOutput.innerHTML));
+    let addonPrice =
+      addonPriceAll[i].innerHTML * Number(rangeSliderOutput.innerHTML);
 
     if (!addonCheckbox[i].checked) {
       // Checkar in checkbox för att styla css etc.
@@ -93,11 +100,17 @@ for (let i = 0; i < addonCheckbox.length; i++) {
       createLi.innerHTML = `${addonTitle} <span class="total__addon-price">${addonPrice}</span>`;
 
       // När vi ändra antal personer så ändras tillvalspriser (baserat på antal personer).
-      rangeSliderOutput.addEventListener("DOMSubtreeModified", function(){
-        let addonPrice = addonPriceAll[i].innerHTML * rangeSliderOutput.innerHTML;
+
+      const updateAddonPriceObserver = new MutationObserver(updateAddonPrice);
+      const config = { childList: true, subtree: true };
+      updateAddonPriceObserver.observe(rangeSliderOutput, config);
+
+      function updateAddonPrice() {
+        let addonPrice =
+          addonPriceAll[i].innerHTML * rangeSliderOutput.innerHTML;
         createLi.innerHTML = `${addonTitle} <span class="total__addon-price">${addonPrice}</span>`;
         localStorage.setItem(`addon${i + 1}_price`, addonPrice);
-      });
+      }
 
     } else {
       // Checkar av checkbox för att styla css etc.
@@ -169,7 +182,7 @@ function addInfo() {
     localStorage.setItem("contact_phone", contactPhoneValue);
     localStorage.setItem("contact_email", contactEmailValue);
     localStorage.setItem("message", messageValue);
-    // Totalsumma också
+    // + Totalsumma också
     localStorage.setItem("total", totalSum);
     // Länkar vidare till invoice.
     window.document.location = "../html/invoice.html";
@@ -182,9 +195,15 @@ function addInfo() {
 //----------------------- Totalsumman -------------------------//
 
 /* Om något ändras i total__spec (pris-specifikationen innan totalsumman) = uppdatera totalsumman. */
-const totalSpec = document.querySelector(".total__spec");
-totalSpec.addEventListener("DOMSubtreeModified", updateTotal);
 
+// - Med hjälp av Mutationobserver:
+// Sätt en target
+const totalSpec = document.querySelector(".total__spec");
+
+// Skapa en 'Mutationobserver' med en callback i param.
+const updateTotalObserver = new MutationObserver(updateTotal);
+
+// Våran callback
 function updateTotal() {
   let spanSum = 0;
   const allaSpan = document.querySelectorAll(".total__addon-price");
@@ -194,9 +213,17 @@ function updateTotal() {
   for (let i = 0; i < allaSpan.length; i++) {
     spanSum += Number(allaSpan[i].innerHTML);
   }
-  
 
   /* Lägger samman produktpris från spec med alla spans som har klassen ".total__product-price". */
   totalSum.innerHTML =
     Number(totalSpecProductPrice.innerHTML) + Number(spanSum);
 }
+
+// Sätt inställningar för observern.
+const config = {
+  childList: true,  // target's children observeras (Not in a creepy way.)
+  subtree: true     // target's descendents observeras. (Också ganska creepy.)
+};
+
+// Observa våran target
+updateTotalObserver.observe(totalSpec, config);
